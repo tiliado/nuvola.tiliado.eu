@@ -24,6 +24,13 @@ python3.6 -m nuvola_index 'http://127.0.0.1:8000/'
 ### Deployment
 
 ```sh
+cd ~/dev/projects/nuvolaplayer3/nuvola-apps-repository-index
+python3.6 ./update_apps.py \
+    -l ~/dev/projects/nuvolaplayer3/flatpak/recipes.yaml \
+    -d ~/dev/projects/nuvolaplayer3/apps
+git status
+git add data/apps.json
+git commit -m "Update apps.json"
 python3.6 -m nuvola_index -f 'https://nuvola.tiliado.eu/'
 cd ~/dev/projects/fxdepl
 ./fxdepl.py push -s v2.tiliado.eu -p nuvola.tiliado.eu -R
