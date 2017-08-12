@@ -1,13 +1,17 @@
 from typing import List, Dict, Any
-
 import os
-
 import shutil
 
-from nuvola_index.templater import Templater
+from . import Templater
 
 
 class Generator:
+    distributions: List[Dict[str, Any]]
+    apps: List[Dict[str, Any]]
+    output_dir: str
+    static_dir: str
+    templater: Templater
+
     def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], output_dir: str,
                  static_dir: str, templater: Templater):
         self.static_dir = static_dir
@@ -163,7 +167,6 @@ class Generator:
             f.write(self.templater.render(template + ".flatpakref", data))
 
     def copy_static_files(self):
-
         target = os.path.join(self.output_dir, os.path.basename(self.static_dir))
         if os.path.isdir(target):
             shutil.rmtree(target)

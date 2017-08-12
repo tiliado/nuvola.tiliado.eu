@@ -3,8 +3,7 @@ import os
 from argparse import ArgumentParser, Namespace
 from typing import List
 
-from nuvola_index.templater import create_teplater
-from . import Generator
+from . import Generator, create_templater
 
 
 def main(argv: List[str]) -> int:
@@ -19,7 +18,7 @@ def main(argv: List[str]) -> int:
     output = os.path.abspath(params.output)
     templates = os.path.abspath(params.templates)
     global_vars["root"] = params.hostname.rstrip("/")
-    templater = create_teplater(templates, global_vars)
+    templater = create_templater(templates, global_vars)
     static = os.path.abspath(params.static)
     generator = Generator(distributions, apps, output, static, templater)
     if params.fresh:

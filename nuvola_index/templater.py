@@ -3,13 +3,12 @@ from typing import Dict, Any, Union, List
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template, TemplateError
 
 
-def create_teplater(template_dir: str, global_vars: Dict[str, Any] = None) -> "Templater":
+def create_templater(template_dir: str, global_vars: Dict[str, Any] = None) -> "Templater":
     env = Environment(
         loader=FileSystemLoader(template_dir),
         autoescape=select_autoescape(['html', 'xml'])
     )
     env.globals.update(global_vars)
-
     return Templater(env)
 
 
