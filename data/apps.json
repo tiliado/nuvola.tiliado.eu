@@ -1,162 +1,162 @@
 [
   {
+    "id": "8tracks",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "8tracks",
+    "uid": "eu.tiliado.NuvolaApp8tracks",
+    "version": "5.2"
+  },
+  {
     "id": "amazon_cloud_player",
-    "maintainer_link": "https://github.com/a-m-s",
     "maintainer": "Andrew Stubbs",
-    "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
+    "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
+    "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
     "version": "5.4"
   },
   {
-    "id": "plex",
-    "maintainer_link": "https://github.com/skyghis",
-    "maintainer": "SkyghiS",
-    "uid": "eu.tiliado.NuvolaAppPlex",
-    "name": "Plex Music",
-    "version": "1.3"
+    "id": "bbc_iplayer",
+    "maintainer": "Andrew Stubbs",
+    "maintainer_link": "https://github.com/a-m-s",
+    "name": "BBC iPlayer",
+    "uid": "eu.tiliado.NuvolaAppBbcIplayer",
+    "version": "1.1"
   },
   {
-    "id": "yandex_music",
-    "maintainer_link": "https://github.com/fenryxo",
+    "id": "bandcamp",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppYandexMusic",
-    "name": "Yandex Music",
-    "version": "1.4"
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Bandcamp",
+    "uid": "eu.tiliado.NuvolaAppBandcamp",
+    "version": "2.2"
   },
   {
-    "id": "kexp",
-    "maintainer_link": "https://github.com/thenyeguy",
-    "maintainer": "Michael Nye",
-    "uid": "eu.tiliado.NuvolaAppKexp",
-    "name": "KEXP Live Stream",
+    "id": "deezer",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Deezer",
+    "uid": "eu.tiliado.NuvolaAppDeezer",
+    "version": "2.7"
+  },
+  {
+    "id": "google_calendar",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Google Calendar",
+    "uid": "eu.tiliado.NuvolaAppGoogleCalendar",
     "version": "1.2"
   },
   {
+    "id": "google_play_music",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Google Play Music",
+    "uid": "eu.tiliado.NuvolaAppGooglePlayMusic",
+    "version": "5.19"
+  },
+  {
     "id": "groove",
-    "maintainer_link": "https://github.com/jrosco",
     "maintainer": "Joel Cumberland",
-    "uid": "eu.tiliado.NuvolaAppGroove",
+    "maintainer_link": "https://github.com/jrosco",
     "name": "Groove",
+    "uid": "eu.tiliado.NuvolaAppGroove",
     "version": "1.3"
   },
   {
-    "id": "mixcloud",
-    "maintainer_link": "https://github.com/s83",
-    "maintainer": "Samuel Mansour",
-    "uid": "eu.tiliado.NuvolaAppMixcloud",
-    "name": "Mixcloud",
-    "version": "3.2"
+    "id": "jango",
+    "maintainer": "Stefano Bagnatica",
+    "maintainer_link": "https://github.com/thepisu",
+    "name": "Jango",
+    "uid": "eu.tiliado.NuvolaAppJango",
+    "version": "2.3"
   },
   {
-    "id": "owncloud_music",
-    "maintainer_link": "https://github.com/fenryxo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
-    "name": "ownCloud Music",
+    "id": "kexp",
+    "maintainer": "Michael Nye",
+    "maintainer_link": "https://github.com/thenyeguy",
+    "name": "KEXP Live Stream",
+    "uid": "eu.tiliado.NuvolaAppKexp",
     "version": "1.2"
   },
   {
     "id": "logitech_media_server",
-    "maintainer_link": "https://github.com/Tar-Dingens",
     "maintainer": "Steffen Coenen",
-    "uid": "eu.tiliado.NuvolaAppLogitechMediaServer",
+    "maintainer_link": "https://github.com/Tar-Dingens",
     "name": "Logitech Media Server",
+    "uid": "eu.tiliado.NuvolaAppLogitechMediaServer",
     "version": "2.2"
   },
   {
-    "id": "siriusxm",
-    "maintainer_link": "https://github.com/fenryxo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppSiriusxm",
-    "name": "SiriusXM",
+    "id": "mixcloud",
+    "maintainer": "Samuel Mansour",
+    "maintainer_link": "https://github.com/s83",
+    "name": "Mixcloud",
+    "uid": "eu.tiliado.NuvolaAppMixcloud",
+    "version": "3.2"
+  },
+  {
+    "id": "plex",
+    "maintainer": "SkyghiS",
+    "maintainer_link": "https://github.com/skyghis",
+    "name": "Plex Music",
+    "uid": "eu.tiliado.NuvolaAppPlex",
     "version": "1.3"
   },
   {
-    "id": "spotify",
-    "maintainer_link": "https://github.com/thenyeguy",
-    "maintainer": "Michael Nye",
-    "uid": "eu.tiliado.NuvolaAppSpotify",
-    "name": "Spotify",
-    "version": "2.3"
-  },
-  {
-    "id": "bandcamp",
-    "maintainer_link": "https://github.com/fenryxo",
+    "id": "siriusxm",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppBandcamp",
-    "name": "Bandcamp",
-    "version": "2.2"
-  },
-  {
-    "id": "google_play_music",
     "maintainer_link": "https://github.com/fenryxo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppGooglePlayMusic",
-    "name": "Google Play Music",
-    "version": "5.19"
-  },
-  {
-    "id": "youtube",
-    "maintainer_link": "https://github.com/jrosco",
-    "maintainer": "Joel Cumberland",
-    "uid": "eu.tiliado.NuvolaAppYoutube",
-    "name": "YouTube",
+    "name": "SiriusXM",
+    "uid": "eu.tiliado.NuvolaAppSiriusxm",
     "version": "1.3"
   },
   {
     "id": "soundcloud",
-    "maintainer_link": "https://github.com/kixam",
     "maintainer": "KiXaM",
-    "uid": "eu.tiliado.NuvolaAppSoundcloud",
+    "maintainer_link": "https://github.com/kixam",
     "name": "SoundCloud",
+    "uid": "eu.tiliado.NuvolaAppSoundcloud",
     "version": "1.3"
   },
   {
-    "id": "tunein",
-    "maintainer_link": "https://github.com/ajabot",
-    "maintainer": "Aur\u00e9lien Jabot",
-    "uid": "eu.tiliado.NuvolaAppTunein",
-    "name": "TuneIn",
-    "version": "1.3"
-  },
-  {
-    "id": "deezer",
-    "maintainer_link": "https://github.com/fenryxo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppDeezer",
-    "name": "Deezer",
-    "version": "2.7"
-  },
-  {
-    "id": "bbc_iplayer",
-    "maintainer_link": "https://github.com/a-m-s",
-    "maintainer": "Andrew Stubbs",
-    "uid": "eu.tiliado.NuvolaAppBbcIplayer",
-    "name": "BBC iPlayer",
-    "version": "1.1"
-  },
-  {
-    "id": "jango",
-    "maintainer_link": "https://github.com/thepisu",
-    "maintainer": "Stefano Bagnatica",
-    "uid": "eu.tiliado.NuvolaAppJango",
-    "name": "Jango",
+    "id": "spotify",
+    "maintainer": "Michael Nye",
+    "maintainer_link": "https://github.com/thenyeguy",
+    "name": "Spotify",
+    "uid": "eu.tiliado.NuvolaAppSpotify",
     "version": "2.3"
   },
   {
-    "id": "google_calendar",
-    "maintainer_link": "https://github.com/fenryxo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaAppGoogleCalendar",
-    "name": "Google Calendar",
-    "version": "1.2"
+    "id": "tunein",
+    "maintainer": "Aur\u00e9lien Jabot",
+    "maintainer_link": "https://github.com/ajabot",
+    "name": "TuneIn",
+    "uid": "eu.tiliado.NuvolaAppTunein",
+    "version": "1.3"
   },
   {
-    "id": "8tracks",
-    "maintainer_link": "https://github.com/fenryxo",
+    "id": "yandex_music",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "uid": "eu.tiliado.NuvolaApp8tracks",
-    "name": "8tracks",
-    "version": "5.2"
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Yandex Music",
+    "uid": "eu.tiliado.NuvolaAppYandexMusic",
+    "version": "1.4"
+  },
+  {
+    "id": "youtube",
+    "maintainer": "Joel Cumberland",
+    "maintainer_link": "https://github.com/jrosco",
+    "name": "YouTube",
+    "uid": "eu.tiliado.NuvolaAppYoutube",
+    "version": "1.3"
+  },
+  {
+    "id": "owncloud_music",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "ownCloud Music",
+    "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
+    "version": "1.2"
   }
 ]
