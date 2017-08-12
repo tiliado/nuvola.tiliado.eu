@@ -1,0 +1,45 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Install Flatpak</h2>
+  <p>
+    Flatpak is a cross-distribution framework for distribution and running of
+    sandboxed applications.
+  </p>
+  <p>
+    Although Flatpak is available in the Ubuntu 16.10 repository, that package is rather ancient.
+    Luckily, there is the
+    <a href="https://launchpad.net/~alexlarsson/+archive/ubuntu/flatpak">Flatpak PPA on Launchpad</a>.
+  </p>
+  <ol>
+    <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
+    <li>Type <code>sudo add-apt-repository ppa:alexlarsson/flatpak</code> and press the Enter key to add the Flatpak
+      repository.
+    </li>
+    <li>Then type <code>sudo apt-get update</code> and press the Enter key to refresh a package cache.</li>
+    <li>Finally, type <code>sudo apt-get install flatpak</code> and press the Enter key to install Flatpak.</li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ol>
+
+  <h2>Install Desktop Portal service</h2>
+  <p>
+    XDG Desktop Portal provides {{nuvola.name}} with desktop integration.
+    A more up-to-date version is included the
+    <a href="https://launchpad.net/~alexlarsson/+archive/ubuntu/flatpak">Flatpak PPA on Launchpad</a>.
+  </p>
+  </p>
+  <ul>
+    <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
+    <li>Type <code>sudo apt-get install xdg-desktop-portal-gtk</code> and press the Enter key to install the portal.
+    </li>
+  </ul>
+
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.ubuntu_install_and_launch_nuvola() }}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  {{ snippets.debian_install_flatpak(release.id) }}
+  {{ snippets.debian_install_xdg_desktop_portal(release.id) }}
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.install_and_launch_nuvola() }}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ nuvola.name }} Repository Index{% endblock %}
+
+{% block content %}
+  <div id="index" class="container">
+    <p>
+      <span class="glyphicon glyphicon-info-sign"></span>
+      This repository provides cross-distribution flatpak packages of
+      <a href="https://tiliado.github.io/nuvolaplayer/documentation/4.html">
+        Nuvola Apps 4.x Rolling Releases.</a>
+    </p>
+    <p>
+      <span class="glyphicon glyphicon-alert"></span>
+      Nuvola Apps 4.x Rolling Releases are currently available only to users with the
+      <a href="https://tiliado.eu/nuvolaplayer/funding/">Premium or Patron account</a>.
+    </p>
+
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Web App</th>
+        <th>Version</th>
+        <th>Maintainer</th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for app in apps %}
+          <tr>
+            <th><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></th>
+            <td>{{ app.version }}</td>
+            <td><a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

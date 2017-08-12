@@ -1,0 +1,36 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Install Flatpak</h2>
+  <p>
+    Flatpak is a cross-distribution framework for distribution and running of
+    sandboxed applications.
+  </p>
+  <p>Flatpak is available in <a href="https://backports.debian.org">the backports repository</a>.</p>
+  <ol>
+    <li><a href="https://backports.debian.org/Instructions/">Enable Debian Jessie Backports</a>.</li>
+    <li>Run <code>apt-get -t jessie-backports install flatpak</code> as superuser/root.</li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ol>
+
+  <h2>Install Desktop Portal service</h2>
+  <p>
+    XDG Desktop Portal provides {{ nuvola.name }} with desktop integration. It is not available in
+    the repository and cannot be build on Jessie because of dependencies, but the {{ nuvola.name }} core
+    developer has created a very basic implementation of the XDG Desktop Portal for this case.
+    Run following commands as root/superuser:
+  </p>
+  <ul>
+    <li><code>wget https://dl.tiliado.eu/flatpak/legacy/xdg-desktop-portal_0.0.2_amd64.deb</code></li>
+    <li><code>dpkg -i xdg-desktop-portal_0.0.2_amd64.deb</code></li>
+  </ul>
+
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.install_and_launch_nuvola() }}
+
+{% endblock %}

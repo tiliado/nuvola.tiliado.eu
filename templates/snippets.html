@@ -1,0 +1,167 @@
+{# ================================ COMMON =============================== #}
+
+{% macro purge_old_nuvola() %}
+<h2>Purge Old Nuvola Installations</h2>
+<p>
+  If you used Nuvola in the past, it is necessary to purge the old installation. Otherwise,
+  compatibility issues may occur. Run following commands in terminal:
+</p>
+<pre><code>sudo apt-get remove nuvolaplayer*
+rm -rf ~/.cache/nuvolaplayer3
+rm -rf ~/.local/share/nuvolaplayer3
+rm -rf ~/.config/nuvolaplayer3
+rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
+{% endmacro %}
+
+{% macro install_and_launch_nuvola() %}
+  <h2>Install {{ nuvola.name }} Runtime</h2>
+  <p>
+    Run <code>flatpak install --from {{ root }}/{{ nuvola.uid }}.flatpakref</code>
+    (as a regular user without sudo/root rights).
+  </p>
+
+  <h2>Launch {{ nuvola.name }} Runtime</h2>
+  <p>
+    You should be able to find {{ nuvola.name }} in a list of installed applications. Alternatively, you can launch
+    {{ nuvola.name }} from terminal:
+  </p>
+  <p>
+    <code>flatpak run {{ nuvola.uid }}
+    </code>
+  </p>
+{% endmacro %}
+
+{# ================================ UBUNTU =============================== #}
+
+{% macro ubuntu_install_and_launch_nuvola() %}
+
+  <h2>Install {{ nuvola.name }} Runtime
+  </h2>
+  <p>
+    Run <code>flatpak install --from {{root}}{{nuvola.uid}}.flatpakref</code>
+    in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without <code>sudo</code>)
+    and answer <strong><code>y</code></strong> when you are asked <code>Configure this as new remote
+    'gnome' [y/n]</code> and <strong><code>y</code></strong> again when you are asked
+    <code>Found in remote gnome, do you want to install it? [y/n]</code>.
+  </p>
+  <pre><code>$ flatpak install --from {{root}}{{nuvola.uid}}.flatpakref
+This application depends on runtimes from:
+  http://sdk.gnome.org/repo/
+Configure this as new remote 'gnome' [y/n]: <strong>y</strong>
+Installing: eu.tiliado.Nuvola/x86_64/stable
+Required runtime for eu.tiliado.Nuvola/x86_64/stable (org.gnome.Platform/x86_64/3.22) is not installed, searching...
+Found in remote gnome, do you want to install it? [y/n]: <strong>y</strong>
+Installing: org.gnome.Platform/x86_64/3.22 from gnome</code></pre>
+
+  <h2>Launch {{nuvola.name}}</h2>
+  <ul>
+    <li>
+      You should be able to find {{nuvola.name}} in a list of installed applications.
+      If not, you may have forgotten to log out and log in and Unity has not find out yet that a new
+      application has been installed.
+    </li>
+    <li>
+      Alternatively,you can launch {{nuvola.name}}
+      from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
+      <br/><code>flatpak run {{nuvola.uid}}
+    </code>
+    </li>
+  </ul>
+{% endmacro %}
+
+{% macro ubuntu_install_app(app, distro_spec) %}
+  <h2>Prerequisites</h2>
+  <p>
+    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+    Make sure <a href="/nuvola{{ distro_spec }}/">{{ nuvola.name }} Runtime</a> is installed.
+  </p>
+
+  <h2>Install {{ app.name }} script</h2>
+  <ul>
+    <li>
+      Run <code>flatpak install --from {{ root }}/{{ app.uid }}.flatpakref</code>
+      in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without
+      <code>sudo</code>).
+    </li>
+    <li>
+      Then log out and log in to let Unity find out that a new application has been installed.
+      Otherwise, you may see "Unknown Application Name" in the menu bar and other funny bugs.
+    </li>
+  </ul>
+
+  <h2>Launch {{ app.name }} </h2>
+  <ul>
+    <li>
+      You should be able to find {{ app.name }} in a list of installed applications. If not, you may have forgotten
+      to log out and log in and Unity has not find out yet that a new application has been installed.
+    </li>
+    <li>
+      Alternatively, you can launch {{ app.name }}
+      from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
+      <br/><code>flatpak run {{ app.uid }}</code>
+    </li>
+  </ul>
+{% endmacro %}
+
+{# ================================ DEBIAN =============================== #}
+
+{% macro debian_install_flatpak(codename) %}
+  <h2>Install Flatpak</h2>
+  <p>
+    Flatpak is a cross-distribution framework for distribution and running of
+    sandboxed applications. It is
+    <a href="https://packages.debian.org/{{ codename }}/flatpak">available in the repository</a>.
+  </p>
+  <ul>
+    <li>Run <code>apt-get install flatpak</code> as root/sudo.</li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ul>
+{% endmacro %}
+
+{% macro debian_install_xdg_desktop_portal(codename) %}
+  <h2>Install Desktop Portal service</h2>
+  <p>
+    XDG Desktop Portal provides Nuvola Apps Runtime with desktop integration. It is
+    <a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal-gtk">available in the repository</a>.
+  </p>
+  <p>
+    Run <code>apt-get install xdg-desktop-portal-gtk</code> as root/sudo.
+  </p>
+{% endmacro %}
+
+{# ================================ FEDORA =============================== #}
+
+{% macro fedora_install_flatpak() %}
+  <h2>Install Flatpak</h2>
+  <p>
+    Flatpak is a cross-distribution framework for distribution and running of
+    sandboxed applications. It is
+    <a href="https://apps.fedoraproject.org/packages/flatpak">available in the repository</a>
+    since <strong>Fedora 24</strong>.
+  </p>
+  <ul>
+    <li>
+      Run <code>dnf install flatpak</code> as root/sudo.
+    </li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ul>
+{% endmacro %}
+
+{% macro fedora_install_xdg_desktop_portal() %}
+  <h2>Install Desktop Portal service</h2>
+  <p>
+    XDG Desktop Portal provides
+    {{nuvola.name}}
+    with desktop integration. It is
+    <a href="https://apps.fedoraproject.org/packages/xdg-desktop-portal-gtk">available in the repository</a>.
+  </p>
+  <p>
+    Run <code>dnf install xdg-desktop-portal-gtk xdg-desktop-portal</code> as root/sudo.
+  </p>
+{% endmacro %}

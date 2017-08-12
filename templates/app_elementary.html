@@ -1,0 +1,37 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Prerequisites</h2>
+  <p>
+    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+    Make sure <a href="/nuvola{{ distro_spec }}/">{{nuvola.name}} runtime</a> is installed.
+  </p>
+  
+  <h2>Install {{app.name}}</h2>
+  <ul>
+    <li>
+      Run <code>flatpak install --from {{root}}/{{app.uid}}.flatpakref</code>
+      in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without <code>sudo</code>).
+    </li>
+    <li>
+      Then log out and log in to let Pantheon find out that a new application has been installed.
+      Otherwise, you may see funny bugs.
+    </li>
+  </ul>
+  
+  <h2>Launch {{app.name}}</h2>
+  <ul>
+    <li>
+      You should be able to find {{app.name}} in a list of installed applications.
+      If not, you may have forgotten to log out and log in and Pantheon has not find out yet that a new
+      application has been installed.
+    </li>
+    <li>
+      Alternatively, you can launch {{app.name}} from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
+      <br /><code>flatpak run {{app.uid}}</code>
+    </li>
+  </ul>
+
+{% endblock %}

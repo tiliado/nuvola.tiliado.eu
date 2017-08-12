@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% import 'distro_tabs.html' as distro_tabs %}
+
+{% block content %}
+  <div class="install-app install-nuvola container">
+    <div>
+      {%  block heading %}{% endblock %}
+      <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          {% for d in distributions %}
+            <li role="presentation"{% if d.id == distro.id %} class="active"{% endif %}><a
+                href="{{ tab_target }}/{{ d.id }}/" role="tab">{{ d.name }}</a></li>
+          {% endfor %}
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          {% if releases %}
+            <div role="tabpanel" class="tab-pane panel panel-default active">
+              <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  {% for r in releases %}
+                    <li role="presentation" {% if release and r.id == release.id %} class="active"{% endif %}><a
+                        href="{{ tab_target }}/{{ distro.id }}/{{ r.id }}/" role="tab">{{ r.name }}</a></li>
+                  {% endfor %}
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  {% endif %}
+                    <div role="tabpanel" class="tab-pane panel panel-default active">
+                      <div class="panel-body install-nuvola">
+                        {% block tab_content %}
+                        {% endblock %}
+                      </div>
+                    </div>
+                  {% if releases %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.container -->
+
+{% endblock %}

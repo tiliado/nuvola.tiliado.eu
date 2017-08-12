@@ -1,0 +1,78 @@
+[
+  {
+    "id": "ubuntu",
+    "name": "Ubuntu",
+    "releases": [
+      {
+        "id": "xenial",
+        "name": "16.04 LTS Xenial Xerus"
+      },
+      {
+        "id": "yakkety",
+        "name": "16.10 Yakkety Yak"
+      },
+      {
+        "id": "zesty",
+        "name": "17.04 Zesty Zapus"
+      }
+    ]
+  },
+  {
+    "id": "elementary",
+    "name": "elementaryOS",
+    "releases": [
+      {
+        "id": "loki",
+        "name": "0.4 Loki"
+      }
+    ]
+  },
+  {
+    "id": "debian",
+    "name": "Debian",
+    "releases": [
+      {
+        "id": "stretch",
+        "name": "9 Stretch (stable)"
+      },
+      {
+        "id": "buster",
+        "name": "10 Buster (testing)"
+      },
+      {
+        "id": "sid",
+        "name": "Sid (unstable)"
+      },
+      {
+        "id": "jessie",
+        "name": "8 Jessie (oldstable)"
+      }
+    ]
+  },
+  {
+    "id": "fedora",
+    "name": "Fedora",
+    "releases": [
+      {
+        "id": "fc26",
+        "name": "Fedora 26"
+      },
+      {
+        "id": "fc25",
+        "name": "Fedora 25"
+      },
+      {
+        "id": "fc24",
+        "name": "Fedora 24"
+      }
+    ]
+  },
+  {
+    "id": "archlinux",
+    "name": "Arch Linux"
+  },
+  {
+    "id": "other",
+    "name": "Other Linux"
+  }
+]

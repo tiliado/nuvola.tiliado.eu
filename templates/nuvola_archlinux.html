@@ -1,0 +1,28 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Install Flatpak and Friends</h2>
+  <ul>
+    <li>
+      <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
+      sandboxed applications. It is
+      <a href="https://www.archlinux.org/packages/extra/x86_64/flatpak/">available in the Arch Linux Extra repository</a>.
+    </li>
+    <li>
+      <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration. It is
+      <a href="https://www.archlinux.org/packages/extra/x86_64/xdg-desktop-portal/">available in the Arch Linux Extra
+        repository</a>.
+    </li>
+    <li>Run <code>pacman -Sy flatpak xdg-desktop-portal-gtk</code> as root/sudo.</li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ul>
+
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.install_and_launch_nuvola() }}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Install Flatpak</h2>
+  <p>
+    Flatpak is a cross-distribution framework for distribution and running of
+    sandboxed applications.
+  </p>
+  <p>Flatpak is not available in the elementaryOS 0.4 Loki repository but there is the
+    <a href="https://launchpad.net/~alexlarsson/+archive/ubuntu/flatpak">Flatpak PPA on Launchpad</a>.</p>
+  <ol>
+    <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
+    <li>Type <code>sudo apt install software-properties-common --no-install-recommends</code> and press the Enter key to
+      install repository management tools.
+    </li>
+    <li>Type <code>sudo add-apt-repository ppa:alexlarsson/flatpak</code> and press the Enter key to add the Flatpak
+      repository.
+    </li>
+    <li>Then type <code>sudo apt update</code> and press the Enter key to refresh a package cache.</li>
+    <li>Finally, type <code>sudo apt install flatpak</code> and press the Enter key to install Flatpak.</li>
+    <li>
+      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+    </li>
+  </ol>
+
+  <h2>Install Desktop Portal service</h2>
+  <p>
+    XDG Desktop Portal provides
+    {{nuvola.name}}
+    with desktop integration.
+    It is not available in the elementaryOS 0.4 Loki repository but it is included the
+    <a href="https://launchpad.net/~alexlarsson/+archive/ubuntu/flatpak">Flatpak PPA on Launchpad</a>.
+  </p>
+  </p>
+  <ul>
+    <li>Make sure you have added the Flatpak PPA (see above).</li>
+    <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
+    <li>Type <code>sudo apt-get install xdg-desktop-portal-gtk</code> and press the Enter key to install the portal.
+    </li>
+  </ul>
+
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.ubuntu_install_and_launch_nuvola() }}
+
+{% endblock %}

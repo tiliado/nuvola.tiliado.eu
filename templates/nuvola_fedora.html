@@ -1,0 +1,11 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  {{ snippets.fedora_install_flatpak() }}
+  {{ snippets.fedora_install_xdg_desktop_portal() }}
+  {{ snippets.purge_old_nuvola() }}
+  {{ snippets.install_and_launch_nuvola() }}
+
+{% endblock %}

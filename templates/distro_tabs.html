@@ -1,0 +1,30 @@
+{% macro distro_tabs(distributions, releases, path, distro_id, release_id) -%}
+  <div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      {% for distro in distributions %}
+        <li role="presentation"{% if distro.id == distro_id %} class="active"{% endif %}><a
+            href="{{ path }}/{{ distro.id }}/" role="tab">{{ distro.name }}</a></li>
+      {% endfor %}
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      {% if releases %}
+        <div role="tabpanel" class="tab-pane panel panel-default active">
+          <div class="panel-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              {% for release in releases %}
+                <li role="presentation" {% if release.id == release_id %} class="active"{% endif %}><a
+                    href="{{ path }}/{{ distro_id }}/{{ release.id }}/" role="tab">{{ release.name }}</a></li>
+              {% endfor %}
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+            </div>
+          </div>
+        </div>
+      {%  endif %}
+    </div>
+  </div>
+{%- endmacro %}
