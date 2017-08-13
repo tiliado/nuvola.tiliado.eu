@@ -31,6 +31,7 @@ python3.6 ./update_apps.py \
 git status
 git add data/apps.json && git commit -m "Update apps.json"
 python3.6 -m nuvola_index -f 'https://nuvola.tiliado.eu/'
+python3.6 /usr/local/bin/css-html-js-minify.py --overwrite build
 cd ~/dev/projects/fxdepl
 ./fxdepl.py push -s v2.tiliado.eu -p nuvola.tiliado.eu -R
 ./fxdepl.py push -s v2.tiliado.eu.vscht -p nuvola.tiliado.eu -R
