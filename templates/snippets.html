@@ -35,16 +35,15 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 
 {% macro ubuntu_install_and_launch_nuvola() %}
 
-  <h2>Install {{ nuvola.name }} Runtime
-  </h2>
+  <h2>Install {{ nuvola.name }} Runtime</h2>
   <p>
-    Run <code>flatpak install --from {{root}}/{{nuvola.uid}}.flatpakref</code>
+    Run <code>flatpak install --from {{ root }}/{{nuvola.uid}}.flatpakref</code>
     in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without <code>sudo</code>)
     and answer <strong><code>y</code></strong> when you are asked <code>Configure this as new remote
     'gnome' [y/n]</code> and <strong><code>y</code></strong> again when you are asked
     <code>Found in remote gnome, do you want to install it? [y/n]</code>.
   </p>
-  <pre><code>$ flatpak install --from {{root}}/{{nuvola.uid}}.flatpakref
+  <pre><code>$ flatpak install --from {{ root }}/{{nuvola.uid}}.flatpakref
 This application depends on runtimes from:
   http://sdk.gnome.org/repo/
 Configure this as new remote 'gnome' [y/n]: <strong>y</strong>
