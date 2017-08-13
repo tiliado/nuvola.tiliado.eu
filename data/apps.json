@@ -72,6 +72,14 @@
     "version": "2.3"
   },
   {
+    "id": "jupiter_broadcasting",
+    "maintainer": "Andrew Stubbs",
+    "maintainer_link": "https://github.com/a-m-s",
+    "name": "Jupiter Broadcasting",
+    "uid": "eu.tiliado.NuvolaAppJupiterBroadcasting",
+    "version": "1.1"
+  },
+  {
     "id": "kexp",
     "maintainer": "Michael Nye",
     "maintainer_link": "https://github.com/thenyeguy",
