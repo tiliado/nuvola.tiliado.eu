@@ -25,7 +25,7 @@
       }
     }
 
-    var url
+    var url;
     switch (target || 'index') {
       case 'index':
         url = distro_spec ? '/index' + distro_spec + '/' : '/'
