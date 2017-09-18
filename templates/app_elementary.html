@@ -3,11 +3,7 @@
 
 {% block tab_content %}
 
-  <h2>Prerequisites</h2>
-  <p>
-    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-    Make sure <a href="/nuvola{{ distro_spec }}/">{{nuvola.name}} runtime</a> is installed.
-  </p>
+  {{ snippets.install_nuvola_runtime(distro_spec) }}
   
   <h2>Install {{app.name}}</h2>
   <ul>

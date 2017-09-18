@@ -1,5 +1,14 @@
 {# ================================ COMMON =============================== #}
 
+{% macro install_nuvola_runtime(distro_spec) %}
+  <h2>Install {{ nuvola.name }} Runtime</h2>
+  <p>
+    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+    Follow <a href="/nuvola{{ distro_spec }}/">installation instructions</a>
+    to install <a href="/nuvola{{ distro_spec }}/">{{ nuvola.name }} runtime</a>.
+  </p>
+{% endmacro %}
+
 {% macro purge_old_nuvola() %}
 <h2>Purge Old Nuvola Installations</h2>
 <p>
@@ -69,11 +78,7 @@ Installing: org.gnome.Platform/x86_64/3.22 from gnome</code></pre>
 {% endmacro %}
 
 {% macro ubuntu_install_app(app, distro_spec) %}
-  <h2>Prerequisites</h2>
-  <p>
-    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-    Make sure <a href="/nuvola{{ distro_spec }}/">{{ nuvola.name }} Runtime</a> is installed.
-  </p>
+  {{ install_nuvola_runtime(distro_spec) }}
 
   <h2>Install {{ app.name }} script</h2>
   <ul>
