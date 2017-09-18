@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "snippets.html" as snippets %}
 
 {% block title %}{{ nuvola.name }} Repository Index{% endblock %}
 
@@ -11,23 +12,6 @@
         Nuvola Apps 4.x Rolling Releases</a>.
     </p>
 
-    <table class="table table-bordered table-striped table-hover">
-      <thead>
-      <tr>
-        <th>Web App</th>
-        <th>Version</th>
-        <th>Maintainer</th>
-      </tr>
-      </thead>
-      <tbody>
-        {% for app in apps %}
-          <tr>
-            <th><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></th>
-            <td>{{ app.version }}</td>
-            <td><a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a></td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {{ snippets.table_of_apps(apps, distro_spec) }}
   </div>
 {% endblock %}

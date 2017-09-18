@@ -7,5 +7,6 @@
   {{ snippets.debian_install_xdg_desktop_portal(release.id) }}
   {{ snippets.purge_old_nuvola() }}
   {{ snippets.install_and_launch_nuvola() }}
+  {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}

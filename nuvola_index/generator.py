@@ -102,6 +102,7 @@ class Generator:
         with open(target, "wt") as f:
             f.write(self.templater.render(templates, {
                 "tab_target": "/app/" + app["id"],
+                "apps": self.apps,
                 "app": app,
                 "distributions": self.distributions,
                 "distro": distro,
@@ -149,6 +150,7 @@ class Generator:
             f.write(self.templater.render([template, "nuvola.html"], {
                 "tab_target": "/nuvola",
                 "distributions": self.distributions,
+                "apps": self.apps,
                 "distro": distro,
                 "releases": releases,
                 "release": release,
