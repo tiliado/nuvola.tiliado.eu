@@ -61,7 +61,7 @@
     "maintainer_link": "https://github.com/jrosco",
     "name": "Groove",
     "uid": "eu.tiliado.NuvolaAppGroove",
-    "version": "1.3"
+    "version": "2.0"
   },
   {
     "id": "jango",
@@ -112,6 +112,14 @@
     "version": "1.3"
   },
   {
+    "id": "pocket_casts",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Pocket Casts",
+    "uid": "eu.tiliado.NuvolaAppPocketCasts",
+    "version": "1.0"
+  },
+  {
     "id": "siriusxm",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
@@ -133,7 +141,7 @@
     "maintainer_link": "https://github.com/thenyeguy",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
-    "version": "2.3"
+    "version": "2.4"
   },
   {
     "id": "tunein",
