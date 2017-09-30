@@ -13,7 +13,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
     "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.4"
+    "version": "5.5"
   },
   {
     "id": "bbc_iplayer",
@@ -53,7 +53,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Google Play Music",
     "uid": "eu.tiliado.NuvolaAppGooglePlayMusic",
-    "version": "5.19"
+    "version": "6.0"
   },
   {
     "id": "groove",
