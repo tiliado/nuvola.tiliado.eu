@@ -5,6 +5,11 @@
   <div class="install-app install-nuvola container">
     <div>
       {%  block heading %}{% endblock %}
+      <div class="alert alert-warning not-amd64" role="alert">
+        <span class="glyphicon glyphicon-alert"></span>
+        <strong>Nuvola Apps Repository provides only 64bit flatpak builds (amd64).
+        32bit and ARM packages may be provided in the future.</strong>
+      </div>
       <div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
