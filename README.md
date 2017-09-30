@@ -11,6 +11,7 @@ Usage
   * Python 3.6
   * Jinja2: `python3.6 -m pip install -U Jinja2`
   * PyYAML: `python3.6 -m pip install PyYAML`
+  * css-html-js-minify: `python3.6 -m pip install css-html-js-minify`
 
 ### Development
 
