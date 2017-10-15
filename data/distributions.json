@@ -14,6 +14,10 @@
       {
         "id": "zesty",
         "name": "17.04 Zesty Zapus"
+      },
+      {
+        "id": "artful",
+        "name": "17.10 Artful Aardvark"
       }
     ]
   },
