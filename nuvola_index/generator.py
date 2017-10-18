@@ -136,18 +136,20 @@ class Generator:
         if not release and releases:
             release = releases[0]
 
+        templates = []
         if not release:
             distro_spec = "/%s" % distro["id"]
-            template = "nuvola_%s.html" % distro["id"]
         else:
             distro_spec = "/%s/%s" % (distro["id"], release["id"])
-            template = "nuvola_%s_%s.html" % (distro["id"], release["id"])
+            templates.append("nuvola_%s_%s.html" % (distro["id"], release["id"]))
+        templates.append("nuvola_%s.html" % distro["id"])
+        templates.append("nuvola.html")
 
         canonical_path = "/nuvola%s/" % distro_spec
         target = os.path.join(self.output_dir, "nuvola%s/index.html" % target)
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
-            f.write(self.templater.render([template, "nuvola.html"], {
+            f.write(self.templater.render(templates, {
                 "tab_target": "/nuvola",
                 "distributions": self.distributions,
                 "apps": self.apps,
