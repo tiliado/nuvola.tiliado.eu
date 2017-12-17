@@ -125,7 +125,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SiriusXM",
     "uid": "eu.tiliado.NuvolaAppSiriusxm",
-    "version": "1.3"
+    "version": "1.4"
   },
   {
     "id": "soundcloud",
@@ -153,11 +153,11 @@
   },
   {
     "id": "yandex_music",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
-    "maintainer_link": "https://github.com/fenryxo",
+    "maintainer": "Aleksey Zhidkov",
+    "maintainer_link": "https://github.com/d-r-q",
     "name": "Yandex Music",
     "uid": "eu.tiliado.NuvolaAppYandexMusic",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "youtube",
