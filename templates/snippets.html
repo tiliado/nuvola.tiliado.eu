@@ -54,16 +54,6 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
     Run <code>flatpak install --from {{ root }}/{{ nuvola.uid }}.flatpakref</code>
     (as a regular user without sudo/root rights).
   </p>
-
-  <h2>Launch {{ nuvola.name }} Runtime</h2>
-  <p>
-    You should be able to find {{ nuvola.name }} in a list of installed applications. Alternatively, you can launch
-    {{ nuvola.name }} from terminal:
-  </p>
-  <p>
-    <code>flatpak run {{ nuvola.uid }}
-    </code>
-  </p>
 {% endmacro %}
 
 {# ================================ UBUNTU =============================== #}
@@ -86,21 +76,6 @@ Installing: eu.tiliado.Nuvola/x86_64/stable
 Required runtime for eu.tiliado.Nuvola/x86_64/stable (org.gnome.Platform/x86_64/3.22) is not installed, searching...
 Found in remote gnome, do you want to install it? [y/n]: <strong>y</strong>
 Installing: org.gnome.Platform/x86_64/3.22 from gnome</code></pre>
-
-  <h2>Launch {{nuvola.name}}</h2>
-  <ul>
-    <li>
-      You should be able to find {{nuvola.name}} in a list of installed applications.
-      If not, you may have forgotten to log out and log in and Unity has not find out yet that a new
-      application has been installed.
-    </li>
-    <li>
-      Alternatively,you can launch {{nuvola.name}}
-      from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
-      <br/><code>flatpak run {{nuvola.uid}}
-    </code>
-    </li>
-  </ul>
 {% endmacro %}
 
 {% macro ubuntu_install_app(app, distro_spec) %}
