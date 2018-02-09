@@ -97,11 +97,11 @@
   },
   {
     "id": "mixcloud",
-    "maintainer": "Samuel Mansour",
-    "maintainer_link": "https://github.com/s83",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
     "name": "Mixcloud",
     "uid": "eu.tiliado.NuvolaAppMixcloud",
-    "version": "3.2"
+    "version": "4.0"
   },
   {
     "id": "plex",
@@ -137,8 +137,8 @@
   },
   {
     "id": "spotify",
-    "maintainer": "Michael Nye",
-    "maintainer_link": "https://github.com/thenyeguy",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
     "version": "2.4"
@@ -161,8 +161,8 @@
   },
   {
     "id": "youtube",
-    "maintainer": "Joel Cumberland",
-    "maintainer_link": "https://github.com/jrosco",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube",
     "uid": "eu.tiliado.NuvolaAppYoutube",
     "version": "1.3"
