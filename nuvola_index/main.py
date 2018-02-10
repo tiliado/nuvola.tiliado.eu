@@ -19,7 +19,7 @@ def main(argv: List[str]) -> int:
     templates = os.path.abspath(params.templates)
     global_vars["root"] = params.hostname.rstrip("/")
     templater = create_templater(templates, global_vars)
-    static = os.path.abspath(params.static)
+    static = [os.path.abspath(path) for path in params.static]
     generator = Generator(distributions, apps, output, static, templater)
     if params.fresh:
         generator.purge()
@@ -45,8 +45,8 @@ def parse_args(argv: List[str]) -> Namespace:
         "-t", "--templates", default="templates",
         help="Path to templates directory [templates].")
     parser.add_argument(
-        "-s", "--static", default="static",
-        help="Path to static files directory [static].")
+        "-s", "--static", default=["static", "screenshots"], nargs='*',
+        help="Path to static files directory [static, screenshots].")
     parser.add_argument(
         "-f", "--fresh", action="store_true", default=False,
         help="Start with a fresh build directory.")

@@ -9,12 +9,12 @@ class Generator:
     distributions: List[Dict[str, Any]]
     apps: List[Dict[str, Any]]
     output_dir: str
-    static_dir: str
+    static_dirs: List[str]
     templater: Templater
 
     def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], output_dir: str,
-                 static_dir: str, templater: Templater):
-        self.static_dir = static_dir
+                 static_dirs: List[str], templater: Templater):
+        self.static_dirs = static_dirs
         self.templater = templater
         self.output_dir = output_dir
         self.distributions = distributions
@@ -171,7 +171,8 @@ class Generator:
             f.write(self.templater.render(template + ".flatpakref", data))
 
     def copy_static_files(self):
-        target = os.path.join(self.output_dir, os.path.basename(self.static_dir))
-        if os.path.isdir(target):
-            shutil.rmtree(target)
-        shutil.copytree(self.static_dir, target)
+        for static_dir in self.static_dirs:
+            target = os.path.join(self.output_dir, os.path.basename(static_dir))
+            if os.path.isdir(target):
+                shutil.rmtree(target)
+            shutil.copytree(static_dir, target)
