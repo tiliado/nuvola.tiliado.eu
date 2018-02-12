@@ -104,6 +104,54 @@ Found in remote flathub, do you want to install it? [y/n]: <strong>y</strong>
 Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
 {% endmacro %}
 
+{% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec) %}
+  <h2>Install {{ app.name }}</h2>
+  <ol>
+    <li>
+       <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      <p>
+        In order to <strong>install {{ app.name }} with Ubuntu Software</strong>, launch <em>Ubuntu Software</em>,
+        search for <em>{{ app.name }}</em> and finally click the <em>Install</em> button.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/gnome_software_search_nuvola_commented.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/gnome_software_search_nuvola_commented.thumb.png" class="img-thumbnail">
+            </a>
+            <a href="/screenshots/nuvola/nuvola_app_install_commented.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/nuvola_app_install_commented.thumb.png" class="img-thumbnail">
+            </a>
+          </div>
+        </div>
+      </div>
+      <p>
+        Alternatively, launch
+        <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+        type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
+      </p>
+    </li>
+    <li>
+      Then <strong>log out and log in back</strong> to let Unity find out that a new application has been installed.
+      Otherwise, you may see "Unknown Application Name" in the menu bar and other funny bugs.
+    </li>
+  </ol>
+
+  <h2>Launch {{ app.name }} </h2>
+  <ul>
+    <li>
+      You should be able to find {{ app.name }} in a list of installed applications. If not, you may have forgotten
+      to log out and log in and Unity has not find out yet that a new application has been installed.
+    </li>
+    <li>
+      Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+      type <code>flatpak run {{ app.uid }}</code> to launch {{ app.name }} from terminal.
+    </li>
+  </ul>
+{% endmacro %}
+
 {% macro ubuntu_install_app(app, distro_spec) %}
   {{ install_nuvola_runtime(distro_spec) }}
 
