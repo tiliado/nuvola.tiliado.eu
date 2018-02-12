@@ -9,3 +9,6 @@ body { padding-top: 0px; }
 .navbar-brand img {width: 28px; height: 28px; margin-top: -3px;}
 .navbar {font-weight: normal;}
 .not-amd64 {display: none;}
+
+.alert-info {color: white; background-color: #008cba;}
+.alert-info a {color: #7edede;}
