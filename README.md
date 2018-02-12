@@ -17,10 +17,8 @@ Usage
 
 ```sh
 python3.6 -m nuvola_index -f 'http://127.0.0.1:8000/'
-cd build; python3 -m http.server &
-cd ..
-python3.6 -m nuvola_index 'http://127.0.0.1:8000/'
-
+cd build
+cd ..; python3.6 -m nuvola_index -f 'http://127.0.0.1:8000/'; cd build; python3 -m http.server
 ```
 
 ### Deployment
