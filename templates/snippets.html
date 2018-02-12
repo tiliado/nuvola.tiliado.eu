@@ -78,6 +78,32 @@ Found in remote gnome, do you want to install it? [y/n]: <strong>y</strong>
 Installing: org.gnome.Platform/x86_64/3.22 from gnome</code></pre>
 {% endmacro %}
 
+{% macro ubuntu_install_nuvola_service_wtih_gnome_software() %}
+
+  <h2>Install {{ nuvola.name }} Service</h2>
+  <p>
+    <strong>Nuvola Apps Service</strong> is an optional background service that provides individual Nuvola apps with
+    global shared resources such as a global configuration storage, global keyboard shortcuts, a HTTP remote control
+    server, and a command-line controller. While this service is optional, the installation is recommended.
+  </p>
+  <p>
+    In order to <strong>install Nuvola Apps Service with Ubuntu Software</strong>, launch <em>Ubuntu Software</em>,
+    search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
+  </p>
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+    type <code>flatpak install nuvola {{ nuvola.uid }}</code> and press the Enter key to install this package.
+  </p>
+  <pre><code>$ flatpak install nuvola {{ nuvola.uid }}
+This application depends on runtimes from:
+  http://sdk.gnome.org/repo/
+Configure this as new remote 'gnome' [y/n]: <strong>y</strong>
+Installing: eu.tiliado.Nuvola/x86_64/stable
+Required runtime for eu.tiliado.Nuvola/x86_64/stable (org.gnome.Platform/x86_64/3.26) is not installed, searching...
+Found in remote flathub, do you want to install it? [y/n]: <strong>y</strong>
+Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
+{% endmacro %}
+
 {% macro ubuntu_install_app(app, distro_spec) %}
   {{ install_nuvola_runtime(distro_spec) }}
 
