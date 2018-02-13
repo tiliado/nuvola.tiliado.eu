@@ -1,5 +1,23 @@
 {# ================================ COMMON =============================== #}
 
+{% macro about_nuvola_service() %}
+  <h2>Install {{ nuvola.name }} Service</h2>
+  <p>
+    <strong>Nuvola Apps Service</strong> is an optional background service that provides individual Nuvola apps with
+    global shared resources such as a global configuration storage, global keyboard shortcuts, a HTTP remote control
+    server, and a command-line controller. While this service is optional, the installation is recommended.
+  </p>
+{% endmacro %}
+
+{%  macro about_flatpak_repositories() %}
+  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
+    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+  </p>
+{% endmacro %}
+
 {% macro table_of_apps(apps, distro_spec) %}
 <table class="table table-bordered table-striped table-hover">
       <thead>
@@ -58,34 +76,48 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 
 {# ================================ UBUNTU =============================== #}
 
-{% macro ubuntu_install_and_launch_nuvola() %}
+{% macro ubuntu_install_flatpak_from_ppa() %}
+  <ol>
+    <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
+    <li>
+      Type <code>sudo add-apt-repository ppa:alexlarsson/flatpak</code> and press the Enter key to add the Flatpak
+      repository.
+    </li>
+    <li>Then type <code>sudo apt-get update</code> and press the Enter key to refresh a package cache.</li>
+    <li>
+      Finally, type <code>sudo apt-get install flatpak xdg-desktop-portal-gtk</code> and press the Enter key to
+      install Flatpak and Desktop Portal.
+    </li>
+  </ol>
 
-  <h2>Install {{ nuvola.name }} Runtime</h2>
+  <h2>Restart your computer</h2>
   <p>
-    Run <code>flatpak install --from {{ root }}/{{nuvola.uid}}.flatpakref</code>
-    in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without <code>sudo</code>)
-    and answer <strong><code>y</code></strong> when you are asked <code>Configure this as new remote
-    'gnome' [y/n]</code> and <strong><code>y</code></strong> again when you are asked
-    <code>Found in remote gnome, do you want to install it? [y/n]</code>.
+    It is necessary to restart your computer to add Flatpak paths alongside the system ones.
+    Otherwise, you may see strange errors. Unfortunately, just logging out and logging in is not enough.
   </p>
-  <pre><code>$ flatpak install --from {{ root }}/{{nuvola.uid}}.flatpakref
-This application depends on runtimes from:
-  http://sdk.gnome.org/repo/
-Configure this as new remote 'gnome' [y/n]: <strong>y</strong>
-Installing: eu.tiliado.Nuvola/x86_64/stable
-Required runtime for eu.tiliado.Nuvola/x86_64/stable (org.gnome.Platform/x86_64/3.22) is not installed, searching...
-Found in remote gnome, do you want to install it? [y/n]: <strong>y</strong>
-Installing: org.gnome.Platform/x86_64/3.22 from gnome</code></pre>
+{% endmacro %}
+
+{% macro ubuntu_add_flatpak_repositories_from_command_line() %}
+  {{ about_flatpak_repositories() }}
+  <p>
+    Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+    type <code>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code>,
+    <code>flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code>,
+    and <code>flatpak update</code>.
+  </p>
+{% endmacro %}
+
+{% macro ubuntu_install_nuvola_service_from_command_line() %}
+  {{ about_nuvola_service() }}
+  <p>
+    Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+    type <code>flatpak install nuvola {{ nuvola.uid }}</code> and press the Enter key to install this package.
+  </p>
 {% endmacro %}
 
 {% macro ubuntu_install_nuvola_service_wtih_gnome_software() %}
 
-  <h2>Install {{ nuvola.name }} Service</h2>
-  <p>
-    <strong>Nuvola Apps Service</strong> is an optional background service that provides individual Nuvola apps with
-    global shared resources such as a global configuration storage, global keyboard shortcuts, a HTTP remote control
-    server, and a command-line controller. While this service is optional, the installation is recommended.
-  </p>
+  {{ about_nuvola_service() }}
   <p>
     In order to <strong>install Nuvola Apps Service with Ubuntu Software</strong>, launch <em>Ubuntu Software</em>,
     search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
@@ -118,7 +150,7 @@ Found in remote flathub, do you want to install it? [y/n]: <strong>y</strong>
 Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
 {% endmacro %}
 
-{% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec) %}
+{% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec, environments) %}
   <h2>Install {{ app.name }}</h2>
   <ol>
     <li>
@@ -150,45 +182,40 @@ Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
       </p>
     </li>
     <li>
-      Then <strong>log out and log in back</strong> to let Unity find out that a new application has been installed.
-      Otherwise, you may see "Unknown Application Name" in the menu bar and other funny bugs.
+      Then <strong>log out and log in back</strong> to let your desktop environment ({{ environments }}) find out that
+      a new application has been installed. Otherwise, you may see "Unknown Application Name" in the menu bar,
+      mismatched application icons and other funny bugs.
     </li>
   </ol>
-
-  <h2>Launch {{ app.name }} </h2>
-  <ul>
-    <li>
-      You should be able to find {{ app.name }} in a list of installed applications. If not, you may have forgotten
-      to log out and log in and Unity has not find out yet that a new application has been installed.
-    </li>
-    <li>
-      Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
-      type <code>flatpak run {{ app.uid }}</code> to launch {{ app.name }} from terminal.
-    </li>
-  </ul>
+  {{ ubuntu_launch_app(app, environments) }}
 {% endmacro %}
 
-{% macro ubuntu_install_app(app, distro_spec) %}
-  {{ install_nuvola_runtime(distro_spec) }}
-
-  <h2>Install {{ app.name }} script</h2>
-  <ul>
+{% macro ubuntu_install_app(app, distro_spec, environments) %}
+  <h2>Install {{ app.name }}</h2>
+  <ol>
     <li>
-      Run <code>flatpak install --from {{ root }}/{{ app.uid }}.flatpakref</code>
-      in <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a> (without
-      <code>sudo</code>).
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
     </li>
     <li>
-      Then log out and log in to let Unity find out that a new application has been installed.
-      Otherwise, you may see "Unknown Application Name" in the menu bar and other funny bugs.
+      Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+      type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
     </li>
-  </ul>
+    <li>
+      Then <strong>log out and log in back</strong> to let your desktop environment ({{ environments }}) find out that
+      a new application has been installed. Otherwise, you may see "Unknown Application Name" in the menu bar,
+      mismatched application icons and other funny bugs.
+    </li>
+  </ol>
+  {{ ubuntu_launch_app(app, environments) }}
+{% endmacro %}
 
+{% macro ubuntu_launch_app(app, environments) %}
   <h2>Launch {{ app.name }} </h2>
   <ul>
     <li>
       You should be able to find {{ app.name }} in a list of installed applications. If not, you may have forgotten
-      to log out and log in and Unity has not find out yet that a new application has been installed.
+      to log out and log in and your desktop environment ({{ environments }}) has not find out yet
+      that a new application has been installed.
     </li>
     <li>
       Alternatively, you can launch {{ app.name }}
@@ -196,7 +223,7 @@ Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
       <br/><code>flatpak run {{ app.uid }}</code>
     </li>
   </ul>
-{% endmacro %}
+{%  endmacro %}
 
 {# ================================ DEBIAN =============================== #}
 

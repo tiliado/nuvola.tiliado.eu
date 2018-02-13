@@ -37,8 +37,9 @@
     Unfortunately, just logging out and logging in is not enough.
   </p>
 
+  {{ snippets.ubuntu_add_flatpak_repositories_from_command_line() }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.ubuntu_install_and_launch_nuvola() }}
+  {{ snippets.ubuntu_install_nuvola_service_from_command_line() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}
