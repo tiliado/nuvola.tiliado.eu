@@ -3,43 +3,9 @@
 
 {% block tab_content %}
 
-  <h2>Install Flatpak and Friends</h2>
-  <p>
-    <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
-    sandboxed applications.
-    <strong>XDG Desktop Portal</strong> provides {{nuvola.name}} with desktop integration.
-    All packages are available in the Ubuntu 17.04 repository. No third-party PPA is required.
-  </p>
-  <ol>
-    <li>
-      <a class="btn btn-primary btn-lg" href="apt:flatpak">
-        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        Click to install Flatpak with Ubuntu Software
-      </a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="apt:xdg-desktop-portal-gtk">
-        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        Click to nstall XDG Desktop Portal with Ubuntu Software
-      </a>
-    </li>
-  </ol>
-  <p>
-    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
-    and type <code>sudo apt-get install flatpak xdg-desktop-portal-gtk</code>
-    and press the Enter key to install these packages.
-  </p>
-
-  <h2>Restart your computer</h2>
-  <p>
-    It is necessary to restart your computer to add Flatpak paths alongside the system ones and to activate
-    the Ubuntu Software Flatpak Plugin. Otherwise, you may see strange errors.
-    Unfortunately, just logging out and logging in is not enough.
-  </p>
-
-  {{ snippets.ubuntu_add_flatpak_repositories_from_command_line() }}
+  {{ snippets.ubuntu_install_flatpak_with_gnome_software("17.04") }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.ubuntu_install_nuvola_service_from_command_line() }}
+  {{ snippets.ubuntu_install_nuvola_service_wtih_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}

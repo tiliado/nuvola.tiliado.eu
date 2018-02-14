@@ -76,6 +76,97 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 
 {# ================================ UBUNTU =============================== #}
 
+{%  macro ubuntu_install_flatpak_with_gnome_software(ubuntu_version) %}
+  <h2>Install Flatpak and Friends</h2>
+  <p>
+    <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
+    sandboxed applications.
+    <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration.
+    All packages are available in the Ubuntu {{ ubuntu_version }} repository. No third-party PPA is required.
+  </p>
+  <ol>
+    <li>
+      <a class="btn btn-primary" href="apt:flatpak">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install Flatpak with Ubuntu Software
+      </a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="apt:xdg-desktop-portal-gtk">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install XDG Desktop Portal with Ubuntu Software
+      </a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="apt:gnome-software-plugin-flatpak">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install the Flatpak plugin for Ubuntu Software
+      </a>
+    </li>
+  </ol>
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type <code>sudo apt-get install flatpak xdg-desktop-portal-gtk gnome-software-plugin-flatpak</code>
+    and press the Enter key to install these packages.
+  </p>
+
+  <h2>Restart your computer</h2>
+  <p>
+    It is necessary to restart your computer to add Flatpak paths alongside the system ones and to activate
+    the Ubuntu Software Flatpak Plugin. Otherwise, you may see strange errors.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+
+  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
+    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+  </p>
+  <ol>
+    <li>
+      <a class="btn btn-primary" href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install Flathub repository with Ubuntu Software
+      </a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install Nuvola Apps repository with Ubuntu Software
+      </a>
+    </li>
+    <li>
+      <p>
+        Refresh Ubuntu Software package cache: Launch <em>Ubuntu Software</em> → switch to the <em>Updates</em> screen
+        → click the <em>Refresh</em> button in the top left corner.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/ubuntu_software_main_screen_click_updates.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_main_screen_click_updates.thumb.png"
+                   class="img-thumbnail"
+                   alt="Launch Ubuntu Software and switch to the 'Updates' screen.">
+            </a>
+            <a href="/screenshots/nuvola/ubuntu_software_updates_click_refresh.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_updates_click_refresh.thumb.png"
+                   class="img-thumbnail"
+                   alt="Click the 'Refresh' button.">
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+    type <code>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code>,
+    <code>flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code>,
+    and <code>flatpak update</code>.
+  </p>
+{%  endmacro %}
+
 {% macro ubuntu_install_flatpak_from_ppa() %}
   <ol>
     <li>Launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>.</li>
@@ -140,14 +231,6 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
     Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
     type <code>flatpak install nuvola {{ nuvola.uid }}</code> and press the Enter key to install this package.
   </p>
-  <pre><code>$ flatpak install nuvola {{ nuvola.uid }}
-This application depends on runtimes from:
-  http://sdk.gnome.org/repo/
-Configure this as new remote 'gnome' [y/n]: <strong>y</strong>
-Installing: eu.tiliado.Nuvola/x86_64/stable
-Required runtime for eu.tiliado.Nuvola/x86_64/stable (org.gnome.Platform/x86_64/3.26) is not installed, searching...
-Found in remote flathub, do you want to install it? [y/n]: <strong>y</strong>
-Installing: org.gnome.Platform/x86_64/3.26 from gnome</code></pre>
 {% endmacro %}
 
 {% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec, environments) %}
