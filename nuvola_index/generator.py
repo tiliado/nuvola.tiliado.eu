@@ -45,16 +45,24 @@ class Generator:
     def build_index_for_distro(self, distro: Dict[str, Any] = None, release: Dict[str, Any] = None):
         if not distro:
             distro_spec = ""
+            distro_name = None
         elif not release:
             distro_spec = "/%s" % distro["id"]
+            distro_name = distro["name"] if not "releses" not in distro else None
         else:
             distro_spec = "/%s/%s" % (distro["id"], release["id"])
+            if release["name"].startswith(distro["name"]):
+                distro_name = release["name"]
+            else:
+                distro_name = "%s %s" % (distro["name"], release["name"])
 
         canonical_path = "/"
         target = os.path.join(self.output_dir, "index%s/index.html" % distro_spec if distro_spec else "index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.templater.render("index.html", {
+                "distributions": self.distributions,
+                "distro_name": distro_name,
                 "apps": self.apps,
                 "distro_spec": distro_spec,
                 "canonical_path": canonical_path
