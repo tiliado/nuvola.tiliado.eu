@@ -1,0 +1,6 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+  {{ snippets.ubuntu_install_app_with_ubuntu_software(app, distro_spec, "GNOME, Unity, etc.") }}
+{% endblock %}

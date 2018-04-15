@@ -18,6 +18,10 @@
       {
         "id": "artful",
         "name": "17.10 Artful Aardvark"
+      },
+      {
+        "id": "bionic",
+        "name": "18.04 LTS Bionic Beaver"
       }
     ]
   },
