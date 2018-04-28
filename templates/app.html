@@ -14,33 +14,5 @@
 {%  endblock %}
 
 {% block tab_content %}
-
-  {{ snippets.install_nuvola_runtime(distro_spec) }}
-
-  <h2>Install {{ app.name }}</h2>
-  <ul>
-    <li>
-      Run <code>flatpak install --from {{ root }}/{{ app.uid }}.flatpakref</code>
-      in a terminal (without <code>sudo</code>).
-    </li>
-    <li>
-      Then, it may be necessary to log out and log in again for your desktop environment to
-      find out that a new application have been installed. Otherwise, you may see funny bugs.
-    </li>
-  </ul>
-
-  <h2>Launch {{ app.name }}</h2>
-  <ul>
-    <li>
-      You should be able to find {{ app.name }} in a list of installed applications.
-      If not, try logging out and logging in to let your desktop environment find out that a new
-      application has been installed. As a last resort, try rebooting your computer.
-    </li>
-    <li>
-      Alternatively, you can launch {{ app.name }} from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a
-      terminal</a>:
-      <br/><code>flatpak run {{ app.uid }}</code>
-    </li>
-  </ul>
-
+  {{ snippets.fedora_install_app_with_gnome_software(app, distro_spec, "e.g., GNOME Shell") }}
 {% endblock %}

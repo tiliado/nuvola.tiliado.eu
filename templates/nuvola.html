@@ -18,21 +18,27 @@
   <ul>
     <li>
       <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
-      sandboxed applications. Follow
-      <a href="http://flatpak.org/getting.html">official installation instructions</a>..
+      sandboxed applications. Follow <a href="https://flatpak.org/setup/">official quick setup instructions</a> or
+      <a href="https://github.com/flatpak/flatpak">build it from the source code</a>.
     </li>
     <li>
-      <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration. Follow
-      <a href="https://github.com/flatpak/xdg-desktop-portal">official installation instructions</a>.
+      <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration. Install it with your
+      package manager or <a href="https://github.com/flatpak/xdg-desktop-portal">build it from the source code</a>.
     </li>
     <li>
-      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      <strong>GNOME Software</strong> provides {{ nuvola.name }} makes the browsing and installation of Flatpaks
+      easier. Install it with your package manager or
+      <a href="https://download.gnome.org/sources/gnome-software/">build it from the source code</a>.
+    </li>
+    <li>
+      Then <strong>restart your computer</strong> to add Flatpak paths alongside the system ones. Otherwise,
       you may see strange errors. Unfortunately, just logging out and logging in is not enough.
     </li>
   </ul>
 
+  {{ snippets.fedora_add_repositories_with_gnome_software() }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.install_and_launch_nuvola() }}
+  {{ snippets.fedora_install_nuvola_service_with_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}

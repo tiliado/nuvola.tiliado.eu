@@ -368,8 +368,10 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
     Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
     you may see strange errors. Unfortunately, just logging out and logging in is not enough.
   </p>
+  {{ fedora_add_repositories_with_gnome_software() }}
+{% endmacro %}
 
-
+{% macro fedora_add_repositories_with_gnome_software() %}
   <h2>Add Flathub and Nuvola Apps Repositories</h2>
   <p>
     The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common

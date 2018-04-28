@@ -4,26 +4,29 @@
 {% block tab_content %}
 
   <h2>Install Flatpak and Friends</h2>
-  <ul>
-    <li>
-      <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
-      sandboxed applications. It is
-      <a href="https://www.archlinux.org/packages/extra/x86_64/flatpak/">available in the Arch Linux Extra repository</a>.
-    </li>
-    <li>
-      <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration. It is
-      <a href="https://www.archlinux.org/packages/extra/x86_64/xdg-desktop-portal/">available in the Arch Linux Extra
-        repository</a>.
-    </li>
-    <li>Run <code>pacman -Sy flatpak xdg-desktop-portal-gtk</code> as root/sudo.</li>
-    <li>
-      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
-      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
-    </li>
-  </ul>
+  <p>
+    <strong>Flatpak</strong> <sup>(<a href="https://www.archlinux.org/packages/extra/x86_64/flatpak/">pkg</a>)</sup>
+    is a cross-distribution framework for distribution and running of sandboxed applications.
+    <strong>XDG Desktop Portal</strong>
+    <sup>
+      (<a href="https://www.archlinux.org/packages/extra/x86_64/xdg-desktop-portal/">pkg1</a>,
+      <a href="https://www.archlinux.org/packages/extra/x86_64/xdg-desktop-portal-gtk/">pkg2</a>)
+    </sup> provides {{ nuvola.name }} with desktop integration.
+    <strong>GNOME Software</strong>
+      <sup>(<a href="https://www.archlinux.org/packages/community/x86_64/gnome-software/">pkg</a>)</sup>
+    makes the browsing and installation of Flatpaks easier.
+  </p>
+  <p>
+    <strong>All packages are available in Arch Linux's extra/community repositories.</strong>
+    Run <code>pacman -Sy flatpak xdg-desktop-portal-gtk gnome-software</code> as root/sudo.
+    Then <strong>restart your computer</strong> to add Flatpak paths alongside the system ones. Otherwise,
+    you may see strange errors. Unfortunately, just logging out and logging in is not enough.
+  </p>
 
+
+  {{ snippets.fedora_add_repositories_with_gnome_software() }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.install_and_launch_nuvola() }}
+  {{ snippets.fedora_install_nuvola_service_with_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}
