@@ -3,10 +3,9 @@
 
 {% block tab_content %}
 
-  {{ snippets.fedora_install_flatpak() }}
-  {{ snippets.fedora_install_xdg_desktop_portal() }}
+  {{ snippets.fedora_install_flatpak_with_gnome_software() }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.install_and_launch_nuvola() }}
+  {{ snippets.fedora_install_nuvola_service_with_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}

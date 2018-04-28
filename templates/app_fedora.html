@@ -1,0 +1,6 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+  {{ snippets.fedora_install_app_with_gnome_software(app, distro_spec, "e.g., GNOME Shell") }}
+{% endblock %}
