@@ -4,24 +4,24 @@
     "name": "Ubuntu",
     "releases": [
       {
+        "id": "bionic",
+        "name": "18.04 LTS Bionic Beaver"
+      },
+      {
         "id": "xenial",
         "name": "16.04 LTS Xenial Xerus"
-      },
-      {
-        "id": "yakkety",
-        "name": "16.10 Yakkety Yak"
-      },
-      {
-        "id": "zesty",
-        "name": "17.04 Zesty Zapus"
       },
       {
         "id": "artful",
         "name": "17.10 Artful Aardvark"
       },
       {
-        "id": "bionic",
-        "name": "18.04 LTS Bionic Beaver"
+        "id": "zesty",
+        "name": "17.04 Zesty Zapus"
+      },
+      {
+        "id": "yakkety",
+        "name": "16.10 Yakkety Yak"
       }
     ]
   },
