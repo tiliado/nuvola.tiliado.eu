@@ -13,7 +13,7 @@
     <li><a href="https://backports.debian.org/Instructions/">Enable Debian Jessie Backports</a>.</li>
     <li>Run <code>apt-get -t jessie-backports install flatpak</code> as superuser/root.</li>
     <li>
-      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
+      Then <strong>restart your computer</strong> to add Flatpak paths alongside the system ones. Otherwise,
       you may see strange errors. Unfortunately, just logging out and logging in is not enough.
     </li>
   </ol>
@@ -29,9 +29,9 @@
     <li><code>wget https://dl.tiliado.eu/flatpak/legacy/xdg-desktop-portal_0.0.2_amd64.deb</code></li>
     <li><code>dpkg -i xdg-desktop-portal_0.0.2_amd64.deb</code></li>
   </ul>
-
+  {{ snippets.generic_add_flatpak_repositories_from_command_line() }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.install_and_launch_nuvola() }}
+  {{ snippets.generic_install_nuvola_service_from_command_line() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}

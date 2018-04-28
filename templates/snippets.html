@@ -89,6 +89,43 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
   </ul>
 {% endmacro %}
 
+{% macro generic_add_flatpak_repositories_from_command_line() %}
+  {{ about_flatpak_repositories() }}
+  <p>
+    Launch a Linux terminal emulator,
+    type <code>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code>,
+    <code>flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code>,
+    and <code>flatpak update</code>.
+  </p>
+{% endmacro %}
+
+{% macro generic_install_nuvola_service_from_command_line() %}
+  {{ about_nuvola_service() }}
+  <p>
+    Launch a Linux terminal emulator,
+    type <code>flatpak install nuvola {{ nuvola.uid }}</code> and press the Enter key to install this package.
+  </p>
+{% endmacro %}
+
+{% macro generic_install_app_from_commandline(app, distro_spec, environments) %}
+  <h2>Install {{ app.name }}</h2>
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      Launch a Linux terminal emulator,
+      type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
+    </li>
+    <li>
+      Then <strong>log out and log in back</strong> to let your desktop environment ({{ environments }}) find out that
+      a new application has been installed. Otherwise, you may see "Unknown Application Name" in the menu bar,
+      mismatched application icons and other funny bugs.
+    </li>
+  </ol>
+  {{ generic_launch_app(app, environments) }}
+{% endmacro %}
+
 {# ================================ UBUNTU =============================== #}
 
 {%  macro ubuntu_install_flatpak_with_gnome_software(ubuntu_version) %}
@@ -324,6 +361,33 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 {%  endmacro %}
 
 {# ================================ DEBIAN =============================== #}
+
+{% macro debian_install_flatpak_with_gnome_software(codename) %}
+  <h2>Install Flatpak and Friends</h2>
+  <p>
+    <strong>Flatpak</strong> <sup>(<a href="https://packages.debian.org/{{ codename }}/flatpak">pkg</a>)</sup>
+    is a cross-distribution framework for distribution and running of sandboxed applications.
+    <strong>XDG Desktop Portal</strong>
+    <sup>
+      (<a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal">pkg1</a>,
+      <a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal-gtk">pkg2</a>)
+    </sup> provides {{ nuvola.name }} with desktop integration.
+    <strong>GNOME Software with Flatpak plugin</strong><sup>
+    (<a href="https://packages.debian.org/{{ codename }}/gnome-software">pkg1</a>,
+    <a href="https://packages.debian.org/{{ codename }}/gnome-software-plugin-flatpak">pkg2</a>)
+  </sup>
+    makes the browsing and installation of Flatpaks easier.
+  </p>
+  <p>
+    <strong>All packages are available in the repositories.</strong>
+    Run <code>apt install flatpak xdg-desktop-portal-gtk xdg-desktop-portal gnome-software
+    gnome-software-plugin-flatpak</code> as root/sudo.
+    Then <strong>restart your computer</strong> to add Flatpak paths alongside the system ones and to activate the GNOME
+    Software Flatpak plugin. Otherwise, you may see strange errors.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+  {{ fedora_add_repositories_with_gnome_software() }}
+{% endmacro %}
 
 {% macro debian_install_flatpak(codename) %}
   <h2>Install Flatpak</h2>

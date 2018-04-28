@@ -1,0 +1,6 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+  {{ snippets.generic_install_app_from_commandline(app, distro_spec, "GNOME, XFCE, KDE, etc.") }}
+{% endblock %}
