@@ -39,15 +39,6 @@
     </table>
 {% endmacro %}
 
-{% macro install_nuvola_runtime(distro_spec) %}
-  <h2>Install {{ nuvola.name }} Runtime</h2>
-  <p>
-    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-    Follow <a href="/nuvola{{ distro_spec }}/">installation instructions</a>
-    to install <a href="/nuvola{{ distro_spec }}/">{{ nuvola.name }} runtime</a>.
-  </p>
-{% endmacro %}
-
 {% macro install_individual_apps(apps, distro_spec) %}
   <h2>Install Individual Apps</h2>
   {{ table_of_apps(apps, distro_spec) }}
@@ -64,14 +55,6 @@ rm -rf ~/.cache/nuvolaplayer3
 rm -rf ~/.local/share/nuvolaplayer3
 rm -rf ~/.config/nuvolaplayer3
 rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
-{% endmacro %}
-
-{% macro install_and_launch_nuvola() %}
-  <h2>Install {{ nuvola.name }} Runtime</h2>
-  <p>
-    Run <code>flatpak install --from {{ root }}/{{ nuvola.uid }}.flatpakref</code>
-    (as a regular user without sudo/root rights).
-  </p>
 {% endmacro %}
 
 {% macro generic_launch_app(app, environments) %}
@@ -387,33 +370,6 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
     Unfortunately, just logging out and logging in is not enough.
   </p>
   {{ fedora_add_repositories_with_gnome_software() }}
-{% endmacro %}
-
-{% macro debian_install_flatpak(codename) %}
-  <h2>Install Flatpak</h2>
-  <p>
-    Flatpak is a cross-distribution framework for distribution and running of
-    sandboxed applications. It is
-    <a href="https://packages.debian.org/{{ codename }}/flatpak">available in the repository</a>.
-  </p>
-  <ul>
-    <li>Run <code>apt-get install flatpak</code> as root/sudo.</li>
-    <li>
-      Then restart your computer to add Flatpak paths alongside the system ones. Otherwise,
-      you may see strange errors. Unfortunately, just logging out and logging in is not enough.
-    </li>
-  </ul>
-{% endmacro %}
-
-{% macro debian_install_xdg_desktop_portal(codename) %}
-  <h2>Install Desktop Portal service</h2>
-  <p>
-    XDG Desktop Portal provides Nuvola Apps Runtime with desktop integration. It is
-    <a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal-gtk">available in the repository</a>.
-  </p>
-  <p>
-    Run <code>apt-get install xdg-desktop-portal-gtk</code> as root/sudo.
-  </p>
 {% endmacro %}
 
 {# ================================ FEDORA =============================== #}
