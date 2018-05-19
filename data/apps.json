@@ -13,7 +13,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
     "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.6"
+    "version": "5.7"
   },
   {
     "id": "bbc_iplayer",
@@ -21,7 +21,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "BBC iPlayer",
     "uid": "eu.tiliado.NuvolaAppBbcIplayer",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "bandcamp",
@@ -32,12 +32,28 @@
     "version": "2.2"
   },
   {
+    "id": "brain_fm",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Brain.fm",
+    "uid": "eu.tiliado.NuvolaAppBrainFm",
+    "version": "1.1"
+  },
+  {
     "id": "deezer",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Deezer",
     "uid": "eu.tiliado.NuvolaAppDeezer",
     "version": "3.0"
+  },
+  {
+    "id": "focus_at_will",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Focus@Will",
+    "uid": "eu.tiliado.NuvolaAppFocusAtWill",
+    "version": "1.1"
   },
   {
     "id": "google_calendar",
@@ -77,7 +93,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Jupiter Broadcasting",
     "uid": "eu.tiliado.NuvolaAppJupiterBroadcasting",
-    "version": "1.1"
+    "version": "1.2"
   },
   {
     "id": "kexp",
@@ -104,9 +120,17 @@
     "version": "4.1"
   },
   {
+    "id": "npr_one",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "NPR One",
+    "uid": "eu.tiliado.NuvolaAppNprOne",
+    "version": "1.1"
+  },
+  {
     "id": "plex",
-    "maintainer": "SkyghiS",
-    "maintainer_link": "https://github.com/skyghis",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
     "name": "Plex Music",
     "uid": "eu.tiliado.NuvolaAppPlex",
     "version": "1.3"
