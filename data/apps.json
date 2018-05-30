@@ -72,14 +72,6 @@
     "version": "6.0"
   },
   {
-    "id": "groove",
-    "maintainer": "Joel Cumberland",
-    "maintainer_link": "https://github.com/jrosco",
-    "name": "Groove",
-    "uid": "eu.tiliado.NuvolaAppGroove",
-    "version": "2.0"
-  },
-  {
     "id": "jango",
     "maintainer": "Stefano Bagnatica",
     "maintainer_link": "https://github.com/thepisu",
