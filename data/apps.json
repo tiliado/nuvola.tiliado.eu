@@ -89,11 +89,11 @@
   },
   {
     "id": "kexp",
-    "maintainer": "Michael Nye",
-    "maintainer_link": "https://github.com/thenyeguy",
-    "name": "KEXP Live Stream",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "KEXP Radio",
     "uid": "eu.tiliado.NuvolaAppKexp",
-    "version": "1.2"
+    "version": "1.3"
   },
   {
     "id": "logitech_media_server",
@@ -133,7 +133,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Plex Music",
     "uid": "eu.tiliado.NuvolaAppPlex",
-    "version": "1.3"
+    "version": "1.4"
   },
   {
     "id": "pocket_casts",
@@ -141,7 +141,15 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Pocket Casts",
     "uid": "eu.tiliado.NuvolaAppPocketCasts",
-    "version": "1.0"
+    "version": "1.1"
+  },
+  {
+    "id": "qobuz",
+    "maintainer": "Bors, Ltd",
+    "maintainer_link": "https://github.com/borsltd",
+    "name": "Qobuz",
+    "uid": "eu.tiliado.NuvolaAppQobuz",
+    "version": "1.1"
   },
   {
     "id": "siriusxm",
@@ -197,6 +205,6 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "ownCloud Music",
     "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
-    "version": "1.2"
+    "version": "1.3"
   }
 ]
