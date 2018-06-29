@@ -1,0 +1,19 @@
+{% macro purge_old_nuvola() %}
+  <h2>Purge Old Nuvola Installations</h2>
+  <p>
+    If you used Nuvola in the past, it is necessary to purge the old installation. Otherwise,
+    compatibility issues may occur.
+  </p>
+  <p>
+    You can use following commands to find installed Nuvola packages and then remove them with <code>pacman -R</code>.
+  </p>
+  <pre><code>pacman -Qs '^nuvolaplayer'
+pacman -Qs '^nuvolaruntime'
+pacman -Qs '^nuvola-app-'</code></pre>
+  <p>You can use following commands to remove old configuration.</p>
+  <pre><code>rm -rf ~/.cache/nuvolaplayer3
+rm -rf ~/.local/share/nuvolaplayer3 ~/.local/share/nuvolaruntime
+rm -rf ~/.config/nuvolaplayer3 ~/.config/nuvolaruntime
+rm -rf ~/.cache/nuvolaplayer3 ~/.cache/nuvolaruntime
+rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
+{% endmacro %}
