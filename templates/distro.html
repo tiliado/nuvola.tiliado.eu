@@ -1,60 +1,57 @@
 {% extends "base.html" %}
-{% import 'distro_tabs.html' as distro_tabs %}
 
 {% block content %}
   <div class="install-app install-nuvola container">
     <div>
       {%  block heading %}{% endblock %}
       <div class="alert alert-warning not-amd64" role="alert">
-        <span class="glyphicon glyphicon-alert"></span>
-        <strong>Nuvola Apps Repository provides only 64bit flatpak builds (amd64).
-        32bit and ARM packages may be provided in the future.</strong>
+        Nuvola Apps Repository provides <strong>only 64bit flatpak builds (amd64)</strong>.
+        32bit and ARM packages may be provided in the future.
       </div>
       <noscript>
         <div class="alert alert-info" role="alert">
-          <span class="glyphicon glyphicon-warning"></span>
-          <strong>Nuvola Apps Repository provides only 64bit flatpak builds (amd64).
-            32bit and ARM packages may be provided in the future.</strong>
+          Nuvola Apps Repository provides <strong>only 64bit flatpak builds (amd64)</strong>.
+            32bit and ARM packages may be provided in the future.
         </div>
       </noscript>
       <div class="alert alert-info" role="alert">
-        <span class="glyphicon glyphicon-info-sign"></span>
-        If you have any troubles, <a href="https://github.com/tiliado/nuvola-repository-index/issues/new">report your
-        issue to get help</a>.
+        If you have any troubles,
+        <a class="alert-link" href="https://github.com/tiliado/nuvola-repository-index/issues/new">report
+          your issue to get help</a>.
       </div>
-      <div>
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-          {% for d in distributions %}
-            <li role="presentation"{% if d.id == distro.id %} class="active"{% endif %}><a
-                href="{{ tab_target }}/{{ d.id }}/" role="tab">{{ d.name }}</a></li>
-          {% endfor %}
-        </ul>
+      <div class="card">
+        <div class="card-header">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs card-header-tabs" role="tablist">
+            {% for d in distributions %}
+              <li role="presentation" class="nav-item">
+                <a class="nav-link {% if d.id == distro.id %}active{% endif %}"
+                  href="{{ tab_target }}/{{ d.id }}/" role="tab">{{ d.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
         <!-- Tab panes -->
-        <div class="tab-content">
+        <div class="card-body">
           {% if releases %}
-            <div role="tabpanel" class="tab-pane panel panel-default active">
-              <div class="panel-body">
+            <div class="card">
+              <div class="card-header">
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
                   {% for r in releases %}
-                    <li role="presentation" {% if release and r.id == release.id %} class="active"{% endif %}><a
+                    <li role="presentation" class="nav-item">
+                      <a class="nav-link {% if release and r.id == release.id %}active{% endif %}"
                         href="{{ tab_target }}/{{ distro.id }}/{{ r.id }}/" role="tab">{{ r.name }}</a></li>
                   {% endfor %}
                 </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                  {% endif %}
-                    <div role="tabpanel" class="tab-pane panel panel-default active">
-                      <div class="panel-body install-nuvola">
-                        {% block tab_content %}
-                        {% endblock %}
-                      </div>
-                    </div>
-                  {% if releases %}
+              </div>
+              <!-- Tab panes -->
+              <div class="card-body">
+          {% endif %}
+          {% block tab_content %}
+          {% endblock %}
+          {% if releases %}
                 </div>
               </div>
-            </div>
           {% endif %}
         </div>
       </div>

@@ -1,18 +1,35 @@
+th a {
+    display: block;
+}
 
-.tab-pane.panel {border-top: 0px !important;}
-p, li {font-size: 120%;}
-li p {font-size: inherit;}
-td, th {font-size: 130%;}
-th a {display: block;}
-.alert {font-size: 115%; padding: 5px; margin: 5px 0px;}
-body { padding-top: 0px; }
-.navbar-brand img {width: 28px; height: 28px; margin-top: -3px;}
-.navbar {font-weight: normal;}
-.not-amd64 {display: none;}
+li button, li .btn {
+    margin: 2px 0;
+}
 
-.alert-info {color: white; background-color: #008cba;}
-.alert-info a {color: #7edede;}
-.gallery {margin: 1em auto 1.5em;}
+.btn-lg img.icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-bottom;
+}
+
+.not-amd64 {
+    display: none;
+}
+
+a.alert-link {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+a.alert-link:hover {
+    text-decoration: none;
+}
+
+.gallery {
+    margin: 1em auto 1.5em;
+}
 
 #gallery-lightbox {
     position: fixed;

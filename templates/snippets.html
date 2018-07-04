@@ -20,23 +20,23 @@
 
 {% macro table_of_apps(apps, distro_spec) %}
 <table class="table table-bordered table-striped table-hover">
-      <thead>
+  <thead>
+    <tr>
+      <th>Web App</th>
+      <th>Version</th>
+      <th>Maintainer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for app in apps %}
       <tr>
-        <th>Web App</th>
-        <th>Version</th>
-        <th>Maintainer</th>
+        <th><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></th>
+        <td>{{ app.version }}</td>
+        <td><a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a></td>
       </tr>
-      </thead>
-      <tbody>
-        {% for app in apps %}
-          <tr>
-            <th><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></th>
-            <td>{{ app.version }}</td>
-            <td><a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a></td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    {% endfor %}
+  </tbody>
+</table>
 {% endmacro %}
 
 {% macro install_individual_apps(apps, distro_spec) %}
