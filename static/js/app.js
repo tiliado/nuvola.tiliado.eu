@@ -119,6 +119,7 @@
     }
     if (!galleryLightbox) {
       var img = mkelm('img', {alt: ' ', 'class': 'lightbox-img'})
+      img.onclick = galleryGoNext(images)
       var position = mkelm('span', {'class': 'lightbox-position'})
       var prev = mkelm('span', {'class': 'lightbox-prev'}, ['<'])
       prev.onclick = galleryGoPrev(images)
