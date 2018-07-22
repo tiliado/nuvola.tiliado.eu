@@ -77,8 +77,10 @@ class Generator:
             else:
                 distro_name = "%s %s" % (distro["name"], release["name"])
 
-        canonical_path = "/"
-        target = os.path.join(self.output_dir, "index%s/index.html" % distro_spec if distro_spec else "index.html")
+        canonical_path = "/index/"
+        target = os.path.join(
+            self.output_dir,
+            "index%s/index.html" % distro_spec if distro_spec else "index/index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.templater.render("index.html", {
