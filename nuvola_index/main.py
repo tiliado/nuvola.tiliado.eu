@@ -15,12 +15,14 @@ def main(argv: List[str]) -> int:
         apps.sort(key=lambda item: item["name"])
     with open(params.distributions) as f:
         distributions = json.load(f)
+    with open(params.team) as f:
+        team = json.load(f)
     output = os.path.abspath(params.output)
     templates = os.path.abspath(params.templates)
     global_vars["root"] = params.hostname.rstrip("/")
     templater = create_templater(templates, global_vars)
     static = [os.path.abspath(path) for path in params.static]
-    generator = Generator(distributions, apps, output, static, templater)
+    generator = Generator(distributions, apps, team, output, static, templater)
     if params.fresh:
         generator.purge()
     generator.build()
@@ -38,6 +40,9 @@ def parse_args(argv: List[str]) -> Namespace:
     parser.add_argument(
         "-a", "--apps", default="data/apps.json",
         help="Path to information about apps [data/apps.json].")
+    parser.add_argument(
+        "--team", default="data/team.json",
+        help="Path to information about the team [data/team.json].")
     parser.add_argument(
         "-o", "--output", default="build",
         help="Path to output directory [build].")

@@ -12,13 +12,33 @@ class Generator:
     static_dirs: List[str]
     templater: Templater
 
-    def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], output_dir: str,
-                 static_dirs: List[str], templater: Templater):
+    def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], team: Dict[str, Any],
+                 output_dir: str, static_dirs: List[str], templater: Templater):
         self.static_dirs = static_dirs
         self.templater = templater
         self.output_dir = output_dir
         self.distributions = distributions
         self.apps = apps
+        self.team = team
+        maintainers = {}
+        for app in apps:
+            maintainer_name = app['maintainer']
+            try:
+                maintainer = maintainers[maintainer_name]
+            except KeyError:
+                maintainer = {
+                    'name': maintainer_name,
+                    'link': app['maintainer_link'],
+                    'apps': [],
+                }
+                maintainers[maintainer_name] = maintainer
+            maintainer['apps'].append({
+                'name': app['name'],
+                'link': f'/app/{app["id"]}/',
+            })
+        team['maintainers'] = [maintainers[key] for key in sorted(maintainers)]
+        for maintainer in team['maintainers']:
+            maintainer['apps'].sort(key=lambda item: item['name'])
 
     def purge(self):
         if os.path.isdir(self.output_dir):
@@ -29,6 +49,7 @@ class Generator:
         self.build_apps()
         self.build_nuvola()
         self.build_flatpak_refs()
+        self.build_team()
         self.copy_static_files()
 
     def build_index(self):
@@ -61,6 +82,7 @@ class Generator:
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.templater.render("index.html", {
+                'navbar_tab': 'install',
                 "distributions": self.distributions,
                 "distro_name": distro_name,
                 "apps": self.apps,
@@ -109,6 +131,7 @@ class Generator:
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.templater.render(templates, {
+                'navbar_tab': 'install',
                 "tab_target": "/app/" + app["id"],
                 "apps": self.apps,
                 "app": app,
@@ -158,6 +181,7 @@ class Generator:
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.templater.render(templates, {
+                'navbar_tab': 'install',
                 "tab_target": "/nuvola",
                 "distributions": self.distributions,
                 "apps": self.apps,
@@ -177,6 +201,17 @@ class Generator:
         target = os.path.join(self.output_dir, "%s.flatpakref" % uid)
         with open(target, "wt") as f:
             f.write(self.templater.render(template + ".flatpakref", data))
+
+    def build_team(self):
+        canonical_path = "/team/"
+        target = os.path.join(self.output_dir, "team/index.html")
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        with open(target, "wt") as f:
+            f.write(self.templater.render(['team.html'], {
+                'navbar_tab': 'team',
+                "team": self.team,
+                "canonical_path": canonical_path
+            }))
 
     def copy_static_files(self):
         for static_dir in self.static_dirs:

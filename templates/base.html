@@ -32,7 +32,7 @@
           <li class="nav-item">
             <a class="nav-link" href="https://tiliado.eu/nuvolaplayer/">About</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item {% if navbar_tab == 'install' %}active{% endif %}">
             <a class="nav-link" href="/">Install</a>
           </li>
           <li class="nav-item">
@@ -40,6 +40,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://tiliado.github.io/nuvolaplayer/documentation/4.html">Documentation</a>
+          </li>
+          <li class="nav-item {% if navbar_tab == 'team' %}active{% endif %}">
+            <a class="nav-link" href="/team/">Team</a>
           </li>
         </ul>
       </div>

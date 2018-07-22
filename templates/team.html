@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Team</h1>
+
+    <h2>Core Developers</h2>
+    <p>
+      These people develop <a href="https://github.com/tiliado/nuvolaruntime">Nuvola Apps Runtime</a>,
+      <a href="https://github.com/tiliado/nuvolasdk">Nuvola SDK</a>,
+      <a href="https://github.com/tiliado/diorite">Diorite library</a>, and more.
+    </p>
+    <ul>
+      {% for developer in team.core_developers %}
+        <li><a href="{{ developer.link }}">{{ developer.name }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <h2>Web Apps Maintainers</h2>
+    <p>These people maintain indiviual web app integration scripts.</p>
+    <ul>
+      {% for maintainer in team.maintainers %}
+        <li>
+          <a href="{{ maintainer.link }}">{{ maintainer.name }}</a>:
+          <ul>
+            {% for app in maintainer.apps %}
+              <li><a href="{{ app.link }}">{{ app.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
