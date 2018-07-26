@@ -1,4 +1,6 @@
-from typing import Dict, Any, Union, List
+import json
+import os
+from typing import Dict, Any, Union, List, Tuple
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template, TemplateError
 
@@ -9,24 +11,35 @@ def create_templater(template_dir: str, global_vars: Dict[str, Any] = None) -> "
         autoescape=select_autoescape(['html', 'xml'])
     )
     env.globals.update(global_vars)
-    return Templater(env)
+    return Templater(template_dir, env)
 
 
 class Templater:
     env: Environment
-    templates: Dict[str, Template]
+    templates: Dict[str, Tuple[Template, dict]]
 
-    def __init__(self, env: Environment):
+    def __init__(self, template_dir: str, env: Environment):
+        self.template_dir = template_dir
         self.env = env
         self.templates = {}
 
-    def get_template(self, name: Union[str, List[str]]) -> Template:
+    def load_template_data(self, name: str) -> dict:
+        path = os.path.join(self.template_dir, os.path.splitext(name)[0] + '.json')
+        if os.path.isfile(path):
+            with open(path) as fh:
+                return json.load(fh)
+        return {}
+
+    def get_template(self, name: Union[str, List[str]]) -> Tuple[Template, dict]:
         if isinstance(name, str):
             try:
                 return self.templates[name]
             except KeyError:
-                self.templates[name] = template = self.env.get_template(name)
-                return template
+                template = self.env.get_template(name)
+                data = self.load_template_data(name)
+                result = template, data
+                self.templates[name] = result
+                return result
         elif not name:
             raise ValueError("Template list must not be empty")
         else:
@@ -40,5 +53,7 @@ class Templater:
                 raise error
 
     def render(self, name: Union[str, List[str]], variables: Dict[str, Any]) -> str:
-        return self.get_template(name).render(**variables)
+        template, data = self.get_template(name)
+        variables.setdefault('data', data)
+        return template.render(**variables)
 
