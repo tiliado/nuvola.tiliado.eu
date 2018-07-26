@@ -241,8 +241,21 @@ class Generator:
         meta['path'] = meta['canonical_path'] = path
         target = self.output_dir + (path + 'index.html' if path.endswith('/') else path)
         template = meta['template']
+
+        snippets = {}
+        for ogiginal_name in meta.get('snippets', '').split(','):
+            original_name = ogiginal_name.strip()
+            normalized_name = original_name.lower().replace(' ', '_').replace('-', '_')
+            if original_name and normalized_name not in snippets:
+                snippets[original_name] = snippets[normalized_name] = self.templater.render(
+                    [f'snippets/{normalized_name}.html'], meta)
+        body = page.body
+        for name, content in snippets.items():
+            body = body.replace(f'[Snippet: {name}]', content)
+            body = body.replace(f'[snippet: {name}]', content)
+
         os.makedirs(os.path.dirname(target), exist_ok=True)
-        variables = {"body": page.body}
+        variables = {"body": body}
         variables.update(meta)
         with open(target, "wt") as f:
             f.write(self.templater.render([template + '.html'], variables))
