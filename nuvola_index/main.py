@@ -22,7 +22,7 @@ def main(argv: List[str]) -> int:
     global_vars["root"] = params.hostname.rstrip("/")
     templater = create_templater(templates, global_vars)
     static = [os.path.abspath(path) for path in params.static]
-    generator = Generator(distributions, apps, team, output, static, templater)
+    generator = Generator(distributions, apps, team, output, static, templater, params.pages)
     if params.fresh:
         generator.purge()
     generator.build()
@@ -43,6 +43,9 @@ def parse_args(argv: List[str]) -> Namespace:
     parser.add_argument(
         "--team", default="data/team.json",
         help="Path to information about the team [data/team.json].")
+    parser.add_argument(
+        "--pages", default="pages",
+        help="Path to a directory with Markdown pages [pages].")
     parser.add_argument(
         "-o", "--output", default="build",
         help="Path to output directory [build].")

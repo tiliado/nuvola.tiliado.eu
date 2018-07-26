@@ -2,6 +2,7 @@ from typing import List, Dict, Any
 import os
 import shutil
 
+from nuvola_index.pages import MarkdownPage
 from . import Templater
 
 
@@ -13,13 +14,14 @@ class Generator:
     templater: Templater
 
     def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], team: Dict[str, Any],
-                 output_dir: str, static_dirs: List[str], templater: Templater):
+                 output_dir: str, static_dirs: List[str], templater: Templater, pages_dir: str = None):
         self.static_dirs = static_dirs
         self.templater = templater
         self.output_dir = output_dir
         self.distributions = distributions
         self.apps = apps
         self.team = team
+        self.pages_dir = pages_dir
         maintainers = {}
         for app in apps:
             maintainer_name = app['maintainer']
@@ -50,6 +52,7 @@ class Generator:
         self.build_nuvola()
         self.build_flatpak_refs()
         self.build_team()
+        self.build_pages()
         self.copy_static_files()
 
     def build_index(self):
@@ -214,6 +217,35 @@ class Generator:
                 "team": self.team,
                 "canonical_path": canonical_path
             }))
+
+    def build_pages(self):
+        if self.pages_dir:
+            for root, dirs, files in os.walk(self.pages_dir):
+                for path in files:
+                    if path.endswith('.md'):
+                        path = os.path.join(root, path)
+                        target = path[len(self.pages_dir):]
+                        self.build_page(path, target)
+
+    def build_page(self, source: str, path: str):
+        page = MarkdownPage(source)
+        page.process()
+        meta = page.metadata
+        meta.setdefault('title', os.path.splitext(os.path.basename(source))[0])
+        meta.setdefault('template', 'page')
+        path = meta.get('path', path)
+        if not path.startswith('/'):
+            path = '/' + path
+        if not path.endswith(('/', '.html', '.htm')):
+            path += '/'
+        meta['path'] = meta['canonical_path'] = path
+        target = self.output_dir + (path + 'index.html' if path.endswith('/') else path)
+        template = meta['template']
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        variables = {"body": page.body}
+        variables.update(meta)
+        with open(target, "wt") as f:
+            f.write(self.templater.render([template + '.html'], variables))
 
     def copy_static_files(self):
         for static_dir in self.static_dirs:
