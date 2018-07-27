@@ -10,13 +10,49 @@
     {% endif %}
     <title>{% block title %}Nuvola Apps{% endblock %}</title>
     {% block styles %}
-      <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+      <noscript>
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+      </noscript>
+      <script>
+        var _DEFAULT_THEME_URL = '/static/bootstrap/css/bootstrap.min.css';
+        function _getTheme () {
+          return localStorage.getItem('nuvola-theme')
+        }
+        function _getThemeURL (theme) {
+          return (theme && theme !== 'default'
+              ? 'https://bootswatch.com/4/' + theme + '/bootstrap.css' : _DEFAULT_THEME_URL)
+        }
+        function _setTheme (theme) {
+          var url = _getThemeURL(theme)
+          var stylesheet = document.getElementById('bootstrap4-css')
+          if (!stylesheet || stylesheet.href !== url) {
+            var stylesheet2 = document.createElement('link')
+            stylesheet2.rel = 'stylesheet'
+            stylesheet2.href = url
+            stylesheet2.id = 'bootstrap4-css'
+            stylesheet2.onerror = function () {
+              this.href = _DEFAULT_THEME_URL
+            }
+            if (stylesheet) {
+              stylesheet.id = ''
+              stylesheet2.onload = function () {
+                stylesheet.parentNode.removeChild(stylesheet)
+              }
+              stylesheet.parentNode.insertBefore(stylesheet2, stylesheet)
+            } else {
+              var title = document.getElementsByTagName('title')[0]
+              title.parentNode.insertBefore(stylesheet2, title.nextSibling)
+            }
+          }
+        }
+        _setTheme(_getTheme())
+      </script>
       <link rel="stylesheet" href="/static/css/app.css">
     {% endblock %}
   {% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img alt="Brand" src="https://tiliado.eu/static/nuvolaplayer/logo.png" width="32" height="32"/>
@@ -66,15 +102,11 @@
   </noscript>
 
   {% block content %}{% endblock %}
-  {% block scripts %}
-    <script src="/static/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/js/app.js"></script>
-  {% endblock %}
-  <footer class="text-light bg-dark">
+
+  <footer class="text-light bg-primary">
     <div class="container">
       <div class="row text-center p-3 mt-5">
-        <div class="col">
+        <div class="col" id="footer-text">
           &copy; 2014-2018 Jiří Janoušek
           • Built with <a href="https://getbootstrap.com/" class="text-light">Bootstrap</a>
           • <a href="https://github.com/tiliado/nuvola.tiliado.eu" class="text-light">Source code</a>
@@ -82,5 +114,11 @@
       </div>
     </div>
   </footer>
+
+  {% block scripts %}
+    <script src="/static/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/app.js"></script>
+  {% endblock %}
 </body>
 </html>

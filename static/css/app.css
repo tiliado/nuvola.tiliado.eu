@@ -115,6 +115,6 @@ a.alert-link:hover {
     color: #999;
 }
 
-footer.bg-dark a {
+footer a {
     text-decoration: underline;
 }

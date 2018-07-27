@@ -175,5 +175,31 @@
     showGalleryImage(event, galleryNumber, images, imageNumber)
   }
 
+  var setupStyleSelector = function () {
+    var footerText = document.getElementById('footer-text')
+    footerText.appendChild(document.createTextNode(' • '))
+    var a = document.createElement('a')
+    a.href = 'https://bootswatch.com/'
+    a.className = 'text-light'
+    a.textContent = 'Theme'
+    footerText.appendChild(a)
+    footerText.appendChild(document.createTextNode(': '))
+    var selector = document.createElement('select')
+    var selected = _getTheme()
+    for (var name of ['Default', 'Cerulean', 'Cosmo', 'Litera', 'Lumen', 'Materia', 'Spacelab', 'Yeti', 'Sketchy']) {
+      var option = document.createElement('option')
+      option.value = name.toLowerCase()
+      option.textContent = name
+      option.selected = option.value === selected
+      selector.add(option)
+    }
+    footerText.appendChild(selector)
+    selector.onchange = function () {
+      localStorage.setItem('nuvola-theme', this.value)
+      _setTheme(this.value)
+    }
+  }
+
   setupGalleries(document.querySelectorAll('.gallery'))
+  setupStyleSelector()
 })(window)
