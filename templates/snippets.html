@@ -19,24 +19,18 @@
 {% endmacro %}
 
 {% macro table_of_apps(apps, distro_spec) %}
-<table class="table table-bordered table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Web App</th>
-      <th>Version</th>
-      <th>Maintainer</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="row align-items-center justify-content-center text-center">
     {% for app in apps %}
-      <tr>
-        <th><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></th>
-        <td>{{ app.version }}</td>
-        <td><a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a></td>
-      </tr>
+      <div class="col-6 col-md-4 col-lg-3 my-4">
+        <a href="/app/{{ app.id }}{{ distro_spec }}/" class="d-block w-75 mb-4 mx-auto"
+           style="height: 120px; background: url(/static/apps/{{ app.id }}.png) center center no-repeat; background-size: contain;"
+        ><span class="sr-only">Install {{ app.name }}</span></a>
+        <strong><a href="/app/{{ app.id }}{{ distro_spec }}/">{{ app.name }}</a></strong><br>
+        Version {{ app.version }}<br>
+        <a href="{{ app.maintainer_link }}">{{ app.maintainer }}</a>
+      </div>
     {% endfor %}
-  </tbody>
-</table>
+  </div>
 {% endmacro %}
 
 {% macro install_individual_apps(apps, distro_spec) %}
