@@ -5,12 +5,17 @@ from typing import Dict, Any, Union, List, Tuple
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template, TemplateError
 
 
+def todict(value, key):
+    return {item[key]: item for item in value or []}
+
+
 def create_templater(template_dir: str, global_vars: Dict[str, Any] = None) -> "Templater":
     env = Environment(
         loader=FileSystemLoader(template_dir),
         autoescape=select_autoescape(['html', 'xml'])
     )
     env.globals.update(global_vars)
+    env.filters['todict'] = todict
     return Templater(template_dir, env)
 
 
