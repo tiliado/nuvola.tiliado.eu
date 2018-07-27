@@ -1,0 +1,11 @@
+{%  for news in data.news %}
+  <div class="card my-3">
+    <div class="card-body">
+      <h5 class="card-title"><a href="{{ news.link }}">{{ news.title }}</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ news.date }}</h6>
+      <p class="card-text">
+        {{ news.text }} <a href="{{ news.link }}" class="card-link">Continue reading this article</a>.
+      </p>
+    </div>
+  </div>
+{% endfor %}

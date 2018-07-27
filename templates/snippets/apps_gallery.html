@@ -1,0 +1,12 @@
+{% set apps =  datasets.apps|todict('id') %}
+<div class="row align-items-center justify-content-center text-center">
+  {% for name in data.apps %}
+    {% set app = apps[name] %}
+    <div class="col-6 col-md-4 col-lg-3 my-4">
+        <a href="/app/{{ name }}/" class="d-block w-75 mb-4 mx-auto"
+           style="height: 120px; background: url(/static/apps/{{ name }}.png) center center no-repeat; background-size: contain;"
+        ><span class="sr-only">Install {{ app.name }}</span></a>
+        <a class="" href="/app/{{ name }}/">{{ app.name }}</a>
+    </div>
+  {% endfor %}
+</div>

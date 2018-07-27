@@ -1,0 +1,29 @@
+{
+  "apps": [
+    "spotify",
+    "deezer",
+    "amazon_cloud_player",
+    "google_play_music",
+    "youtube",
+    "youtube_music",
+    "pandora",
+    "yandex_music",
+    "qobuz",
+    "bbc_iplayer",
+    "jupiter_broadcasting",
+    "pocket_casts",
+    "8tracks",
+    "bandcamp",
+    "jango",
+    "kexp",
+    "mixcloud",
+    "npr_one",
+    "plex",
+    "siriusxm",
+    "soundcloud",
+    "tunein",
+    "brain_fm",
+    "focus_at_will",
+    "owncloud_music"
+  ]
+}

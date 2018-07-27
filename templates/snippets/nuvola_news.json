@@ -1,0 +1,52 @@
+{
+  "news": [
+    {
+      "title": "Nuvola 4.12 Released",
+      "link": "https://medium.com/nuvola-news/nuvola-4-12-released-297cb17630c1",
+      "date": "July 21st, 2018",
+      "text": "Nuvola 4.12 was released. This announcement is targeted to script maintainers and third-party packagers rather than to users because all user-visible changes have already been announced before."
+    },
+    {
+      "title": "Nuvola Brings Redesigned Preferences Dialog, More Appearance Settings, and Bug Fixes",
+      "link": "https://medium.com/nuvola-news/nuvola-brings-redesigned-preferences-dialog-more-appearance-settings-and-bug-fixes-6545325b35f3",
+      "date": "July 14th, 2018",
+      "text": "The latest flatpak builds of Nuvola Apps bring redesigned Preferences dialog with expanded Appearance section as well as a few bug fixes."
+    },
+    {
+      "title": "Nuvola Adds YouTube Music, Updates Jango & Tune In, Drops Logitech Media Server",
+      "date": "June 30th, 2018",
+      "link": "https://medium.com/nuvola-news/nuvola-adds-youtube-music-updates-jango-tune-in-drops-logitech-media-server-37dfc73bc6f9",
+      "text": "A new script was added to the stable Flatpak repository: YouTube Music. Jango & Tune In integrations got a new maintainer, were ported to the Chromium-based backend for audio playback without Flash plugin and updated to the latest Nuvola standards. Logitech Media Server script is now unsupported until a new maintainer is found."
+    },
+    {
+      "title": "Nuvola Adds Qobuz, Updates KEXP Radio and Yandex Music",
+      "date": "June 17th, 2018",
+      "link": "https://medium.com/nuvola-news/nuvola-adds-qobuz-updates-kexp-radio-and-yandex-music-a67c9ee8d783",
+      "text": "A new script was added to the stable Flatpak repository: Qobuz. KEXP Radio got a new maintainer and was adjusted to new player interface. Yandex Music was ported to Chromium-based backend for audio playback without Flash plugin. Finally, Nuvola Runtime received a few tweaks."
+    },
+    {
+      "title": "Nuvola Adds Pandora Radio, Updates Sound Cloud & Sirius XM",
+      "date": "June 3rd, 2018",
+      "link": "https://medium.com/nuvola-news/nuvola-adds-pandora-radio-updates-sound-cloud-sirius-xm-1691822ef1fe",
+      "text": "A new script was added to the stable Flatpak repository: Pandora Radio. Sound Cloud got a new maintainer and was significantly improved. Sirius XM was adjusted to recent changes in its web interface."
+    },
+    {
+      "title": "Nuvola Adds Three New Scripts: Brain.fm, Focus@Will, and NPR One",
+      "date": "May 20th, 2018",
+      "link": "https://medium.com/nuvola-news/nuvola-adds-three-new-scripts-brain-fm-focus-will-and-npr-one-ca989ad0530a",
+      "text": "Three new scripts were added to the stable Flatpak repository: Brain.fm, Focus@Will, and NPR One."
+    },
+    {
+      "title": "Nuvola 4.11.0 Released",
+      "link": "https://medium.com/nuvola-news/nuvola-4-11-0-released-1aecb90a2fb9",
+      "date": "May 8th, 2018",
+      "text": "Nuvola 4.11.0 was released. It is mostly meaningless for users of the genuine flatpak builds of Nuvola (they receive improvements, bug fixes and new features continuously), but packagers of third-party builds may find it helpful to get a fixed release that summarizes recent changes."
+    },
+    {
+      "title": "Nuvola Updates Amazon Cloud Player, BBC iPlayer & Jupiter Broadcasting; Supports Fedora 28",
+      "date": "May 6th, 2018",
+      "link": "https://medium.com/nuvola-news/nuvola-updates-amazon-cloud-player-bbc-iplayer-jupiter-broadcasting-supports-fedora-28-38c809a08639",
+      "text": "The latest stable Flatpaks of Amazon Cloud Player, BBC iPlayer & Jupiter Broadcasting — all maintained by Andrew Stubbs — were updated to use Chromium-based backend for music playback without Flash plugin whenever possible. Installation instructions were updated for Fedora 28, and Nuvola Runtime received a few tweaks."
+    }
+  ]
+}
