@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title }} • {{ super() }}{% endblock %}
 {% block content %}
   <div class="container">
     {{ body | safe }}

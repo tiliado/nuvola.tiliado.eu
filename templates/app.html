@@ -1,7 +1,9 @@
 {% extends "distro.html" %}
 {% import "snippets.html" as snippets %}
 
-{% block title %}Install {{ app.name }} in {{ distro.name }} {{ release.name if release else "" }}{% endblock %}
+{% block title -%}
+  Install {{ app.name }} in {{ distro.name }} {{ release.name if release else "" }} • {{ super() }}
+{%- endblock %}
 
 {%  block heading %}
   <h1 class="install-app">
