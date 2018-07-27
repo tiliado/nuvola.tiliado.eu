@@ -114,3 +114,7 @@ a.alert-link:hover {
     background-color: rgba(0, 0, 0, 0.8);
     color: #999;
 }
+
+footer.bg-dark a {
+    text-decoration: underline;
+}
