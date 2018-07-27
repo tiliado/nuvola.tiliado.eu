@@ -59,6 +59,8 @@ class Templater:
 
     def render(self, name: Union[str, List[str]], variables: Dict[str, Any]) -> str:
         template, data = self.get_template(name)
-        variables.setdefault('data', data)
-        return template.render(**variables)
+        variables['data'] = data
+        result = template.render(**variables)
+        del variables['data']
+        return result
 
