@@ -27,6 +27,9 @@ class MarkdownPage:
         md = self.markdown
         self.body = md.convert(data)
         self.metadata = m = {}
-        for key, val in md.Meta.items():
-            m[key] = " ".join(val)
+        try:
+            for key, val in md.Meta.items():
+                m[key] = " ".join(val)
+        except AttributeError:
+            pass
         self.references = md.references
