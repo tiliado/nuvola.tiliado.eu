@@ -1,4 +1,15 @@
 import markdown
+import markdown.inlinepatterns
+import markdown.util
+
+
+class SpanWithClassPattern(markdown.inlinepatterns.Pattern):
+    PATTERN = r'\{\.\s+([-a-zA-Z_ ]+)\}'
+
+    def handleMatch(self, m):
+        elm = markdown.util.etree.Element('span')
+        elm.attrib['class'] = m.group(2)
+        return elm
 
 
 class MarkdownPage:
@@ -17,6 +28,7 @@ class MarkdownPage:
                     'admonition',
                 ],
                 lazy_ol=False)
+        self.markdown.inlinePatterns.add('spanclass', SpanWithClassPattern(SpanWithClassPattern.PATTERN), '_end')
         self.body = None
         self.metadata = None
         self.references = None
