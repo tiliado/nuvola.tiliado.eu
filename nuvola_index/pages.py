@@ -26,6 +26,7 @@ class MarkdownPage:
                     'attr_list',
                     'abbr',
                     'admonition',
+                    'nuvola_index.md_bootstrap',
                 ],
                 lazy_ol=False)
         self.markdown.inlinePatterns.add('spanclass', SpanWithClassPattern(SpanWithClassPattern.PATTERN), '_end')
