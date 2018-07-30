@@ -41,6 +41,37 @@ Last.fm scrobbling, lyrics fetching, and more.
 </div>
 </div>
 
+<bootstrap>
+  <accordion id="acordion" class="my-5">
+    <entry show="false" class="border-primary">
+       <header class="border-primary">{. fas fa-music} 25 Music streaming services</header>
+       <body>
+         Nuvola supports the largest amount of [music streaming services](#services).
+       </body>
+    </entry>
+    <entry class="border-primary">
+       <header class="border-primary">{. fab fa-linux} Tailor-made for Linux desktop</header>
+       <body>
+         For us, Linux is not a secondary platform but the system we love and use every day.
+        </body>
+    </entry>
+    <entry class="border-primary">
+       <header class="border-primary">{. fas fa-cubes} Cross-distribution sandboxed packages</header>
+       <body>
+         We provide sandboxed [Flatpak packages](/index/) that can be installed on every modern distribution.
+       </body>
+    </entry>
+    <entry class="border-primary">
+       <header class="border-primary">{. fab fa-github} Open source software</header>
+       <body>
+         The source code of [Nuvola Runtime](https://github.com/tiliado/nuvolaruntime) and individual
+         [Nuvola Apps](https://github.com/topics/nuvola-app) are available on
+         [GitHub](https://github.com).
+       </body>
+    </entry>
+  </accordion>
+</bootstrap>
+
 Music Streaming Services {: #services}
 --------------------------------------
 
