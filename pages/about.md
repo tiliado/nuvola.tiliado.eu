@@ -35,7 +35,7 @@ Last.fm scrobbling, lyrics fetching, and much more.
 </div>
 </div>
 <div class="col-6 col-sm-4 col-lg-12 text-center">
-<a href="https://tiliado.github.io/nuvolaplayer/documentation/4/help.html" class="btn btn-secondary btn-block btn-lg m-1">Get Help</a>
+<a href="/help/" class="btn btn-secondary btn-block btn-lg m-1">Get Help</a>
 </div>
 </div>
 </div>
