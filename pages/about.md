@@ -13,7 +13,7 @@ Datasets: apps
 with <a href="#features">more native user experience and richer desktop integration features</a> than
 standard web browsers can offer. Nuvola specializes in <a href="#services">music streaming services</a>
 and offers background playback, handling of media key, integration with media player applets,
-Last.fm scrobbling, lyrics fetching, and more.
+Last.fm scrobbling, lyrics fetching, and much more.
 </p>
 </div>
 <div class="col-12 col-lg-4 col-xl-3 offset-xl-1">
