@@ -1,6 +1,9 @@
+from io import BytesIO
+
 import markdown
 import markdown.inlinepatterns
 import markdown.util
+from markdown.util import etree
 
 
 class SpanWithClassPattern(markdown.inlinepatterns.Pattern):
@@ -46,3 +49,34 @@ class MarkdownPage:
         except AttributeError:
             pass
         self.references = md.references
+
+
+class HtmlPage:
+    def __init__(self, path: str):
+        self.path = path
+        self.body = None
+        self.metadata = None
+
+    def process(self):
+        self.metadata = meta = {}
+        with open(self.path) as fh:
+            data = fh.read()
+
+        tree = etree.fromstring(data)
+        assert tree.tag == 'html'
+        head = tree.find('head')
+        if head:
+            title = head.find('title')
+            if title is not None:
+                meta['title'] = title.text
+            for elm in head.iter('meta'):
+                meta[elm.attrib['name']] = elm.attrib['content']
+        body: etree.Element = tree.find('body')
+        assert body
+        tree.remove(body)
+        tree = etree.ElementTree(body)
+        buffer = BytesIO()
+        tree.write(buffer, encoding='utf-8', xml_declaration=False)
+        self.body = buffer.getvalue().decode('utf-8')
+
+

@@ -2,7 +2,7 @@ from typing import List, Dict, Any
 import os
 import shutil
 
-from nuvola_index.pages import MarkdownPage
+from nuvola_index.pages import MarkdownPage, HtmlPage
 from . import Templater
 
 
@@ -222,13 +222,13 @@ class Generator:
         if self.pages_dir:
             for root, dirs, files in os.walk(self.pages_dir):
                 for path in files:
-                    if path.endswith('.md'):
+                    if path.endswith(('.md', '.html', '.html')):
                         path = os.path.join(root, path)
                         target = path[len(self.pages_dir):]
                         self.build_page(path, target)
 
     def build_page(self, source: str, path: str):
-        page = MarkdownPage(source)
+        page = MarkdownPage(source) if path.endswith('.md') else HtmlPage(source)
         page.process()
         meta = page.metadata
         meta.setdefault('title', os.path.splitext(os.path.basename(source))[0])
