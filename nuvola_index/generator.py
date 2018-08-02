@@ -3,7 +3,7 @@ import os
 import shutil
 
 from fxwebgen.pages import MarkdownPage, HtmlPage
-from . import Templater
+from fxwebgen.templater import Templater
 
 
 class Generator:

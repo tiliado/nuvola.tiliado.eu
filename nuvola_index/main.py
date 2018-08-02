@@ -3,7 +3,8 @@ import os
 from argparse import ArgumentParser, Namespace
 from typing import List
 
-from . import Generator, create_templater
+from fxwebgen.templater import create_templater
+from . import Generator
 
 
 def main(argv: List[str]) -> int:
