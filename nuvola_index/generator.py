@@ -2,7 +2,7 @@ from typing import List, Dict, Any
 import os
 import shutil
 
-from nuvola_index.pages import MarkdownPage, HtmlPage
+from fxwebgen.pages import MarkdownPage, HtmlPage
 from . import Templater
 
 

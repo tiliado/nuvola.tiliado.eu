@@ -8,6 +8,6 @@ do
     cd build
     python3 -m http.server &
     PID=$!
-    inotifywait -e modify -e move -e create -e delete -e close_write -e attrib -r "$WD"
+    inotifywait -e modify -e move -e create -e delete -e close_write -e attrib -r "$WD" "$WD/fxwebgen/"
     kill ${PID}
 done
