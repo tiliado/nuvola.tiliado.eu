@@ -1,27 +1,22 @@
 from typing import List, Dict, Any
 import os
-import shutil
 
-from fxwebgen.pages import MarkdownPage, HtmlPage
 from fxwebgen.templater import Templater
+from fxwebgen import generator
 
 
-class Generator:
+class Generator(generator.Generator):
     distributions: List[Dict[str, Any]]
     apps: List[Dict[str, Any]]
-    output_dir: str
-    static_dirs: List[str]
-    templater: Templater
+    team: Dict[str, Any]
 
     def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], team: Dict[str, Any],
                  output_dir: str, static_dirs: List[str], templater: Templater, pages_dir: str = None):
-        self.static_dirs = static_dirs
-        self.templater = templater
-        self.output_dir = output_dir
+        super().__init__(templater, output_dir, pages_dir=pages_dir, static_dirs=static_dirs,
+                         datasets={'distributions': distributions, 'apps': apps, 'team': team})
         self.distributions = distributions
         self.apps = apps
         self.team = team
-        self.pages_dir = pages_dir
         maintainers = {}
         for app in apps:
             maintainer_name = app['maintainer']
@@ -42,18 +37,12 @@ class Generator:
         for maintainer in team['maintainers']:
             maintainer['apps'].sort(key=lambda item: item['name'])
 
-    def purge(self):
-        if os.path.isdir(self.output_dir):
-            shutil.rmtree(self.output_dir, ignore_errors=True)
-
-    def build(self):
+    def before_building_pages(self) -> None:
         self.build_index()
         self.build_apps()
         self.build_nuvola()
         self.build_flatpak_refs()
         self.build_team()
-        self.build_pages()
-        self.copy_static_files()
 
     def build_index(self):
         self.build_index_for_distro(None, None)
@@ -217,61 +206,3 @@ class Generator:
                 "team": self.team,
                 "canonical_path": canonical_path
             }))
-
-    def build_pages(self):
-        if self.pages_dir:
-            for root, dirs, files in os.walk(self.pages_dir):
-                for path in files:
-                    if path.endswith(('.md', '.html', '.html')):
-                        path = os.path.join(root, path)
-                        target = path[len(self.pages_dir):]
-                        self.build_page(path, target)
-
-    def build_page(self, source: str, path: str):
-        page = MarkdownPage(source) if path.endswith('.md') else HtmlPage(source)
-        page.process()
-        meta = page.metadata
-        meta.setdefault('title', os.path.splitext(os.path.basename(source))[0])
-        meta.setdefault('template', 'page')
-        path = meta.get('path', path)
-        if not path.startswith('/'):
-            path = '/' + path
-        if not path.endswith(('/', '.html', '.htm')):
-            path += '/'
-        meta['path'] = meta['canonical_path'] = path
-        target = self.output_dir + (path + 'index.html' if path.endswith('/') else path)
-        template = meta['template']
-
-        variables = {}
-        variables.update(meta)
-
-        variables['datasets'] = datasets = {}
-        for name in meta.get('datasets', '').split(','):
-            name = name.strip()
-            if name:
-                name = name.lower().replace(' ', '_').replace('-', '_')
-                datasets[name] = getattr(self, name) if name in ('apps', 'distributions') else None
-
-        snippets = {}
-        for ogiginal_name in meta.get('snippets', '').split(','):
-            original_name = ogiginal_name.strip()
-            normalized_name = original_name.lower().replace(' ', '_').replace('-', '_')
-            if original_name and normalized_name not in snippets:
-                snippets[original_name] = snippets[normalized_name] = self.templater.render(
-                    [f'snippets/{normalized_name}.html'], variables)
-        body = page.body
-        for name, content in snippets.items():
-            body = body.replace(f'[Snippet: {name}]', content)
-            body = body.replace(f'[snippet: {name}]', content)
-
-        os.makedirs(os.path.dirname(target), exist_ok=True)
-        variables['body'] = body
-        with open(target, "wt") as f:
-            f.write(self.templater.render([template + '.html'], variables))
-
-    def copy_static_files(self):
-        for static_dir in self.static_dirs:
-            target = os.path.join(self.output_dir, os.path.basename(static_dir))
-            if os.path.isdir(target):
-                shutil.rmtree(target)
-            shutil.copytree(static_dir, target)
