@@ -128,3 +128,22 @@ a.alert-link:hover {
 footer a {
     text-decoration: underline;
 }
+
+#toc-wrapper .btn[aria-expanded] small {
+    display: inline;
+}
+#toc-wrapper .btn[aria-expanded] small:first-child {
+    display: none;
+}
+#toc-wrapper .btn[aria-expanded].collapsed small {
+    display: none;
+}
+#toc-wrapper .btn[aria-expanded].collapsed small:first-child {
+    display: inline;
+}
+#toc ul {
+    padding: 0 0 0 0.9rem;
+}
+#toc ul ul{
+    padding: 0 0 0 1.2rem;
+}

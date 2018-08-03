@@ -202,4 +202,14 @@
 
   setupGalleries(document.querySelectorAll('.gallery'))
   setupStyleSelector()
+
+  var tocCollapse = function () {
+    try {
+      $('#toc').collapse($(window).width() < 992 ? 'hide' : 'show')
+    } catch (e) {
+    }
+  }
+
+  $(window).on('resize', tocCollapse)
+  tocCollapse()
 })(window)

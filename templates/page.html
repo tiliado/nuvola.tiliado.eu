@@ -2,6 +2,22 @@
 {% block title %}{{ title }} • {{ super() }}{% endblock %}
 {% block content %}
   <div class="container">
-    {{ body | safe }}
+    <div class="row">
+      {% if toc %}
+        <div class="col-12 col-lg-3">
+          <div class="px-3 pt-3 pb-0 mb-5 border border-dark rounded" id="toc-wrapper">
+            <h4>
+              Contents
+              <button class="btn btn-link" data-toggle="collapse" data-target="#toc"
+                      aria-expanded="true" aria-controls="toc"><small>show</small> <small>hide</small></button>
+            </h4>
+            <div class="collapse show" id="toc">
+            {{ toc | safe }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="{%  if toc %}col-12 col-lg-9{% else %}col-12{% endif %}">{{ body | safe }}</div>
+    </div>
   </div>
 {% endblock %}
