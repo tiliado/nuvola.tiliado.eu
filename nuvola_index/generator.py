@@ -1,6 +1,8 @@
 from typing import List, Dict, Any
 import os
 
+from fxwebgen.context import Context
+from fxwebgen.postprocessor import PostProcessor
 from fxwebgen.templater import Templater
 from fxwebgen import generator
 
@@ -12,8 +14,12 @@ class Generator(generator.Generator):
 
     def __init__(self, distributions: List[Dict[str, Any]], apps: List[Dict[str, Any]], team: Dict[str, Any],
                  output_dir: str, static_dirs: List[str], templater: Templater, pages_dir: str = None):
-        super().__init__(templater, output_dir, pages_dir=pages_dir, static_dirs=static_dirs,
-                         datasets={'distributions': distributions, 'apps': apps, 'team': team})
+        ctx = Context(templater, output_dir,
+                      pages_dir=pages_dir,
+                      static_dirs=static_dirs,
+                      interlinks=None,
+                      datasets={'distributions': distributions, 'apps': apps, 'team': team})
+        super().__init__(ctx, post_processor=PostProcessor())
         self.distributions = distributions
         self.apps = apps
         self.team = team
@@ -71,11 +77,11 @@ class Generator(generator.Generator):
 
         canonical_path = "/index/"
         target = os.path.join(
-            self.output_dir,
+            self.ctx.output_dir,
             "index%s/index.html" % distro_spec if distro_spec else "index/index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
-            f.write(self.templater.render("index.html", {
+            f.write(self.ctx.templater.render("index.html", {
                 'navbar_tab': 'install',
                 "distributions": self.distributions,
                 "distro_name": distro_name,
@@ -121,10 +127,10 @@ class Generator(generator.Generator):
             templates.insert(0, "app_%s_%s.html" % (distro["id"], release["id"]))
 
         canonical_path = "/app/%s%s/" % (app["id"], distro_spec)
-        target = os.path.join(self.output_dir, "app/%s%s/index.html" % (app["id"], target))
+        target = os.path.join(self.ctx.output_dir, "app/%s%s/index.html" % (app["id"], target))
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
-            f.write(self.templater.render(templates, {
+            f.write(self.ctx.templater.render(templates, {
                 'navbar_tab': 'install',
                 "tab_target": "/app/" + app["id"],
                 "apps": self.apps,
@@ -171,10 +177,10 @@ class Generator(generator.Generator):
         templates.append("nuvola.html")
 
         canonical_path = "/nuvola%s/" % distro_spec
-        target = os.path.join(self.output_dir, "nuvola%s/index.html" % target)
+        target = os.path.join(self.ctx.output_dir, "nuvola%s/index.html" % target)
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
-            f.write(self.templater.render(templates, {
+            f.write(self.ctx.templater.render(templates, {
                 'navbar_tab': 'install',
                 "tab_target": "/nuvola",
                 "distributions": self.distributions,
@@ -187,21 +193,21 @@ class Generator(generator.Generator):
             }))
 
     def build_flatpak_refs(self):
-        self.build_flatpak_ref(self.templater.env.globals["nuvola"]["uid"], "nuvola")
+        self.build_flatpak_ref(self.ctx.templater.env.globals["nuvola"]["uid"], "nuvola")
         for app in self.apps:
             self.build_flatpak_ref(app["uid"], "app", app=app)
 
     def build_flatpak_ref(self, uid, template, **data):
-        target = os.path.join(self.output_dir, "%s.flatpakref" % uid)
+        target = os.path.join(self.ctx.output_dir, "%s.flatpakref" % uid)
         with open(target, "wt") as f:
-            f.write(self.templater.render(template + ".flatpakref", data))
+            f.write(self.ctx.templater.render(template + ".flatpakref", data))
 
     def build_team(self):
         canonical_path = "/team/"
-        target = os.path.join(self.output_dir, "team/index.html")
+        target = os.path.join(self.ctx.output_dir, "team/index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
-            f.write(self.templater.render(['team.html'], {
+            f.write(self.ctx.templater.render(['team.html'], {
                 'navbar_tab': 'team',
                 "team": self.team,
                 "canonical_path": canonical_path
