@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola Apps Runtime Fixes Issue with Spotify & Widevine Plugin, Tweaks Dark Theme Option and Scrollbars",
+      "link": "https://medium.com/nuvola-news/nuvola-apps-runtime-fixes-issue-with-spotify-widevine-plugin-tweaks-dark-theme-option-and-dbd22ebdce04",
+      "date": "August 8th, 2018",
+      "text": "The latest flatpak builds of Nuvola Apps fix the incompatibility of a new Widevine plugin (needed by Spotify), enable a dark theme preference for nine web apps that use a rather dark user interface, and improve the appearance of Chromium scrollbars (both light and dark variants are available). Individual Nuvola apps now check whether the installed Nuvola Apps Service does have the same version to prevent compatibility issues."
+    },
+    {
       "title": "Nuvola 4.12 Released",
       "link": "https://medium.com/nuvola-news/nuvola-4-12-released-297cb17630c1",
       "date": "July 21st, 2018",
