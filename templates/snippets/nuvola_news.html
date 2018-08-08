@@ -1,4 +1,4 @@
-{%  for news in data.news %}
+{%  for news in data.news[0:5] %}
   <div class="card my-3">
     <div class="card-body">
       <h5 class="card-title"><a href="{{ news.link }}">{{ news.title }}</a></h5>
