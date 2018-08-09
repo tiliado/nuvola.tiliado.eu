@@ -23,6 +23,8 @@ class Generator(generator.Generator):
         self.distributions = distributions
         self.apps = apps
         self.team = team
+        self.repo_pages_kind = self.resources.add_kind('repo_pages')
+        self.flatpakrefs_kind = self.resources.add_kind('flatpakrefs')
         maintainers = {}
         for app in apps:
             maintainer_name = app['maintainer']
@@ -44,11 +46,13 @@ class Generator(generator.Generator):
             maintainer['apps'].sort(key=lambda item: item['name'])
 
     def before_building_pages(self) -> None:
+        self.resources.remove_by_kind(self.repo_pages_kind)
         self.build_index()
         self.build_apps()
         self.build_nuvola()
-        self.build_flatpak_refs()
         self.build_team()
+        self.resources.remove_by_kind(self.flatpakrefs_kind)
+        self.build_flatpak_refs()
 
     def build_index(self):
         self.build_index_for_distro(None, None)
@@ -80,6 +84,7 @@ class Generator(generator.Generator):
             self.ctx.output_dir,
             "index%s/index.html" % distro_spec if distro_spec else "index/index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
+        self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render("index.html", {
                 'navbar_tab': 'install',
@@ -129,6 +134,7 @@ class Generator(generator.Generator):
         canonical_path = "/app/%s%s/" % (app["id"], distro_spec)
         target = os.path.join(self.ctx.output_dir, "app/%s%s/index.html" % (app["id"], target))
         os.makedirs(os.path.dirname(target), exist_ok=True)
+        self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(templates, {
                 'navbar_tab': 'install',
@@ -178,6 +184,7 @@ class Generator(generator.Generator):
 
         canonical_path = "/nuvola%s/" % distro_spec
         target = os.path.join(self.ctx.output_dir, "nuvola%s/index.html" % target)
+        self.resources.add(self.repo_pages_kind, None, target)
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(templates, {
@@ -199,6 +206,7 @@ class Generator(generator.Generator):
 
     def build_flatpak_ref(self, uid, template, **data):
         target = os.path.join(self.ctx.output_dir, "%s.flatpakref" % uid)
+        self.resources.add(self.flatpakrefs_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(template + ".flatpakref", data))
 
@@ -206,6 +214,7 @@ class Generator(generator.Generator):
         canonical_path = "/team/"
         target = os.path.join(self.ctx.output_dir, "team/index.html")
         os.makedirs(os.path.dirname(target), exist_ok=True)
+        self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(['team.html'], {
                 'navbar_tab': 'team',
