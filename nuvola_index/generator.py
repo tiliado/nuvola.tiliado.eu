@@ -66,6 +66,7 @@ class Generator(generator.Generator):
                 self.build_index_for_distro(distro, None)
 
     def build_index_for_distro(self, distro: Dict[str, Any] = None, release: Dict[str, Any] = None):
+        print(f'Index: {distro["id"] if distro else None} {release["id"] if release else None}')
         if not distro:
             distro_spec = ""
             distro_name = None
@@ -107,6 +108,7 @@ class Generator(generator.Generator):
             self.build_app_for_distro(app, distro, release)
 
     def build_app_for_distro(self, app, distro: Dict[str, Any] = None, release: Dict[str, Any] = None):
+        print(f'App: {app["id"]} {distro["id"] if distro else None} {release["id"] if release else None}')
         templates = ["app.html"]
         if not distro:
             target = ""
@@ -157,6 +159,7 @@ class Generator(generator.Generator):
                 self.build_nuvola_for_distro(distro, release)
 
     def build_nuvola_for_distro(self, distro: Dict[str, Any] = None, release: Dict[str, Any] = None):
+        print(f'Nuvola: {distro["id"] if distro else None} {release["id"] if release else None}')
         if not distro:
             target = ""
             distro = self.distributions[0]
@@ -205,6 +208,7 @@ class Generator(generator.Generator):
             self.build_flatpak_ref(app["uid"], "app", app=app)
 
     def build_flatpak_ref(self, uid, template, **data):
+        print(f'Flatpakref: {uid}')
         target = os.path.join(self.ctx.output_dir, "%s.flatpakref" % uid)
         self.resources.add(self.flatpakrefs_kind, None, target)
         with open(target, "wt") as f:
