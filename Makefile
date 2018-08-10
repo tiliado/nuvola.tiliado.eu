@@ -9,7 +9,7 @@ update:
 publish:
 	python3.6 -m nuvola_index -f 'https://nuvola.tiliado.eu/'
 	if [ -z "${http_proxy}" ]; then \
-		cd ~/dev/projects/fxdepl && ./fxdepl.py push -s v2.tiliado.eu -p nuvola.tiliado.eu -R; \
+		cd ~/dev/projects/fxdepl && ./fxdepl.py push -s server3.tiliado.eu -p nuvola.tiliado.eu -R; \
 	else \
-		cd ~/dev/projects/fxdepl && ./fxdepl.py push -s v2.tiliado.eu.vscht -p nuvola.tiliado.eu -R; \
+		cd ~/dev/projects/fxdepl && ./fxdepl.py push -s server.tiliado.eu.vscht -p nuvola.tiliado.eu -R; \
 	fi
