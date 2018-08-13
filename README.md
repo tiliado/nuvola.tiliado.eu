@@ -1,7 +1,7 @@
-Nuvola Apps Repository Index
-============================
+Nuvola Apps Website
+===================
 
-Tool to generate [Nuvola Apps Repository Index](https://nuvola.tiliado.eu).
+Tool to generate [Nuvola Apps Website](https://nuvola.tiliado.eu).
 
 Usage
 -----
@@ -9,32 +9,20 @@ Usage
 ### Requirements
 
   * Python 3.6
-  * Jinja2: `python3.6 -m pip install -U Jinja2`
-  * PyYAML: `python3.6 -m pip install PyYAML`
-  * css-html-js-minify: `python3.6 -m pip install css-html-js-minify`
+  * [fxwebgen](https://github.com/tiliado/fxwebgen)
 
 ### Development
 
 ```sh
-python3.6 -m nuvola_index -f 'http://127.0.0.1:8000/'
-cd build
-cd ..; python3.6 -m nuvola_index -f 'http://127.0.0.1:8000/'; cd build; python3 -m http.server
+./serve.sh
 ```
 
 ### Deployment
 
 ```sh
-cd ~/dev/projects/nuvolaplayer3/nuvola-apps-repository-index
-python3.6 ./update_apps.py \
-    -l ~/dev/projects/nuvolaplayer3/flatpak/recipes.yaml \
-    -d ~/dev/projects/nuvolaplayer3/apps
-git status
-git add data/apps.json && git commit -m "Update apps.json"
-python3.6 -m nuvola_index -f 'https://nuvola.tiliado.eu/'
-python3.6 /usr/local/bin/css-html-js-minify.py --overwrite build
-cd ~/dev/projects/fxdepl
-./fxdepl.py push -s v2.tiliado.eu -p nuvola.tiliado.eu -R
-./fxdepl.py push -s v2.tiliado.eu.vscht -p nuvola.tiliado.eu -R
+cd ~/dev/repo/nuvola.tiliado.eu
+make update
+make publish
 ```
 
 Architecture
