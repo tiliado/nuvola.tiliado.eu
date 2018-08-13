@@ -3,42 +3,7 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-12 col-lg-3">
-
-        <div class="list-group border border-dark rounded mb-5 d-none d-lg-block">
-          <div href="#" class="list-group-item list-group-item-action">
-              <h5>Documetation</h5>
-          </div>
-          <a href="{{ webroot }}/" class="list-group-item list-group-item-action {{ 'active' if path == '/docs/' }}">
-              Index
-          </a>
-          <a href="{{ webroot }}/4.html" class="list-group-item list-group-item-action {{ 'active' if path.startswith('/docs/4') }}">
-              Nuvola Apps 4
-              <span class="badge badge-success badge-pill align-middle px-3 ml-1">supported</span>
-          </a>
-          <a href="{{ webroot }}/3.0.html" class="list-group-item list-group-item-action {{ 'active' if path.startswith('/docs/3') }}">
-              Nuvola Player 3
-              <span class="badge badge-danger badge-pill align-middle px-2 ml-1">unsupported</span>
-          </a>
-        </div>
-
-        <ul class="nav nav-pills d-lg-none border border-dark rounded mb-3 pt-1">
-          <li class="nav-item">
-            <h5 class="nav-link">Documetation:</h5>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ 'active' if path == '/docs/' }}" href="{{ webroot }}/">Index</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ 'active' if path.startswith('/docs/4') }}" href="{{ webroot }}/4.html">
-              Nuvola Apps 4 <span class="badge badge-success badge-pill align-middle px-3 ml-1">supported</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ 'active' if path.startswith('/docs/3') }}" href="{{ webroot }}/3.0.html">
-              Nuvola Player 3 <span class="badge badge-danger badge-pill align-middle px-2 ml-1">unsupported</span></a>
-          </li>
-        </ul>
-
+      <div class="col-12 {{ 'col-lg-3' if toc else 'd-none' }}">
         {% if toc %}
           <div class="px-3 pt-3 pb-0 mb-5 border border-dark rounded" id="toc-wrapper">
             <h5>
@@ -52,7 +17,36 @@
           </div>
         {% endif %}
       </div>
-      <div class="col-12 col-lg-9">{{ body | safe }}</div>
+      <div class="col-12 {{ 'col-lg-9' if toc }}">
+        {% if path.startswith('/docs/4/') and path != '/docs/' %}
+          <nav aria-label="breadcrumb">
+            {% set sections = {
+              'features': 'Features', 'preferences': 'Preferences',
+               'news': 'News', 'releases': 'Release Notes'
+               }
+            %}
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item {{ 'active' if path == '/docs/' }}">
+                <a href="{{ webroot }}/">Documentation</a>
+              </li>
+              {% if path == '/docs/4/' %}
+                <li class="breadcrumb-item active"><a href="/docs/4/">Nuvola Apps 4</a></li>
+              {% elif path.startswith('/docs/4/') %}
+                <li class="breadcrumb-item {{ 'active' if path == '/docs/4/' }}"><a href="/docs/4/">Nuvola Apps 4</a></li>
+                {% for section, name in sections.items() %}
+                  {% set section_path = '/docs/4/' + section + '/' %}
+                  {% if path == section_path %}
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ section_path }}">{{ name }}</a></li>
+                  {% elif path.startswith(section_path) %}
+                    <li class="breadcrumb-item"><a href="{{ section_path }}">{{ name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ path }}">{{ title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </ol>
+          </nav>
+        {% endif %}
+        {{ body | safe }}</div>
     </div>
   </div>
 {% endblock %}
