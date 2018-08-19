@@ -3,6 +3,7 @@ Navbar: about
 Title: Nuvola Apps Project
 Snippets: apps gallery, Nuvola News
 Datasets: apps
+Nuvola_News_Limit: 5
 
 <h1>Nuvola Apps Project</h1>
 <div class="row align-items-center justify-content-left">
