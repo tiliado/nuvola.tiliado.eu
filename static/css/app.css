@@ -156,3 +156,10 @@ footer a {
 #toc ul ul{
     padding: 0 0 0 1.2rem;
 }
+
+.round-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+}
