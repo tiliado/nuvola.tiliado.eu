@@ -42,7 +42,16 @@ a.alert-link:hover {
 }
 
 .gallery {
-    margin: 1em auto 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+.gallery a {
+    cursor: zoom-in;
+}
+
+.gallery .row div {
+    margin-bottom: 1.5em;
 }
 
 #gallery-lightbox {
