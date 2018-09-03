@@ -83,6 +83,21 @@
     }
   }
 
+  var setupThumbnails = function (links) {
+    if (links) {
+      var number = 0;
+      for (var i = 0; i < links.length; i++) {
+        var images = links[i].querySelectorAll('img')
+        if (images) {
+          for (var j = 0; j < images.length; j++) {
+            number -= 1;
+            attachGallery(number, images, j)
+          }
+        }
+      }
+    }
+  }
+
   var attachGallery = function (galleryNumber, images, imageNumber) {
     var image = images[imageNumber]
     var link = image.parentNode
@@ -127,7 +142,9 @@
       next.onclick = galleryGoNext(images)
       var caption = mkelm('p', {'class': 'lightbox-caption'})
       var close = mkelm('span', {'class': 'lightbox-close'}, ['×'])
-      var toolbar = mkelm('div', {'class': 'lightbox-toolbar'}, [prev, position, next, close])
+      var toolbar = mkelm(
+          'div', {'class': 'lightbox-toolbar'},
+          galleryNumber < 0 ? [close] : [prev, position, next, close])
       var content = mkelm('div', {'class': 'lightbox-content'}, [img])
 
       close.onclick = removeGalleryLightbox
@@ -143,6 +160,7 @@
     img.src = image.parentNode.href
     img.alt = image.alt
     img.title = image.title || image.alt
+    img.style.cursor = galleryNumber < 0 ? 'zoom-out' : 'pointer'
     caption.textContent = image.alt || image.title
     position.textContent = 'Image ' + (imageNumber + 1) + '/' + images.length
     galleryLightbox.setAttribute('data-gallery-image', imageNumber)
@@ -165,6 +183,10 @@
   var galleryGo = function (event, images, step) {
     var gallery = document.getElementById('gallery-lightbox')
     var galleryNumber = gallery.getAttribute('data-gallery-number') * 1
+    if (galleryNumber < 0) {
+      removeGalleryLightbox()
+      return
+    }
     var imageNumber = gallery.getAttribute('data-gallery-image') * 1 + step
     while (imageNumber < 0) {
       imageNumber += images.length
@@ -201,6 +223,7 @@
   }
 
   setupGalleries(document.querySelectorAll('.gallery'))
+  setupThumbnails(document.querySelectorAll('.no-gallery.thumbnail'))
   setupStyleSelector()
 
   var tocCollapse = function () {
