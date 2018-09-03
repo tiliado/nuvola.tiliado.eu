@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "title": "Nuvola Comes With Start-Up Tips, New Documentation, and More",
+      "link": "https://medium.com/nuvola-news/nuvola-comes-with-start-up-tips-new-documentation-and-more-597326be591b",
+      "date": "August 24th, 2018",
+      "text": "The latest flatpak builds of Nuvola Apps show useful tips during the start-up, add help buttons to individual features for faster access to new documentation written from scratch, and allow you to start writing a bug report with just two clicks. We added new issue templates on Github to make easier to report bugs, suggest features or just ask questions."
+
+    },
+    {
       "title": "Nuvola Apps Runtime Fixes Issue with Spotify & Widevine Plugin, Tweaks Dark Theme Option and Scrollbars",
       "link": "https://medium.com/nuvola-news/nuvola-apps-runtime-fixes-issue-with-spotify-widevine-plugin-tweaks-dark-theme-option-and-dbd22ebdce04",
       "date": "August 8th, 2018",
