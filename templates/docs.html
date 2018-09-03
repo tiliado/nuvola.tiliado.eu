@@ -21,8 +21,7 @@
         {% if path.startswith('/docs/4/') and path != '/docs/' %}
           <nav aria-label="breadcrumb">
             {% set sections = {
-              'features': 'Features', 'preferences': 'Preferences',
-               'news': 'News', 'releases': 'Release Notes'
+               'releases': 'Release Notes'
                }
             %}
             <ol class="breadcrumb">
@@ -33,20 +32,45 @@
                 <li class="breadcrumb-item active"><a href="/docs/4/">Nuvola Apps 4</a></li>
               {% elif path.startswith('/docs/4/') %}
                 <li class="breadcrumb-item {{ 'active' if path == '/docs/4/' }}"><a href="/docs/4/">Nuvola Apps 4</a></li>
-                {% for section, name in sections.items() %}
-                  {% set section_path = '/docs/4/' + section + '/' %}
-                  {% if path == section_path %}
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ section_path }}">{{ name }}</a></li>
-                  {% elif path.startswith(section_path) %}
-                    <li class="breadcrumb-item"><a href="{{ section_path }}">{{ name }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ path }}">{{ title }}</a></li>
-                  {% endif %}
-                {% endfor %}
+                {% set section = path.split('/')[3] %}
+                {% set section_path = '/docs/4/' + section + '/' %}
+                {% set section_name = sections[section] %}
+                {% if not section_name %}
+                  <li class="breadcrumb-item active" aria-current="page"><a href="{{ path }}">{{ title }}</a></li>
+                {% elif path == section_path %}
+                  <li class="breadcrumb-item active" aria-current="page"><a href="{{ section_path }}">{{ section_name }}</a></li>
+                {% else %}
+                  <li class="breadcrumb-item"><a href="{{ section_path }}">{{ section_name }}</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="{{ path }}">{{ title }}</a></li>
+                {% endif %}
               {% endif %}
             </ol>
           </nav>
         {% endif %}
-        {{ body | safe }}</div>
+        {{ body | safe }}
+        <hr />
+        <div class="card border-info mb-3">
+          <div class="card-header bg-info text-light">Questions? Feedback? Found Bug?</div>
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Having trouble? We'd like to help!</strong> But you need to tell us. I'd like to ...
+              <ul>
+                <li>
+                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=bug-report.md">Report a bug</a>
+                  following <a href="https://github.com/tiliado/nuvolaruntime/wiki/Bug-Reporting-Guidelines">guidelines</a>.
+                </li>
+                <li>
+                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=question.md">Ask a queston</a>.
+                </li>
+                <li>
+                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=feature-request.md">Suggest a feature</a>.
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 {% endblock %}
