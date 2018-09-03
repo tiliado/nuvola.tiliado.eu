@@ -2,7 +2,7 @@
   "tiers": [
     ["Basic", "1", "https://gum.co/nuv1", "49", "https://gum.co/nuvolabasic"],
     ["Premium", "2.5", "https://gum.co/nuv3", "99", "https://gum.co/nuvolapremium"],
-    ["Patron", "9", "https://gum.co/nuv10", "299", "https://gum.co/nuvolapatron"]
+    ["Patron", "9", "https://gum.co/nuv10", "199", "https://gum.co/nuvolapatron"]
   ],
   "features": [
     [
