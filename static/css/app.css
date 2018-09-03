@@ -11,6 +11,10 @@ h1 {
     text-shadow: 1px 1px #b0b5b944;
 }
 
+.card-body :first-child {
+    margin-top: 0;
+}
+
 th a {
     display: block;
 }
@@ -216,3 +220,12 @@ footer a {
 .opacity-0 {
     opacity: 0;
 }
+
+.card-body :last-child {
+    margin-bottom: 0;
+}
+
+.card-header :last-child {
+    margin-bottom: 0;
+}
+
