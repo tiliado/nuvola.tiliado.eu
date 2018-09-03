@@ -1,0 +1,85 @@
+{
+  "tiers": [
+    ["Basic", "1", "https://gum.co/nuv1", "49", "https://gum.co/nuvolabasic"],
+    ["Premium", "2.5", "https://gum.co/nuv3", "99", "https://gum.co/nuvolapremium"],
+    ["Patron", "9", "https://gum.co/nuv10", "299", "https://gum.co/nuvolapatron"]
+  ],
+  "features": [
+    [
+      [
+        "https://nuvola.tiliado.eu/docs/4/flatpak.html#cross-distribution",
+        "Cross-distribution packages",
+        "Cross-distribution Flatpak packages work on every modern distribution and allow us maintain constant quality."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/flatpak.html#continuous",
+        "Continuous updates",
+        "You receive bug fixes and new features as soon as possible."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/desktop_launchers.html",
+        "Desktop launchers",
+        "You can launch individual apps from the list of installed applications, pin them to launchers, add them to favorites."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/background_playback.html",
+        "Background playback",
+        "Media streaming web apps can continue playing in background when you close the app window."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/keyboard_shortcuts.html",
+        "Keyboard shortcuts",
+        "You can configure both global and in-app keyboard shortcuts as you wish."],
+      [
+        "https://nuvola.tiliado.eu/docs/4/mpris.html",
+        "Media Player DBus interface",
+        "Also known as MPRIS. It is used by various applets (e.g. GNOME Shell player indicator, Unity sound indicstor, etc.) to control playback of media players."
+      ]
+    ],
+    [
+      [
+        "https://nuvola.tiliado.eu/docs/4/media_keys.html",
+        "Multiedia keys",
+        "You can control playback with multimedia keys on your keyboard."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/notifications.html",
+        "Desktop notifications",
+        "You can receive desktop notifications, e.g. when a track is changed."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/lyrics.html",
+        "Lyrics fetching",
+        "You can download lyric of songs."],
+      [
+        "https://nuvola.tiliado.eu/docs/4/scrobbling.html",
+        "Last.fm scrobbling",
+        "You can scrobble your music taste to Last.fm."],
+      [
+        "https://nuvola.tiliado.eu/docs/4/docks.html",
+        "Extra dock actions",
+        "Extra menu entries for Unity and elementaryOS docks, e.g. to control playback."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/tray_icon.html",
+        "Tray icons",
+        "A small icon in the notification area used to control playback and like/dislike actions."]
+    ],
+    [
+      [
+        "https://nuvola.tiliado.eu/docs/4/http_control.html",
+        "Remote Control over Network",
+        "Control Nuvola from a remote control web app."
+      ],
+      [
+        "https://nuvola.tiliado.eu/docs/4/audio_tweaks.html",
+        "Audio Tweaks",
+        "Do you wish to pause music when headphones are accidentally unplugged?"
+      ]
+    ],
+    [
+      ["/pricing/#patrons", "Advertized Patron status*", "Upon your approval, we wil advertise you as our patron."]
+    ]
+
+  ]
+}

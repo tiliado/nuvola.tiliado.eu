@@ -1,0 +1,3 @@
+{% for name, link in data.patrons -%}
+{%- if not loop.first -%}, {% endif -%}{%- if link -%}<a href="{{ link }}">{{ name }}</a>{%- else -%}{{ name }}{%- endif -%}
+{%- endfor -%}.
