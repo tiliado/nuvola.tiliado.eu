@@ -1,6 +1,13 @@
 {
   "news": [
     {
+      "title": "Nuvola Integrates Repeat & Shuffle Status, Adjusts to New Deezer Design, And More",
+      "link": "https://medium.com/nuvola-news/nuvola-integrates-repeat-shuffle-status-adjusts-to-new-deezer-design-and-more-397d3bc1e03a",
+      "date": "September 24th, 2018",
+      "text": "The latest flatpak builds of Nuvola Apps integrate shuffle/repeat states, fix compatibility with the new Deezer design, and introduce Flash plugin updater for Amazon Cloud Player. In addition, the free tier bar was removed from the main window, the purchase flow was simplified, and the pricing has changed offering lifetime licenses as a one-time payment."
+
+    },
+    {
       "title": "Nuvola Comes With Start-Up Tips, New Documentation, and More",
       "link": "https://medium.com/nuvola-news/nuvola-comes-with-start-up-tips-new-documentation-and-more-597326be591b",
       "date": "August 24th, 2018",
