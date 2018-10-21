@@ -4,6 +4,10 @@
     "name": "Ubuntu",
     "releases": [
       {
+        "id": "cosmic",
+        "name": "18.10 Cosmic Cuttlefish"
+      },
+      {
         "id": "bionic",
         "name": "18.04 LTS Bionic Beaver"
       },
