@@ -66,20 +66,16 @@
     "name": "Fedora",
     "releases": [
       {
+        "id": "fc29",
+        "name": "Fedora 29"
+      },
+      {
         "id": "fc28",
         "name": "Fedora 28"
       },
       {
         "id": "fc27",
         "name": "Fedora 27"
-      },
-      {
-        "id": "fc26",
-        "name": "Fedora 26"
-      },
-      {
-        "id": "fc25",
-        "name": "Fedora 25"
       }
     ]
   },
