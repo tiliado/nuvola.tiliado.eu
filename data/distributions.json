@@ -30,6 +30,10 @@
     "name": "elementaryOS",
     "releases": [
       {
+        "id": "juno",
+        "name": "5 Juno"
+      },
+      {
         "id": "loki",
         "name": "0.4 Loki"
       }

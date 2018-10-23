@@ -1,0 +1,166 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+
+  <h2>Install Flatpak & Friends</h2>
+  <p>
+    <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
+    sandboxed applications.
+    <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration.
+    <strong>GNOME Software</strong> allows you to browse and install flatpaks in a more user friendly way.
+    It is needed because elementary's AppCenter still doesn't support flatpaks.
+  </p>
+  <p>
+    All packages are available in the elementaryOS 5 Juno repository. No third-party package archive is required.
+  </p>
+  <ol>
+    <li>Launch AppCenter and search for "flatpak".</li>
+    <li>Install the package "Flatpak Support" ("Flatpak is a framework for desktop applications on Linux").</li>
+  </ol>
+
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/elementary_launch_appcenter.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_launch_appcenter.thumb.png"
+               class="img-thumbnail"
+               alt="Launch elementaryOS AppCenter.">
+        </a>
+        <a href="/screenshots/nuvola/elementary_appcenter_search.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_appcenter_search.thumb.png"
+               class="img-thumbnail"
+               alt="In AppCenter, enter the search field.">
+        </a>
+      </div>
+      <div class="row">
+        <a href="/screenshots/nuvola/elementary_app_center_search_for_flatpak.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_app_center_search_for_flatpak.thumb.png"
+               class="img-thumbnail"
+               alt="Search for 'flatpak' and install 'Flatpak Support'.">
+        </a>
+        <a href="/screenshots/nuvola/elementary_install_flatpak_authentication.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_install_flatpak_authentication.thumb.png"
+               class="img-thumbnail"
+               alt="Confirm installation by entering your password.">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type <code>sudo apt install flatpak xdg-desktop-portal-gtk gnome-software-plugin-flatpak</code>
+    and press the Enter key to install these packages.
+  </p>
+
+  <h2>Restart your computer</h2>
+  <p>
+    It is necessary to restart your computer to add Flatpak paths alongside the system ones and to activate
+    the Ubuntu Software Flatpak Plugin. Otherwise, you may see strange errors.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+
+  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
+    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+  </p>
+
+  <ol>
+    <li>
+      <a class="btn btn-primary" href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install Flathub repository with GNOME Software
+      </a>
+    </li>
+    <li>
+      <a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        Click to install Nuvola Apps repository with GNOME Software
+      </a>
+    </li>
+    <li>
+      <p>
+        Refresh GNOME Software package cache: Launch <em>GNOME Software</em> → switch to the <em>Updates</em> screen
+        → click the <em>Refresh</em> button in the top left corner.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/elementary_launch_gnome_software.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/elementary_launch_gnome_software.thumb.png"
+                   class="img-thumbnail"
+                   alt="Launch GNOME Software.">
+            </a>
+            <a href="/screenshots/nuvola/elementary_gnome_software_click_updates.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/elementary_gnome_software_click_updates.thumb.png"
+                   class="img-thumbnail"
+                   alt="In GNOME Software, switch to Updates tab.">
+            </a>
+          </div>
+          <div class="row">
+            <a href="/screenshots/nuvola/elementary_gnome_software_refresh.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_main_screen_click_updates.thumb.png"
+                   class="img-thumbnail"
+                   alt="Click the 'Refresh' button.">
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type following commands:
+  </p>
+  <ul>
+  <li><code>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code></li>
+  <li><code>flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code></li>
+  <li><code>flatpak update</code></li>
+  </ul>
+
+  {{ snippets.about_nuvola_service() }}
+
+  <p>
+    In order to <strong>install Nuvola Apps Service with GNOME Software</strong>, launch <em>GNOME Software</em>,
+    search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
+  </p>
+
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/elementary_launch_gnome_software.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_launch_gnome_software.thumb.png"
+               class="img-thumbnail"
+               alt="Launch GNOME Software.">
+        </a>
+        <a href="/screenshots/nuvola/elementary_gnome_software_click_search.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_gnome_software_click_search.thumb.png"
+               class="img-thumbnail"
+               alt="In GNOME Software, click Search button.">
+        </a>
+      </div>
+      <div class="row">
+        <a href="/screenshots/nuvola/elementary_gnome_software_search_for_nuvola_service.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_gnome_software_search_for_nuvola_service.thumb.png" class="img-thumbnail"
+               alt="Search for '{{ nuvola.name }}'.">
+        </a>
+        <a href="/screenshots/nuvola/elementary_gnome_software_install_nuvola_service.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary_gnome_software_install_nuvola_service.thumb.png" class="img-thumbnail"
+               alt="Click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+  <p>
+    Alternatively, launch <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>,
+    type <code>flatpak install nuvola {{ nuvola.uid }}</code> and press the Enter key to install this package.
+  </p>
+
+
+  {{ snippets.install_individual_apps(apps, distro_spec) }}
+
+{% endblock %}
