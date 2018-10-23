@@ -105,7 +105,7 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 
 {# ================================ UBUNTU =============================== #}
 
-{%  macro ubuntu_install_flatpak_with_gnome_software(ubuntu_version) %}
+{%  macro ubuntu_install_flatpak_with_gnome_software(ubuntu_version, img_suffix="") %}
   <h2>Install Flatpak and Friends</h2>
   <p>
     <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of
@@ -173,13 +173,13 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
       <div class="gallery">
         <div class="container-fluid text-center">
           <div class="row">
-            <a href="/screenshots/nuvola/ubuntu_software_main_screen_click_updates.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/ubuntu_software_main_screen_click_updates.thumb.png"
+            <a href="/screenshots/nuvola/ubuntu_software_main_screen_click_updates{{ img_suffix }}.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_main_screen_click_updates{{ img_suffix }}.thumb.png"
                    class="img-thumbnail"
                    alt="Launch Ubuntu Software and switch to the 'Updates' screen.">
             </a>
-            <a href="/screenshots/nuvola/ubuntu_software_updates_click_refresh.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/ubuntu_software_updates_click_refresh.thumb.png"
+            <a href="/screenshots/nuvola/ubuntu_software_updates_click_refresh{{ img_suffix }}.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_updates_click_refresh{{ img_suffix }}.thumb.png"
                    class="img-thumbnail"
                    alt="Click the 'Refresh' button.">
             </a>
@@ -235,7 +235,7 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
   </p>
 {% endmacro %}
 
-{% macro ubuntu_install_nuvola_service_wtih_gnome_software() %}
+{% macro ubuntu_install_nuvola_service_wtih_gnome_software(img_suffix="") %}
 
   {{ about_nuvola_service() }}
   <p>
@@ -245,12 +245,12 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
   <div class="gallery">
     <div class="container-fluid text-center">
       <div class="row">
-        <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps.png" class="col-sm-6">
-          <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps.thumb.png" class="img-thumbnail"
+        <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps{{ img_suffix }}.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps{{ img_suffix }}.thumb.png" class="img-thumbnail"
                alt="Launch Ubuntu Software and search for '{{ nuvola.name }}'.">
         </a>
-        <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps.png" class="col-sm-6">
-          <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps.thumb.png" class="img-thumbnail"
+        <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps{{ img_suffix }}.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps{{ img_suffix }}.thumb.png" class="img-thumbnail"
                alt="Click the 'Install' button.">
         </a>
       </div>
@@ -262,7 +262,7 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
   </p>
 {% endmacro %}
 
-{% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec, environments) %}
+{% macro ubuntu_install_app_with_ubuntu_software(app, distro_spec, environments, img_suffix="") %}
   <h2>Install {{ app.name }}</h2>
   <ol>
     <li>
@@ -276,12 +276,12 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
       <div class="gallery">
         <div class="container-fluid text-center">
           <div class="row">
-            <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps.thumb.png" class="img-thumbnail"
+            <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps{{ img_suffix }}.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps{{ img_suffix }}.thumb.png" class="img-thumbnail"
               alt="Launch Ubuntu Software and search for '{{ app.name }}'.">
             </a>
-            <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps.thumb.png" class="img-thumbnail"
+            <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps{{ img_suffix }}.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps{{ img_suffix }}.thumb.png" class="img-thumbnail"
               alt="Click the 'Install' button.">
             </a>
           </div>

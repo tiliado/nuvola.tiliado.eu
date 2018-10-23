@@ -3,9 +3,9 @@
 
 {% block tab_content %}
 
-  {{ snippets.ubuntu_install_flatpak_with_gnome_software("18.10") }}
+  {{ snippets.ubuntu_install_flatpak_with_gnome_software("18.10", "_18_10") }}
   {{ snippets.purge_old_nuvola() }}
-  {{ snippets.ubuntu_install_nuvola_service_wtih_gnome_software() }}
+  {{ snippets.ubuntu_install_nuvola_service_wtih_gnome_software("_18_10") }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
 {% endblock %}
