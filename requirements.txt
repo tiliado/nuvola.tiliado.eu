@@ -1,1 +1,7 @@
 circleci
+PyYAML
+beautifulsoup4
+Pillow
+Markdown==2.6.11
+python-resize-image
+Jinja2
