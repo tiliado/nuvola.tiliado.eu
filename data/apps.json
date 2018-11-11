@@ -176,6 +176,14 @@
     "version": "3.1"
   },
   {
+    "id": "tidal",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Tidal",
+    "uid": "eu.tiliado.NuvolaAppTidal",
+    "version": "1.0"
+  },
+  {
     "id": "tunein",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
