@@ -1,0 +1,192 @@
+{% macro install_flatpak_with_gui() %}
+  <h2>Install Flatpak and Friends</h2>
+  <p>
+    <strong>Flatpak</strong> is a cross-distribution framework for
+    distribution and running of sandboxed applications.
+    <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with
+    desktop integration.
+    <strong>KDE Discover</strong> and <strong>GNOME Software</strong> make
+    the browsing and installation of Flatpaks easier.
+  </p>
+  <p>
+    All required packages are available in OpenSUSE repositories, run
+    following commands as root/sudo to install them:
+  </p>
+  <ul>
+    <li>
+      KDE Plasma Workstation:
+      <code>
+        zypper install flatpak xdg-desktop-portal
+        xdg-desktop-portal-kde discover
+      </code>
+    </li>
+    <li>
+      GNOME Workstation:
+      <code>
+        zypper install flatpak xdg-desktop-portal
+        xdg-desktop-portal-gtk gnome-software
+      </code>
+    </li>
+  </ul>
+  <p>
+    Then restart your computer to add Flatpak paths alongside the system
+    ones. Otherwise, you may see strange errors. Unfortunately, just logging out
+    and logging in is not enough.
+  </p>
+{% endmacro %}
+
+{% macro add_repositories_with_gnome_software() %}
+<ol>
+  <li>
+    <a class="btn btn-primary"
+       href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+      <span class="glyphicon glyphicon-download-alt"
+        aria-hidden="true"></span>
+      Click to install Flathub repository with GNOME Software
+    </a>
+  </li>
+  <li>
+    <a class="btn btn-primary"
+       href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+      <span class="glyphicon glyphicon-download-alt"
+        aria-hidden="true"></span>
+      Click to install Nuvola Apps repository with GNOME Software
+    </a>
+  </li>
+  <li>
+    <p>Finally, refresh the database of packages: Launch <em>GNOME
+      Software</em> → switch to the <em>Updates</em> screen
+      → click the <em>Refresh</em> button in the top left corner. </p>
+    <div class="gallery">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <a href="/screenshots/nuvola/fedora_software_main_screen_click_updates.png"
+             class="col-sm-6">
+            <img
+                src="/screenshots/nuvola/fedora_software_main_screen_click_updates.thumb.png"
+                class="img-thumbnail"
+                alt="Launch GNOME Software and switch to the 'Updates' screen.">
+          </a>
+          <a href="/screenshots/nuvola/fedora_software_updates_click_refresh.png"
+             class="col-sm-6">
+            <img
+                src="/screenshots/nuvola/fedora_software_updates_click_refresh.thumb.png"
+                class="img-thumbnail"
+                alt="Click the 'Refresh' button.">
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+</ol>
+{% endmacro %}
+
+{% macro add_repositories_with_kde_discover(refresh_packages=True) %}
+<ol>
+  <li>
+    <a class="btn btn-primary"
+       href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+      <span class="glyphicon glyphicon-download-alt"
+        aria-hidden="true"></span>
+      Click to install Flathub repository with KDE Discover
+    </a>
+  </li>
+  <li>
+    <a class="btn btn-primary"
+       href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+      <span class="glyphicon glyphicon-download-alt"
+        aria-hidden="true"></span>
+      Click to install Nuvola Apps repository with KDE Discover
+    </a>
+  </li>
+  <li>
+    {%  if refresh_packages %}
+      <p>Finally, refresh the database of packages: Launch <em>KDE Discover</em> →
+        switch to the <em>Updates</em> section
+        → click the <em>Check for Updates</em> button in the top right corner. </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/tumbleweed_discover_click_updates.png"
+               class="col-sm-6">
+              <img
+                  src="/screenshots/nuvola/tumbleweed_discover_click_updates.thumb.png"
+                  class="img-thumbnail"
+                  alt="Switch to the 'Updates' screen and click the 'Check for Updates'.">
+            </a>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <strong>KDE Discover</strong> may ask you for
+      an authentication to update the database of packages.
+    {% endif %}
+  </li>
+
+</ol>
+{% endmacro %}
+
+{% macro install_nuvola_service_with_kde_discover(codename) %}
+  <p>
+    In order to <strong>install Nuvola Apps Service with KDE Discover</strong>,
+    launch <em>KDE Discover</em>, search for <em>Nuvola Apps Service</em> and
+    finally click the <em>Install</em> button.
+  </p>
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/{{ codename }}_discover_click_applications.png"
+           class="col-sm-6">
+          <img
+              src="/screenshots/nuvola/{{ codename }}_discover_click_applications.thumb.png"
+              class="img-thumbnail"
+              alt="Launch KDE Discover and open Applications section.">
+        </a>
+        <a href="/screenshots/nuvola/{{ codename }}_discover_search_for_nuvola.png"
+           class="col-sm-6">
+          <img
+              src="/screenshots/nuvola/{{ codename }}_discover_search_for_nuvola.thumb.png"
+              class="img-thumbnail"
+              alt="Search for '{{ nuvola.name }}' and click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro install_nuvola_service_with_gnome_software(codename) %}
+  <p>
+    In order to <strong>install Nuvola Apps Service with GNOME Software</strong>,
+    launch <em>GNOME Software</em>, search for <em>Nuvola Apps Service</em> and
+    finally click the <em>Install</em> button.
+  </p>
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/fedora_software_search_for_nuvola_service.png"
+           class="col-sm-6">
+          <img
+              src="/screenshots/nuvola/fedora_software_search_for_nuvola_service.thumb.png"
+              class="img-thumbnail"
+              alt="Launch Ubuntu Software and search for '{{ nuvola.name }}'.">
+        </a>
+        <a href="/screenshots/nuvola/fedora_software_install_nuvola_service.png"
+           class="col-sm-6">
+          <img
+              src="/screenshots/nuvola/fedora_software_install_nuvola_service.thumb.png"
+              class="img-thumbnail"
+              alt="Click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro install_nuvola_service_from_terminal(codename) %}
+  <p>
+    Alternatively, launch a Linux terminal emulator and run a following command:
+  </p>
+  <ul>
+    <li><code>flatpak install nuvola {{ nuvola.uid }}</code></li>
+  </ul>
+{% endmacro %}

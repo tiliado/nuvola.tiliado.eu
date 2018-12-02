@@ -1,0 +1,37 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+{% import "snippets_opensuse.html" as opensuse %}
+
+{% block tab_content %}
+  <h2>Install {{ app.name }}</h2>
+  <p>
+    You can install <strong>{{ app.name }}</strong> easily with
+    <a href="#install-kde">KDE Discover (KDE Plasma Workstation)</a> or
+    <a href="#install-gnome">GNOME Software (GNOME Workstation)</a>.
+    Alternatively, you can install <strong>{{ app.name }}</strong>
+    <a href="#install-terminal">from command-line</a>.
+  </p>
+
+  <h4 id="install-kde">KDE Plasma Workstation</h4>
+  {{ snippets.install_app_with_kde_discover(app, distro_spec, "e.g., KDE Plasma, GNOME Shell") }}
+
+  <h4 id="install-gnome">GNOME Workstation</h4>
+  {{ snippets.install_app_with_gnome_software(app, distro_spec, "e.g., KDE Plasma, GNOME Shell") }}
+
+  <h4 id="install-terminal">From Terminal</h4>
+  {{  snippets.install_app_from_terminal(app, distro_spec, "e.g., KDE Plasma, GNOME Shell") }}
+
+  {{ snippets.generic_launch_app(app, "e.g., KDE Plasma, GNOME Shell") }}
+
+  <h2>Troubleshooting</h2>
+  <p>
+    It may sometimes happen that <em>GNOME Platform flatpak</em> is not
+    installed automatically although it should have been. You need to install
+    it manually then.
+  </p>
+  <ul>
+    <li>Command: <code>flatpak run {{ app.uid }}</code></li>
+    <li>Error message: <code>error: runtime/org.gnome.Platform/x86_64/3.30 not installed</code></li>
+    <li>Solution: <code>flatpak install flathub org.gnome.Platform/x86_64/3.30</code></li>
+  </ul>
+{% endblock %}

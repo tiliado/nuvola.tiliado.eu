@@ -51,6 +51,113 @@ rm -rf ~/.config/nuvolaplayer3
 rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 {% endmacro %}
 
+
+{% macro install_app_with_gnome_software(app, distro_spec, environments) %}
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and
+        add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      <p>
+        In order to <strong>install {{ app.name }} with GNOME Software</strong>,
+        launch <em>GNOME Software</em>, search for <em>{{ app.name }}</em> and
+        finally click the <em>Install</em> button.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/fedora_software_search_for_nuvola_app.png"
+               class="col-sm-6">
+              <img
+                  src="/screenshots/nuvola/fedora_software_search_for_nuvola_app.thumb.png"
+                  class="img-thumbnail"
+                  alt="Launch GNOME Software and search for '{{ app.name }}'.">
+            </a>
+            <a href="/screenshots/nuvola/fedora_software_install_nuvola_app.png"
+               class="col-sm-6">
+              <img
+                  src="/screenshots/nuvola/fedora_software_install_nuvola_app.thumb.png"
+                  class="img-thumbnail"
+                  alt="Click the 'Install' button.">
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      {{ log_out_log_in(environments) }}
+    </li>
+  </ol>
+{% endmacro %}
+
+{% macro install_app_with_kde_discover(app, distro_spec, environments) %}
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and
+        add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      <p>
+        In order to <strong>install {{ app.name }} with KDE Discover</strong>,
+        launch <em>KDE Discover</em>, search for <em>{{ app.name }}</em> and
+        finally click the <em>Install</em> button.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/leap150_discover_click_applications.png"
+               class="col-sm-6">
+              <img
+                  src="/screenshots/nuvola/leap150_discover_click_applications.thumb.png"
+                  class="img-thumbnail"
+                  alt="Launch KDE Discover and open Applications section.">
+            </a>
+            <a href="/screenshots/nuvola/leap150_discover_search_for_app.png"
+               class="col-sm-6">
+              <img
+                  src="/screenshots/nuvola/leap150_discover_search_for_app.thumb.png"
+                  class="img-thumbnail"
+                  alt="Search for '{{ app.name }}' and click the 'Install' button.">
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      {{ log_out_log_in(environments) }}
+    </li>
+  </ol>
+{% endmacro %}
+
+{% macro install_app_from_terminal(app, distro_spec, environments) %}
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and
+        add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      <p>
+        Launch a Linux terminal emulator and run the following command to
+        install this package:<br />
+        <code>flatpak install nuvola {{ app.uid }}</code>
+      </p>
+    </li>
+    <li>
+      {{ log_out_log_in(environments) }}
+    </li>
+  </ol>
+{% endmacro %}
+
+{% macro log_out_log_in(environments) %}
+  <p>
+    Then <strong>log out and log in back</strong> to let your desktop
+    environment ({{ environments }}) find out that
+    a new application has been installed. Otherwise, you may see mismatched
+    application icons and other funny bugs.
+  </p>
+{% endmacro %}
+
 {% macro generic_launch_app(app, environments) %}
   <h2>Launch {{ app.name }} </h2>
   <ul>
@@ -74,6 +181,19 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
     <code>flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code>,
     and <code>flatpak update</code>.
   </p>
+{% endmacro %}
+
+{% macro add_flatpak_repositories_from_command_line() %}
+<p>
+  Launch a Linux terminal emulator and run following commands:
+</p>
+<ol>
+  <li><code>flatpak remote-add --if-not-exists flathub
+    https://dl.flathub.org/repo/flathub.flatpakrepo</code></li>
+  <li><code>flatpak remote-add --if-not-exists nuvola
+    https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo</code></li>
+  <li><code>flatpak update</code></li>
+</ol>
 {% endmacro %}
 
 {% macro generic_install_nuvola_service_from_command_line() %}
@@ -465,38 +585,14 @@ rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
 
 {% macro fedora_install_app_with_gnome_software(app, distro_spec, environments) %}
   <h2>Install {{ app.name }}</h2>
-  <ol>
-    <li>
-      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
-    </li>
-    <li>
-      <p>
-        In order to <strong>install {{ app.name }} with GNOME Software</strong>, launch <em>GNOME Software</em>,
-        search for <em>{{ app.name }}</em> and finally click the <em>Install</em> button.
-      </p>
-      <div class="gallery">
-        <div class="container-fluid text-center">
-          <div class="row">
-            <a href="/screenshots/nuvola/fedora_software_search_for_nuvola_app.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/fedora_software_search_for_nuvola_app.thumb.png" class="img-thumbnail"
-                   alt="Launch Ubuntu Software and search for '{{ app.name }}'.">
-            </a>
-            <a href="/screenshots/nuvola/fedora_software_install_nuvola_app.png" class="col-sm-6">
-              <img src="/screenshots/nuvola/fedora_software_install_nuvola_app.thumb.png" class="img-thumbnail"
-                   alt="Click the 'Install' button.">
-            </a>
-          </div>
-        </div>
-      </div>
-      <p>
-        Alternatively, launch a Linux terminal emulator,
-        type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
-      </p>
-    </li>
-    <li>
-      Then <strong>log out and log in back</strong> to let your desktop environment ({{ environments }}) find out that
-      a new application has been installed. Otherwise, you may see mismatched application icons and other funny bugs.
-    </li>
-  </ol>
+
+  {{ install_app_with_gnome_software(app, distro_spec, environments) }}
+
+  <p>
+     Alternatively, launch a Linux terminal emulator,
+     type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
+  </p>
+  {{ log_out_log_in(environments) }}
+
   {{ generic_launch_app(app, environments) }}
 {% endmacro %}

@@ -80,6 +80,20 @@
     ]
   },
   {
+    "id": "opensuse",
+    "name": "OpenSUSE",
+    "releases": [
+      {
+        "id": "leap150",
+        "name": "Leap 15.0"
+      },
+      {
+        "id": "tumbleweed",
+        "name": "Tumbleweed"
+      }
+    ]
+  },
+  {
     "id": "archlinux",
     "name": "Arch Linux"
   },
