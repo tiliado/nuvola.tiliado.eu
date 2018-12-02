@@ -45,7 +45,8 @@ Last.fm scrobbling, lyrics fetching, and much more.
 <bootstrap>
   <accordion id="acordion" class="my-5">
     <entry show="false" class="border-primary">
-       <header class="border-primary">{. fas fa-music} 25 Music streaming services</header>
+       <header class="border-primary">{. fas fa-music} 27 Music streaming 
+       services</header>
        <body>
          Nuvola supports the largest amount of [music streaming services](#services).
        </body>

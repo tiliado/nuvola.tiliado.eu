@@ -9,6 +9,7 @@
     "pandora",
     "yandex_music",
     "qobuz",
+    "tidal",
     "bbc_iplayer",
     "jupiter_broadcasting",
     "pocket_casts",
@@ -22,6 +23,7 @@
     "siriusxm",
     "soundcloud",
     "tunein",
+    "mentorfm",
     "brain_fm",
     "focus_at_will",
     "owncloud_music"
