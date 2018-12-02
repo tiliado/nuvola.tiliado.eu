@@ -1,6 +1,9 @@
 h2, h3, h4, h5 {
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+h2, h3 {
     padding-bottom: 0.25em;
     border-bottom: 1px solid #9fcdff;
 }
