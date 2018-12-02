@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.14 Released",
+      "link": "https://medium.com/nuvola-news/nuvola-4-14-released-533f1677ab5b",
+      "date": "November 11th, 2018",
+      "text": "Nuvola 4.14 was released. It brings two new services (Tidal and MentorFM), a few user-visible changes, upgrades the library stack (Chromium and GNOME Platform) and continues the quest to improve the quality of the entire codebase."
+    },
+    {
       "title": "Nuvola 4.13 Released",
       "link": "https://medium.com/nuvola-news/nuvola-4-13-released-2fdf80c73742",
       "date": "October 14th, 2018",
