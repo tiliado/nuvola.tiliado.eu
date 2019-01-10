@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.15 Released",
+      "link": "https://medium.com/nuvola-news/nuvola-4-15-released-ccf2e02e6d4e",
+      "date": "December 28th, 2018",
+      "text": "Nuvola 4.15 was released. It brings the 28th streaming service (Jamendo), officially supports OpenSUSE, uses client-side window decorations by default (can be changed), fixes a few memory leaks and continues the quest to improve the quality of the entire codebase."
+    },
+    {
       "title": "Nuvola 4.14 Released",
       "link": "https://medium.com/nuvola-news/nuvola-4-14-released-533f1677ab5b",
       "date": "November 11th, 2018",
