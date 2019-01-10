@@ -72,6 +72,14 @@
     "version": "6.2"
   },
   {
+    "id": "ivoox",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Ivoox",
+    "uid": "eu.tiliado.NuvolaAppIvoox",
+    "version": "1.0"
+  },
+  {
     "id": "jamendo",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
