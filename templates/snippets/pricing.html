@@ -1,6 +1,6 @@
 <script src="https://gumroad.com/js/gumroad.js"></script>
 <div class="card-deck text-center my-5">
-{% for tier, monthly, monthly_link, once, once_link in data.tiers %}
+{% for tier, type, text, link in data.tiers %}
   {%  set i = loop.index %}
   <div class="card text-white {{ 'bg-dark' if loop.index != 2 else 'bg-success' }} shadow box-shadow">
     <div class="card-header">
@@ -11,22 +11,12 @@
     </div>
     <div class="card-body">
       <p class="card-text">
-        {%  if monthly %}
-          <a class="btn btn-outline-light btn-block" href="{{ monthly_link }}" target="_blank" data-gumroad-single-product="true">
-          <small class="d-block">subscription from</small>
-          <strong>${{ monthly }} / month</strong></a>
-          <a class="btn btn-outline-light btn-block" href="{{ once_link }}" target="_blank" data-gumroad-single-product="true">
-          <small class="d-block">lifetime license for</small>
-            <strong>${{ once }} once</strong></a>
+        {%  if type == 'gumroad' %}
+          <a class="btn btn-outline-light btn-block" href="{{ link }}" target="_blank" data-gumroad-single-product="true">
+          <strong>{{ text }}</strong></a>
         {%  else %}
-          <a class="btn btn-outline-light btn-block" href="{{ monthly_link }}"
-             data-gumroad-single-product="true">
-            <small class="d-block">no subscription</small>
-            <strong>$0 / month</strong></a>
-          <a class="btn btn-outline-light btn-block" href="{{ once_link }}"
-             data-gumroad-single-product="true">
-            <small class="d-block">no payment</small>
-            <strong>Download for free</strong></a>
+          <a class="btn btn-outline-light btn-block" href="{{ link }}">
+            <strong>{{ text }}</strong></a>
         {% endif %}
       </p>
     </div>
@@ -36,7 +26,7 @@
         {% for link, name, tooltip in features %}
           <a  href="{{ link }}" class="list-group-item bg-secondary text-white px-1 py-2"
             target="_blank"  data-toggle="tooltip" title="{{ tooltip }}">
-            {% if j <= i + 1 %}<i class="fas fa-check text-success"></i> <u>{{ name }}</u>
+            {% if j <= i %}<i class="fas fa-check text-success"></i> <u>{{ name }}</u>
             {% else %}<i class="fas fa-times text-danger"></i> <s>{{ name }}</s>{%  endif %}
           </a>
         {% endfor %}
@@ -44,27 +34,15 @@
 
     </div>
     <div class="card-footer bg-secondary">
-      {% if monthly %}
-        <a class="btn {{ 'btn-dark' if loop.index != 2 else 'btn-success' }} btn-block" href="{{ monthly_link }}" target="_blank"
-           data-gumroad-single-product="true">
-          <strong>Subscribe</strong>
-          <small class="d-block">software as a service</small>
-        </a>
-        <a class="btn {{ 'btn-dark' if loop.index != 2 else 'btn-success' }} btn-block" href="{{ once_link }}" target="_blank"
-           data-gumroad-single-product="true">
-          <strong>Purchase</strong>
-          <small class="d-block">lifetime license</small>
+      {% if type == 'gumroad' %}
+        <a class="btn {{ 'btn-dark' if loop.index != 2 else 'btn-success' }} btn-block"
+           href="{{ link }}" target="_blank" data-gumroad-single-product="true">
+          <strong>{{ text }}</strong>
         </a>
       {% else %}
-        <a class="btn btn-outline-light btn-block" href="{{ monthly_link }}"
-           data-gumroad-single-product="true">
-          <strong>Download for free</strong>
-          <small class="d-block">purchase later</small>
-        </a>
-        <a class="btn btn-outline-light btn-block invisible" href="{{ monthly_link }}"
-           data-gumroad-single-product="true">
-          <strong>Download for free</strong>
-          <small class="d-block">purchase later</small>
+        <a class="btn {{ 'btn-dark' if loop.index != 2 else 'btn-success' }} btn-block"
+           href="{{ link }}">
+          <strong>{{ text }}</strong>
         </a>
       {% endif %}
     </div>

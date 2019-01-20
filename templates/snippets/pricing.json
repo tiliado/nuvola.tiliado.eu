@@ -1,8 +1,8 @@
 {
   "tiers": [
-    ["Basic", "1", "https://gum.co/nuv1", "49", "https://gum.co/nuvolabasic"],
-    ["Premium", "2.5", "https://gum.co/nuv3", "99", "https://gum.co/nuvolapremium"],
-    ["Patron", "9", "https://gum.co/nuv10", "199", "https://gum.co/nuvolapatron"]
+    ["Free", "link", "Download for free", "https://nuvola.tiliado.eu/index/"],
+    ["Premium", "gumroad", "Pay what you wish", "https://gum.co/nuvola-pwyw"],
+    ["Patron", "gumroad", "Subscribe for $9/month", "https://gum.co/nuv10"]
   ],
   "features": [
     [
@@ -29,14 +29,15 @@
       [
         "https://nuvola.tiliado.eu/docs/4/keyboard_shortcuts.html",
         "Keyboard shortcuts",
-        "You can configure both global and in-app keyboard shortcuts as you wish."],
+        "You can configure both global and in-app keyboard shortcuts as you wish."
+      ]
+    ],
+    [
       [
         "https://nuvola.tiliado.eu/docs/4/mpris.html",
         "Media Player DBus interface",
         "Also known as MPRIS. It is used by various applets (e.g. GNOME Shell player indicator, Unity sound indicstor, etc.) to control playback of media players."
-      ]
-    ],
-    [
+      ],
       [
         "https://nuvola.tiliado.eu/docs/4/media_keys.html",
         "Multimedia keys",
@@ -63,9 +64,8 @@
       [
         "https://nuvola.tiliado.eu/docs/4/tray_icon.html",
         "Tray icons",
-        "A small icon in the notification area used to control playback and like/dislike actions."]
-    ],
-    [
+        "A small icon in the notification area used to control playback and like/dislike actions."
+      ],
       [
         "https://nuvola.tiliado.eu/docs/4/http_control.html",
         "Remote Control over Network",
