@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.16 Brings Libre.FM Scrobbling, Ivoox Service, and more",
+      "link": "https://medium.com/nuvola-news/nuvola-4-16-86a089068784",
+      "date": "February 24th, 2019",
+      "text": "Nuvola 4.16 was released. It reintroduces Libre.fm scrobbling, adds new service Ivoox, comes with updated Adwaita GTK theme and brings other bug fixes and improvements."
+    },
+    {
       "title": "Nuvola 4.15 Released",
       "link": "https://medium.com/nuvola-news/nuvola-4-15-released-ccf2e02e6d4e",
       "date": "December 28th, 2018",
