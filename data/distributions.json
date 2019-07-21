@@ -14,10 +14,6 @@
       {
         "id": "xenial",
         "name": "16.04 LTS Xenial Xerus"
-      },
-      {
-        "id": "artful",
-        "name": "17.10 Artful Aardvark"
       }
     ]
   },
