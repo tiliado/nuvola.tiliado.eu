@@ -1,11 +1,9 @@
 {% extends "nuvola.html" %}
 {% import "snippets.html" as snippets %}
-{% import "snippets_fedora.html" as snippets_fedora %}
 
 {% block tab_content %}
 
   {{ snippets.fedora_install_flatpak_with_gnome_software() }}
-  {{ snippets_fedora.purge_old_nuvola() }}
   {{ snippets.fedora_install_nuvola_service_with_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 

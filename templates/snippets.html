@@ -40,20 +40,6 @@
   {{ table_of_apps(apps, distro_spec) }}
 {% endmacro %}
 
-{% macro purge_old_nuvola() %}
-<h2>Purge Old Nuvola Installations</h2>
-<p>
-  If you used Nuvola in the past, it is necessary to purge the old installation. Otherwise,
-  compatibility issues may occur. Run following commands in terminal:
-</p>
-<pre><code>sudo apt-get remove nuvolaplayer*
-rm -rf ~/.cache/nuvolaplayer3
-rm -rf ~/.local/share/nuvolaplayer3
-rm -rf ~/.config/nuvolaplayer3
-rm -f ~/.local/share/applications/nuvolaplayer3*</code></pre>
-{% endmacro %}
-
-
 {% macro install_app_with_gnome_software(app, distro_spec, environments) %}
   <ol>
     <li>

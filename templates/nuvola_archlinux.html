@@ -1,6 +1,5 @@
 {% extends "nuvola.html" %}
 {% import "snippets.html" as snippets %}
-{% import "snippets_archlinux.html" as snippets_archlinux %}
 
 {% block tab_content %}
 
@@ -26,7 +25,6 @@
 
 
   {{ snippets.fedora_add_repositories_with_gnome_software() }}
-  {{ snippets_archlinux.purge_old_nuvola() }}
   {{ snippets.fedora_install_nuvola_service_with_gnome_software() }}
   {{ snippets.install_individual_apps(apps, distro_spec) }}
 
