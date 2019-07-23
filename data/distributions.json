@@ -66,21 +66,7 @@
   },
   {
     "id": "fedora",
-    "name": "Fedora",
-    "releases": [
-      {
-        "id": "fc30",
-        "name": "Fedora 30"
-      },
-      {
-        "id": "fc29",
-        "name": "Fedora 29"
-      },
-      {
-        "id": "fc28",
-        "name": "Fedora 28"
-      }
-    ]
+    "name": "Fedora"
   },
   {
     "id": "opensuse",
