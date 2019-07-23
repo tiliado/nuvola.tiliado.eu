@@ -46,6 +46,10 @@
         "eol": "~2022"
       },
       {
+        "id": "bullseye",
+        "name": "11 Bullseye (testing)"
+      },
+      {
         "id": "sid",
         "name": "Sid (unstable)"
       },
