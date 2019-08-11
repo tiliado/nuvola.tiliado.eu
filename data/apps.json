@@ -72,6 +72,14 @@
     "version": "6.2"
   },
   {
+    "id": "idagio",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "IDAGIO",
+    "uid": "eu.tiliado.NuvolaAppIdagio",
+    "version": "1.0"
+  },
+  {
     "id": "ivoox",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
