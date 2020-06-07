@@ -48,11 +48,6 @@
       {
         "id": "sid",
         "name": "Sid (unstable)"
-      },
-      {
-        "id": "jessie",
-        "name": "8 Jessie (oldoldstable)",
-        "eol": "~2020-06-30"
       }
     ]
   },
