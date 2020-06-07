@@ -4,6 +4,10 @@
     "name": "Ubuntu",
     "releases": [
       {
+        "id": "focal",
+        "name": "Ubuntu 20.04 LTS Focal Fossa"
+      },
+      {
         "id": "disco",
         "name": "19.04 Disco Dingo"
       },

@@ -438,9 +438,11 @@
       that a new application has been installed.
     </li>
     <li>
-      Alternatively, you can launch {{ app.name }}
-      from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
-      <br/><code>flatpak run {{ app.uid }}</code>
+      <p>
+        Alternatively, you can launch {{ app.name }}
+        from <a href="https://help.ubuntu.com/community/UsingTheTerminal">a terminal</a>:
+      </p>
+      <pre><code>flatpak run {{ app.uid }}</code></pre>
     </li>
   </ul>
 {%  endmacro %}

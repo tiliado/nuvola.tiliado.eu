@@ -1,0 +1,246 @@
+{% import "snippets.html" as snippets %}
+
+{% macro install_flatpak_with_gnome_software_focal(ubuntu_version, img_suffix="") %}
+  <h2 id="install-flatpak">Install Flatpak and Friends</h2>
+  <p>
+    <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of sandboxed applications.
+    <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration.
+    All packages are available in the Ubuntu {{ ubuntu_version }} repository. No third-party PPA is required.
+  </p>
+
+  <p><a class="btn btn-primary" href="apt:flatpak">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install Flatpak with Ubuntu Software
+  </a></p>
+
+  <p><a class="btn btn-primary" href="apt:xdg-desktop-portal-gtk">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install XDG Desktop Portal with Ubuntu Software
+  </a></p>
+
+  <p>
+    Alternatively, launch
+    <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type the command below and press the Enter key to install these packages.
+  </p>
+  <pre><code>
+    sudo apt install flatpak xdg-desktop-portal-gtk
+  </code></pre>
+
+  <h2 id="install-gnome-software">Install GNOME Software (Optional)</h2>
+
+  <div class="alert alert-warning" role="alert">
+    These instructions are needed only if you wish to browse and install Flatpak packages with a software store
+    application. If you prefer commandline tools, you may skip this section.
+  </div>
+
+  <p>
+    Ubuntu switched to
+    <a href="https://www.omgubuntu.co.uk/2020/02/ubuntu-snap-store-transition">a snap-packaged Software Store since
+      Ubuntu 20.04 LTS</a>.
+    While this step has many benefits, there is also one drawback: The snap version doesn't support Flatpak packages.
+    If you wish to install Flatpak packages from a software store application, you need to install the original
+    <strong>GNOME Software</strong> application.
+  </p>
+
+  <p><a class="btn btn-primary" href="apt:gnome-software-plugin-flatpak">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install GNOME Software with Flatpak plugin
+  </a></p>
+
+  <p>
+    Alternatively, launch
+    <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type the command below and press the Enter key to install these packages.
+  </p>
+  <pre><code>
+    sudo apt install gnome-software gnome-software-plugin-flatpak
+  </code></pre>
+
+  <h2 id="restart">Restart your computer</h2>
+  <p>
+    It is necessary to restart your computer to add Flatpak paths alongside the system ones.
+    Otherwise, you may see strange errors.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+
+  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+
+  <div class="alert alert-warning" role="alert">
+    Ubuntu Software, the default software store application, doesn't support Flatpak. You need to
+    <a href="#install-gnome-software" class="alert-link">install original GNOME Software with Flatpak plugin</a>
+    or use the <code>flatpak</code> commands provided at the end of this section.
+  </div>
+
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage.
+  </p>
+
+  <p><a class="btn btn-primary" href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install Flathub repository with GNOME Software
+  </a></p>
+
+  <p>
+    The <strong>Nuvola Apps</strong> repository contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+  </p>
+  <p><a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install Nuvola Apps repository with GNOME Software
+  </a></p>
+
+  <p>Now you need to <strong>refresh GNOME Software package cache</strong>:</p>
+  <ol>
+    <li>
+      Launch <em>GNOME Software</em>.
+      It's called <em>Software</em> in the application list, not <em>Ubuntu Software</em>.</li>
+    <li>Switch to the <em>Updates</em> screen.</li>
+    <li>Click the <em>Refresh</em> button in the top left corner.</li>
+  </ol>
+
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.png" class="col-sm-4">
+          <img
+              src="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.thumb.png"
+              class="img-thumbnail"
+              alt="Launch GNOME Software called just 'Software', not 'Ubuntu Software'.">
+        </a>
+        <a href="/screenshots/nuvola/ubuntu_software_main_screen_click_updates{{ img_suffix }}.png" class="col-sm-4">
+          <img
+              src="/screenshots/nuvola/ubuntu_software_main_screen_click_updates{{ img_suffix }}.thumb.png"
+              class="img-thumbnail"
+              alt="Launch Ubuntu Software and switch to the 'Updates' screen.">
+        </a>
+        <a href="/screenshots/nuvola/ubuntu_software_updates_click_refresh{{ img_suffix }}.png" class="col-sm-4">
+          <img
+              src="/screenshots/nuvola/ubuntu_software_updates_click_refresh{{ img_suffix }}.thumb.png"
+              class="img-thumbnail"
+              alt="Click the 'Refresh' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch
+    <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type the commands below and press the Enter key to add repositories and update package cache.
+  </p>
+  <pre><code>
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo
+    flatpak update
+  </code></pre>
+{% endmacro %}
+
+{% macro install_nuvola_service_with_gnome_software_focal(img_suffix="") %}
+
+  {{ snippets.about_nuvola_service() }}
+
+  <div class="alert alert-warning" role="alert">
+    Ubuntu Software, the default software store application, doesn't support Flatpak. You need to
+    <a href="#install-gnome-software" class="alert-link">install original GNOME Software with Flatpak plugin</a>
+    or use the <code>flatpak</code> command at the end of this section.
+  </div>
+
+  <p>
+    In order to <strong>install Nuvola Apps Service with GNOME Software</strong>, launch <em>GNOME Software</em>,
+    which is called just <em>Software</em>,
+    search for <em>Nuvola Apps Service</em> and finally click the
+    <em>Install</em> button.
+  </p>
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.png" class="col-sm-4">
+          <img
+              src="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.thumb.png"
+              class="img-thumbnail"
+              alt="Launch GNOME Software called just 'Software', not 'Ubuntu Software'.">
+        </a>
+        <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps{{ img_suffix }}.png"
+           class="col-sm-4">
+          <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_service_steps{{ img_suffix }}.thumb.png"
+               class="img-thumbnail"
+               alt="Launch GNOME Software and search for '{{ nuvola.name }}'.">
+        </a>
+        <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps{{ img_suffix }}.png" class="col-sm-4">
+          <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_service_steps{{ img_suffix }}.thumb.png"
+               class="img-thumbnail"
+               alt="Click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch
+    <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+    and type the command below and press the Enter key to install the package.
+  </p>
+  <pre><code>
+    flatpak install nuvola {{ nuvola.uid }}
+  </code></pre>
+{% endmacro %}
+
+{% macro install_app_with_gnome_software_focal(app, distro_spec, environments, img_suffix="") %}
+  <h2>Install {{ app.name }}</h2>
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>
+      <div class="alert alert-warning" role="alert">
+        Ubuntu Software, the default software store application, doesn't support Flatpak. You need to
+        <a href="/nuvola{{ distro_spec }}/#install-gnome-software" class="alert-link">
+          install original GNOME Software with Flatpak plugin</a>
+        or use the <code>flatpak</code> command at the end of this step.
+      </div>
+      <p>
+        In order to <strong>install {{ app.name }} with GNOME Software</strong>, launch <em>GNOME Software</em>,
+        which is called just <em>Software</em>,
+        search for <em>{{ app.name }}</em> and finally click the <em>Install</em> button.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.png" class="col-sm-4">
+              <img
+                  src="/screenshots/nuvola/ubuntu_gnome_software{{ img_suffix }}.thumb.png"
+                  class="img-thumbnail"
+                  alt="Launch GNOME Software called just 'Software', not 'Ubuntu Software'.">
+            </a>
+            <a href="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps{{ img_suffix }}.png"
+               class="col-sm-4">
+              <img src="/screenshots/nuvola/ubuntu_software_search_for_nuvola_app_steps{{ img_suffix }}.thumb.png"
+                   class="img-thumbnail"
+                   alt="Search for '{{ app.name }}'.">
+            </a>
+            <a href="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps{{ img_suffix }}.png" class="col-sm-4">
+              <img src="/screenshots/nuvola/ubuntu_software_install_nuvola_app_steps{{ img_suffix }}.thumb.png"
+                   class="img-thumbnail"
+                   alt="Click the 'Install' button.">
+            </a>
+          </div>
+        </div>
+      </div>
+      <p>
+        Alternatively, launch
+        <a href="https://help.ubuntu.com/community/UsingTheTerminal">a Linux terminal emulator</a>
+        and type the command below and press the Enter key to install the package.
+      </p>
+      <pre><code>
+        flatpak install nuvola {{ app.uid }}
+      </code></pre>
+    </li>
+    <li>
+      Then <strong>log out and log in back</strong> to let your desktop environment ({{ environments }}) find out that
+      a new application has been installed. Otherwise, you may see "Unknown Application Name" in the menu bar,
+      mismatched application icons and other funny bugs.
+    </li>
+  </ol>
+  {{ snippets.ubuntu_launch_app(app, environments) }}
+{% endmacro %}
