@@ -8,20 +8,8 @@
         "name": "Ubuntu 20.04 LTS Focal Fossa"
       },
       {
-        "id": "disco",
-        "name": "19.04 Disco Dingo"
-      },
-      {
-        "id": "cosmic",
-        "name": "18.10 Cosmic Cuttlefish"
-      },
-      {
         "id": "bionic",
         "name": "18.04 LTS Bionic Beaver"
-      },
-      {
-        "id": "xenial",
-        "name": "16.04 LTS Xenial Xerus"
       }
     ]
   },
