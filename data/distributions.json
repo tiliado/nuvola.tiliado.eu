@@ -29,27 +29,7 @@
   },
   {
     "id": "debian",
-    "name": "Debian",
-    "releases": [
-      {
-        "id": "buster",
-        "name": "10 Buster (stable)",
-        "eol": "~2024"
-      },
-      {
-        "id": "stretch",
-        "name": "9 Stretch (oldstable)",
-        "eol": "~2022"
-      },
-      {
-        "id": "bullseye",
-        "name": "11 Bullseye (testing)"
-      },
-      {
-        "id": "sid",
-        "name": "Sid (unstable)"
-      }
-    ]
+    "name": "Debian"
   },
   {
     "id": "fedora",

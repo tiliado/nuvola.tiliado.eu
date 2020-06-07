@@ -447,35 +447,6 @@
   </ul>
 {%  endmacro %}
 
-{# ================================ DEBIAN =============================== #}
-
-{% macro debian_install_flatpak_with_gnome_software(codename) %}
-  <h2>Install Flatpak and Friends</h2>
-  <p>
-    <strong>Flatpak</strong> <sup>(<a href="https://packages.debian.org/{{ codename }}/flatpak">pkg</a>)</sup>
-    is a cross-distribution framework for distribution and running of sandboxed applications.
-    <strong>XDG Desktop Portal</strong>
-    <sup>
-      (<a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal">pkg1</a>,
-      <a href="https://packages.debian.org/{{ codename }}/xdg-desktop-portal-gtk">pkg2</a>)
-    </sup> provides {{ nuvola.name }} with desktop integration.
-    <strong>GNOME Software with Flatpak plugin</strong><sup>
-    (<a href="https://packages.debian.org/{{ codename }}/gnome-software">pkg1</a>,
-    <a href="https://packages.debian.org/{{ codename }}/gnome-software-plugin-flatpak">pkg2</a>)
-  </sup>
-    makes the browsing and installation of Flatpaks easier.
-  </p>
-  <p>
-    <strong>All packages are available in the repositories.</strong>
-    Run <code>apt install flatpak xdg-desktop-portal-gtk xdg-desktop-portal gnome-software
-    gnome-software-plugin-flatpak</code> as root/sudo.
-    Then <strong>restart your computer</strong> to add Flatpak paths alongside the system ones and to activate the GNOME
-    Software Flatpak plugin. Otherwise, you may see strange errors.
-    Unfortunately, just logging out and logging in is not enough.
-  </p>
-  {{ fedora_add_repositories_with_gnome_software() }}
-{% endmacro %}
-
 {# ================================ FEDORA =============================== #}
 
 {% macro fedora_install_flatpak_with_gnome_software() %}
