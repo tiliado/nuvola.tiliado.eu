@@ -14,7 +14,7 @@ update:
 generate:
 	python3 -m nuvola_index -f 'https://nuvola.tiliado.eu/'
 publish: generate
-	cd ~/dev/projects/fxdepl && ./fxdepl.py push -s server3.tiliado.eu -p nuvola.tiliado.eu -R
+	cd ~/dev/k3s && ansible-playbook -i hosts.txt -vD playbooks/tiliado.eu-nginx.yml -l tiliado4 --tags nuvola-website
 
 check: flake8 pylint
 
