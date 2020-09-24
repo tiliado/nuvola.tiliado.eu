@@ -1,0 +1,82 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+{% block tab_content %}
+  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
+    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+  </p>
+
+  <p>
+    Unfortunately, <a href="https://github.com/elementary/sideload/issues/72">Flatpak
+    support in elementaryOS is incomplete</a>, so you need to use terminal commands.
+  </p>
+
+  <ol>
+    <li>Launch <strong>Terminal</strong> application.</li>
+    <li>Enter following commands:</li>
+  </ol>
+
+  <pre><code>
+  flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  flatpak remote-add --if-not-exists --user nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo
+  flatpak update
+  </code></pre>
+
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/elementary/launch_terminal.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary/launch_terminal.thumb.png"
+               class="img-thumbnail"
+               alt="Launch Terminal.">
+        </a>
+        <a href="/screenshots/nuvola/elementary/add_flatpak_repos.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/elementary/add_flatpak_repos.thumb.png"
+               class="img-thumbnail"
+               alt="Type flatpak commands.">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Restart your computer</h2>
+  <p>
+    It is necessary to restart your computer to activate new flatpak repositories.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+
+  {{ snippets.about_nuvola_service() }}
+
+  <p>
+    In order to <strong>install Nuvola Apps Service</strong>, launch <em>AppCenter</em>,
+    search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
+  </p>
+
+  <div class="gallery">
+    <div class="row">
+      <a href="/screenshots/nuvola/elementary/launch_appcenter.png" class="col-sm-6">
+        <img src="/screenshots/nuvola/elementary/launch_appcenter.thumb.png" class="img-thumbnail"
+             alt="Search for '{{ nuvola.name }}'.">
+      </a>
+      <a href="/screenshots/nuvola/elementary/install_service.png" class="col-sm-6">
+        <img src="/screenshots/nuvola/elementary/install_service.thumb.png" class="img-thumbnail"
+             alt="Install '{{ nuvola.name }}'.">
+      </a>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch Terminal application,
+    type the following command and press the Enter key to install this package.
+  </p>
+
+  <pre><code>
+    flatpak install nuvola {{ nuvola.uid }}
+  </code></pre>
+
+  {{ snippets.install_individual_apps(apps, distro_spec) }}
+
+{% endblock %}

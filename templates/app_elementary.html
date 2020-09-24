@@ -3,6 +3,42 @@
 
 {% block tab_content %}
 
-  {{ snippets.ubuntu_install_app(app, distro_spec, "Pantheon, GNOME, Unity, ...") }}
+  <h2>Install {{ app.name }}</h2>
+  <ol>
+  <li>
+    <a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.
+  </li>
+  <li>
+    In order to <strong>install {{ app.name }}</strong>, launch <em>AppCenter</em>,
+    search for <em>{{ app.name }}</em> and finally click the <em>Install</em> button.
+  </li>
 
+  <div class="gallery">
+    <div class="row">
+      <a href="/screenshots/nuvola/elementary/launch_appcenter.png" class="col-sm-6">
+        <img src="/screenshots/nuvola/elementary/launch_appcenter.thumb.png" class="img-thumbnail"
+             alt="Search for '{{ app.name }}'.">
+      </a>
+      <a href="/screenshots/nuvola/elementary/install_app.png" class="col-sm-6">
+        <img src="/screenshots/nuvola/elementary/install_app.thumb.png" class="img-thumbnail"
+             alt="Install '{{ app.name }}'.">
+      </a>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch Terminal application,
+    type the following command and press the Enter key to install this package.
+  </p>
+
+  <pre><code>
+    flatpak install nuvola {{ app.uid }}
+  </code></pre>
+
+  <h2>Log out and log in again</h2>
+  <p>
+    It is necessary gog out and log in again to refresh a list of installed applications.
+    Otherwise, you won't be able to launch <strong>{{ app.name }}</strong> from the list
+    of installed applications.
+  </p>
 {% endblock %}

@@ -18,12 +18,8 @@
     "name": "elementaryOS",
     "releases": [
       {
-        "id": "juno",
-        "name": "5 Juno"
-      },
-      {
-        "id": "loki",
-        "name": "0.4 Loki"
+        "id": "hera",
+        "name": "5.1 Hera"
       }
     ]
   },
