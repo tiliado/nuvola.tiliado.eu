@@ -176,6 +176,14 @@
     "version": "1.3"
   },
   {
+    "id": "primephonic",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Primephonic",
+    "uid": "eu.tiliado.NuvolaAppPrimephonic",
+    "version": "1.0"
+  },
+  {
     "id": "qobuz",
     "maintainer": "Bors, Ltd",
     "maintainer_link": "https://github.com/borsltd",
