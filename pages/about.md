@@ -27,7 +27,6 @@ Last.fm scrobbling, lyrics fetching, and much more.
   <button class="btn btn-lg btn-secondary btn-block dropdown-toggle m-1" type="button" id="follownuvola" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keep in Touch</button>
   <div class="dropdown-menu" aria-labelledby="follownuvola">
     <a class="dropdown-item" href="https://medium.com/nuvola-news" target="_blank">Read Nuvola News blog</a>
-    <a class="dropdown-item" href="https://plus.google.com/110794636546911932554" target="_blank">Follow Nuvola on Google+</a>
     <a class="dropdown-item" href="https://www.facebook.com/nuvolaplayer" target="_blank">Follow Nuvola on Facebook</a>
     <a class="dropdown-item" href="https://twitter.com/NuvolaPlayer" target="_blank">Follow Nuvola on Twitter</a>
     <a class="dropdown-item" href="https://mastodon.cloud/@nuvola" target="_blank">Follow Nuvola on Mastodon</a>
