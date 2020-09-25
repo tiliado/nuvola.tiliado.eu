@@ -40,6 +40,14 @@
     "version": "1.1"
   },
   {
+    "id": "difm",
+    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "DI.FM",
+    "uid": "eu.tiliado.NuvolaAppDifm",
+    "version": "1.0"
+  },
+  {
     "id": "deezer",
     "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
     "maintainer_link": "https://github.com/fenryxo",
