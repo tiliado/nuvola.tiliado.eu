@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.17 brings MusicBrainz scrobbling, Idagio, DI.FM, Primephonic, and more",
+      "link": "https://medium.com/nuvola-news/nuvola-4-17-released-80852f885e90",
+      "date": "September 28th, 2020",
+      "text": "Nuvola 4.17 was released. It brings MusicBrainz scrobbling and three new services: Idagio, DI.FM and Primephonic. Most of the features and bug fixes have already been released to users of Nuvola flatpak builds for a long time but they haven't been officially announced until now."
+    },
+    {
       "title": "Nuvola 4.16 Brings Libre.FM Scrobbling, Ivoox Service, and more",
       "link": "https://medium.com/nuvola-news/nuvola-4-16-86a089068784",
       "date": "February 24th, 2019",
