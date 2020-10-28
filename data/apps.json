@@ -1,7 +1,7 @@
 [
   {
     "id": "8tracks",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "8tracks",
     "uid": "eu.tiliado.NuvolaApp8tracks",
@@ -13,7 +13,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
     "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.9"
+    "version": "5.10"
   },
   {
     "id": "bbc_iplayer",
@@ -25,7 +25,7 @@
   },
   {
     "id": "bandcamp",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Bandcamp",
     "uid": "eu.tiliado.NuvolaAppBandcamp",
@@ -33,7 +33,7 @@
   },
   {
     "id": "brain_fm",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Brain.fm",
     "uid": "eu.tiliado.NuvolaAppBrainFm",
@@ -41,7 +41,7 @@
   },
   {
     "id": "difm",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "DI.FM",
     "uid": "eu.tiliado.NuvolaAppDifm",
@@ -49,15 +49,15 @@
   },
   {
     "id": "deezer",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Deezer",
     "uid": "eu.tiliado.NuvolaAppDeezer",
-    "version": "3.2"
+    "version": "3.3"
   },
   {
     "id": "focus_at_will",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Focus@Will",
     "uid": "eu.tiliado.NuvolaAppFocusAtWill",
@@ -65,23 +65,23 @@
   },
   {
     "id": "google_calendar",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Google Calendar",
     "uid": "eu.tiliado.NuvolaAppGoogleCalendar",
-    "version": "1.3"
+    "version": "1.4"
   },
   {
     "id": "google_play_music",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Google Play Music",
     "uid": "eu.tiliado.NuvolaAppGooglePlayMusic",
-    "version": "6.2"
+    "version": "6.3"
   },
   {
     "id": "idagio",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "IDAGIO",
     "uid": "eu.tiliado.NuvolaAppIdagio",
@@ -89,7 +89,7 @@
   },
   {
     "id": "ivoox",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Ivoox",
     "uid": "eu.tiliado.NuvolaAppIvoox",
@@ -97,7 +97,7 @@
   },
   {
     "id": "jamendo",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Jamendo",
     "uid": "eu.tiliado.NuvolaAppJamendo",
@@ -105,7 +105,7 @@
   },
   {
     "id": "jango",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Jango",
     "uid": "eu.tiliado.NuvolaAppJango",
@@ -117,11 +117,11 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Jupiter Broadcasting",
     "uid": "eu.tiliado.NuvolaAppJupiterBroadcasting",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "kexp",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "KEXP Radio",
     "uid": "eu.tiliado.NuvolaAppKexp",
@@ -129,7 +129,7 @@
   },
   {
     "id": "mentorfm",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "MentorFM",
     "uid": "eu.tiliado.NuvolaAppMentorfm",
@@ -137,7 +137,7 @@
   },
   {
     "id": "mixcloud",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Mixcloud",
     "uid": "eu.tiliado.NuvolaAppMixcloud",
@@ -145,7 +145,7 @@
   },
   {
     "id": "npr_one",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "NPR One",
     "uid": "eu.tiliado.NuvolaAppNprOne",
@@ -153,7 +153,7 @@
   },
   {
     "id": "pandora",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Pandora",
     "uid": "eu.tiliado.NuvolaAppPandora",
@@ -161,7 +161,7 @@
   },
   {
     "id": "plex",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Plex Music",
     "uid": "eu.tiliado.NuvolaAppPlex",
@@ -169,7 +169,7 @@
   },
   {
     "id": "pocket_casts",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Pocket Casts",
     "uid": "eu.tiliado.NuvolaAppPocketCasts",
@@ -177,7 +177,7 @@
   },
   {
     "id": "primephonic",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Primephonic",
     "uid": "eu.tiliado.NuvolaAppPrimephonic",
@@ -185,23 +185,23 @@
   },
   {
     "id": "qobuz",
-    "maintainer": "Bors, Ltd",
-    "maintainer_link": "https://github.com/borsltd",
+    "maintainer": "Romain Berger",
+    "maintainer_link": "https://github.com/Romunix",
     "name": "Qobuz",
     "uid": "eu.tiliado.NuvolaAppQobuz",
     "version": "1.2"
   },
   {
     "id": "siriusxm",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SiriusXM",
     "uid": "eu.tiliado.NuvolaAppSiriusxm",
-    "version": "1.5"
+    "version": "1.6"
   },
   {
     "id": "soundcloud",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SoundCloud",
     "uid": "eu.tiliado.NuvolaAppSoundcloud",
@@ -209,23 +209,23 @@
   },
   {
     "id": "spotify",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
-    "version": "3.1"
+    "version": "3.2"
   },
   {
     "id": "tidal",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Tidal",
     "uid": "eu.tiliado.NuvolaAppTidal",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "tunein",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "TuneIn",
     "uid": "eu.tiliado.NuvolaAppTunein",
@@ -241,23 +241,23 @@
   },
   {
     "id": "youtube",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube",
     "uid": "eu.tiliado.NuvolaAppYoutube",
-    "version": "2.1"
+    "version": "2.2"
   },
   {
     "id": "youtube_music",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube Music",
     "uid": "eu.tiliado.NuvolaAppYoutubeMusic",
-    "version": "1.3"
+    "version": "1.4"
   },
   {
     "id": "owncloud_music",
-    "maintainer": "Ji\u0159\u00ed Janou\u0161ek",
+    "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "ownCloud Music",
     "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
