@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/env python3
 import json
 import shlex
 from argparse import ArgumentParser
@@ -16,12 +16,10 @@ def update_all(apps_list: str, branch: str, apps_dir: str, output: str) -> str:
     with open(apps_list) as f:
         recipes = load_yaml(f)
 
-    recipe = recipes["recipes"][branch]
-    default_branch: str = recipe["branch"]
-    list_of_apps: List[str] = recipe["apps"]
-    apps: List[Dict[str, Any]] = [update_app(apps_dir, app, default_branch) for app in list_of_apps]
+    list_of_apps: List[str] = recipes["apps"][branch]
+    apps: List[Dict[str, Any]] = [update_app(apps_dir, app, "master") for app in list_of_apps]
     apps.sort(key=lambda item: item["name"])
-    data = json.dumps(apps, indent=2, separators=(',', ': '), sort_keys=True)
+    data = json.dumps(apps, indent=2, separators=(',', ': '), sort_keys=True, ensure_ascii=False)
     with open(output, "wt") as f:
         f.write(data)
         f.write("\n")
@@ -29,7 +27,7 @@ def update_all(apps_list: str, branch: str, apps_dir: str, output: str) -> str:
 
 
 def update_app(apps_dir: str, app_spec: str, default_branch: str) -> Dict[str, Any]:
-    app, branch = [s.strip() for s in app_spec.split("=>")] if ("=>" in app_spec) else (app_spec, default_branch)
+    app, branch = [s.strip() for s in app_spec.split("@")] if ("@" in app_spec) else (app_spec, default_branch)
     meta = json.loads(git_read_file(os.path.join(apps_dir, "nuvola-app-" + app), branch, "metadata.in.json"))
     return {
         "id": meta["id"],

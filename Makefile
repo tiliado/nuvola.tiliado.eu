@@ -7,7 +7,7 @@ test:
 	cd build && python3 -m http.server
 update:
 	python3 ./update_apps.py \
-    -l ~/dev/projects/nuvolaplayer3/flatpak/recipes.yaml \
+    -l ~/dev/repo/nuvola/flatpaks/nufb.yml \
     -d ~/dev/projects/nuvolaplayer3/apps
 	git add data/apps.json && git commit -m "Update apps.json"
 
