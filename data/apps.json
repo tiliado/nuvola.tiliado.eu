@@ -16,6 +16,14 @@
     "version": "5.10"
   },
   {
+    "id": "apple_music",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Apple Music",
+    "uid": "eu.tiliado.NuvolaAppAppleMusic",
+    "version": "1.0"
+  },
+  {
     "id": "bbc_iplayer",
     "maintainer": "Andrew Stubbs",
     "maintainer_link": "https://github.com/a-m-s",
