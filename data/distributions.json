@@ -4,6 +4,10 @@
     "name": "Ubuntu",
     "releases": [
       {
+        "id": "groovy",
+        "name": "Ubuntu 20.10 Groovy Gorilla"
+      },
+      {
         "id": "focal",
         "name": "Ubuntu 20.04 LTS Focal Fossa"
       },

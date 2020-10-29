@@ -1,0 +1,9 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+{% import "snippets_ubuntu.html" as ubuntu %}
+
+{% block tab_content %}
+  {{ ubuntu.install_flatpak_with_gnome_software_focal("20.10", "_20_04") }}
+  {{ ubuntu.install_nuvola_service_with_gnome_software_focal("_20_04") }}
+  {{ snippets.install_individual_apps(apps, distro_spec) }}
+{% endblock %}
