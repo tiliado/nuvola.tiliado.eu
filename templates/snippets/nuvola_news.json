@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.18 brings Apple Music and Gaana, resumes Qobuz support, and more",
+      "link": "https://medium.com/nuvola-news/nuvola-4-18-released-5bb1512ec90d",
+      "date": "October 30th, 2020",
+      "text": "Nuvola 4.18 was released. It brings two new services (Apple Music and Gaana, an updated Qobuz script adopted by Romain Berger, and lots of improvements under the hood."
+    },
+    {
       "title": "Nuvola 4.17 brings MusicBrainz scrobbling, Idagio, DI.FM, Primephonic, and more",
       "link": "https://medium.com/nuvola-news/nuvola-4-17-released-80852f885e90",
       "date": "September 28th, 2020",
