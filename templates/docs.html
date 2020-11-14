@@ -29,9 +29,9 @@
                 <a href="{{ webroot }}/">Documentation</a>
               </li>
               {% if path == '/docs/4/' %}
-                <li class="breadcrumb-item active"><a href="/docs/4/">Nuvola Apps 4</a></li>
+                <li class="breadcrumb-item active"><a href="/docs/4/">Nuvola Player 4</a></li>
               {% elif path.startswith('/docs/4/') %}
-                <li class="breadcrumb-item {{ 'active' if path == '/docs/4/' }}"><a href="/docs/4/">Nuvola Apps 4</a></li>
+                <li class="breadcrumb-item {{ 'active' if path == '/docs/4/' }}"><a href="/docs/4/">Nuvola Player 4</a></li>
                 {% set section = path.split('/')[3] %}
                 {% set section_path = '/docs/4/' + section + '/' %}
                 {% set section_name = sections[section] %}
@@ -56,14 +56,14 @@
               <strong>Having trouble? We'd like to help!</strong> But you need to tell us. I'd like to ...
               <ul>
                 <li>
-                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=bug-report.md">Report a bug</a>
-                  following <a href="https://github.com/tiliado/nuvolaruntime/wiki/Bug-Reporting-Guidelines">guidelines</a>.
+                  <a href="https://github.com/tiliado/nuvolaplayer/issues/new?template=bug-report.md">Report a bug</a>
+                  following <a href="https://github.com/tiliado/nuvolaplayer/wiki/Bug-Reporting-Guidelines">guidelines</a>.
                 </li>
                 <li>
-                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=question.md">Ask a queston</a>.
+                  <a href="https://github.com/tiliado/nuvolaplayer/issues/new?template=question.md">Ask a queston</a>.
                 </li>
                 <li>
-                  <a href="https://github.com/tiliado/nuvolaruntime/issues/new?template=feature-request.md">Suggest a feature</a>.
+                  <a href="https://github.com/tiliado/nuvolaplayer/issues/new?template=feature-request.md">Suggest a feature</a>.
                 </li>
               </ul>
             </p>

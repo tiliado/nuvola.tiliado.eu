@@ -2,7 +2,7 @@
 {% import "snippets.html" as snippets %}
 
 {% block title -%}
-  Install {{ nuvola.name }} Runtime on {{ distro.name }} {{ release.name if release else "" }} • {{ super() }}
+  Install {{ nuvola.name }} on {{ distro.name }} {{ release.name if release else "" }} • {{ super() }}
 {%- endblock %}
 
 {% block heading %}
@@ -10,7 +10,7 @@
     <a class="btn btn-secondary btn-lg" href="/index{{ distro_spec }}/">
       <i class="fas fa-home"></i> Index
     </a>
-    → Install {{ nuvola.name }} Runtime
+    → Install {{ nuvola.name }}
   </h1>
 {% endblock %}
 

@@ -8,7 +8,7 @@
     {% if canonical_path %}
       <link rel="canonical" href="{{ root }}{{ canonical_path }}"/>
     {% endif %}
-    <title>{% block title %}Nuvola Apps{% endblock %}</title>
+    <title>{% block title %}Nuvola Player{% endblock %}</title>
     {% block styles %}
       <noscript>
         <link rel="stylesheet" href="{{ path_prefix or '' }}/static/bootstrap/css/bootstrap.min.css">
@@ -59,7 +59,7 @@
       <a class="navbar-brand" href="/">
         <img alt="Brand" src="{{ path_prefix or '' }}/static/favicon.png" width="32" height="32"/>
       </a>
-      <a class="navbar-brand" href="/">Nuvola Apps</a>
+      <a class="navbar-brand" href="/">Nuvola Player</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

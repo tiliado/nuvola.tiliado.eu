@@ -1,5 +1,5 @@
 [Flatpak Ref]
-Title = {{ nuvola.name }} (web app runtime)
+Title = {{ nuvola.name }}
 Name = {{ nuvola.uid }}
 Branch = stable
 Url = https://dl.tiliado.eu/flatpak/nuvola/

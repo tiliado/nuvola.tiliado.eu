@@ -3,18 +3,18 @@
 {% macro about_nuvola_service() %}
   <h2>Install {{ nuvola.name }} Service</h2>
   <p>
-    <strong>Nuvola Apps Service</strong> is an optional background service that provides individual Nuvola apps with
+    <strong>Nuvola Player Service</strong> is an optional background service that provides integration scripts with
     global shared resources such as a global configuration storage, global keyboard shortcuts, a HTTP remote control
     server, and a command-line controller. While this service is optional, the installation is recommended.
   </p>
 {% endmacro %}
 
 {%  macro about_flatpak_repositories() %}
-  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <h2>Add Flathub and Nuvola Player Repositories</h2>
   <p>
     The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
-    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
-    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Player</strong> repository
+    contains <em>Nuvola Player Service</em> and individual integration scripts.
   </p>
 {% endmacro %}
 
@@ -36,7 +36,7 @@
 {% endmacro %}
 
 {% macro install_individual_apps(apps, distro_spec) %}
-  <h2>Install Individual Apps</h2>
+  <h2>Install integration scripts</h2>
   {{ table_of_apps(apps, distro_spec) }}
 {% endmacro %}
 
@@ -254,11 +254,11 @@
     Unfortunately, just logging out and logging in is not enough.
   </p>
 
-  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <h2>Add Flathub and Nuvola Player Repositories</h2>
   <p>
     The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
-    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
-    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Player</strong> repository
+    contains <em>Nuvola Player Service</em> and individual integration scripts.
   </p>
   <ol>
     <li>
@@ -270,7 +270,7 @@
     <li>
       <a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
         <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        Click to install Nuvola Apps repository with Ubuntu Software
+        Click to install Nuvola Player repository with Ubuntu Software
       </a>
     </li>
     <li>
@@ -347,8 +347,8 @@
 
   {{ about_nuvola_service() }}
   <p>
-    In order to <strong>install Nuvola Apps Service with Ubuntu Software</strong>, launch <em>Ubuntu Software</em>,
-    search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
+    In order to <strong>install Nuvola Player Service with Ubuntu Software</strong>, launch <em>Ubuntu Software</em>,
+    search for <em>Nuvola Player Service</em> and finally click the <em>Install</em> button.
   </p>
   <div class="gallery">
     <div class="container-fluid text-center">
@@ -467,11 +467,11 @@
 {% endmacro %}
 
 {% macro fedora_add_repositories_with_gnome_software() %}
-  <h2>Add Flathub and Nuvola Apps Repositories</h2>
+  <h2>Add Flathub and Nuvola Player Repositories</h2>
   <p>
     The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
-    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Apps</strong> repository
-    contains <em>Nuvola Apps Service</em> and individual Nuvola web apps.
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Player</strong> repository
+    contains <em>Nuvola Player Service</em> and individual integration scripts.
   </p>
   <ol>
     <li>
@@ -483,7 +483,7 @@
     <li>
       <a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
         <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        Click to install Nuvola Apps repository with GNOME Software
+        Click to install Nuvola Player repository with GNOME Software
       </a>
     </li>
     <li>
@@ -521,8 +521,8 @@
 
   {{ about_nuvola_service() }}
   <p>
-    In order to <strong>install Nuvola Apps Service with GNOME Software</strong>, launch <em>GNOME Software</em>,
-    search for <em>Nuvola Apps Service</em> and finally click the <em>Install</em> button.
+    In order to <strong>install Nuvola Player Service with GNOME Software</strong>, launch <em>GNOME Software</em>,
+    search for <em>Nuvola Player Service</em> and finally click the <em>Install</em> button.
   </p>
   <div class="gallery">
     <div class="container-fluid text-center">

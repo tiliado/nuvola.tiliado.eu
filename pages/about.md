@@ -1,19 +1,20 @@
 Path: /
 Navbar: about
-Title: Nuvola Apps Project
+Title: Nuvola Player Project
 Snippets: apps gallery, Nuvola News
 Datasets: apps
 Nuvola_News_Limit: 5
 
-<h1>Nuvola Apps Project</h1>
+<h1>Nuvola Player</h1>
 <div class="row align-items-center justify-content-left">
 <div class="col-12 col-lg-8 col-xl-7">
 <p class="lead my-1 px-1 text-justify">
-<strong>Nuvola Apps</strong> are web apps running in
-<em>Nuvola Apps Runtime</em><sup id="fnref:1"><a href="#fn:1">1</a></sup> that provides them
-with <a href="#features">more native user experience and richer desktop integration features</a> than
-standard web browsers can offer. Nuvola specializes in <a href="#services">music streaming services</a>
-and offers background playback, handling of media key, integration with media player applets,
+<strong>Nuvola Player</strong> provides a tight Linux desktop integration for
+<a href="#services">web-based media streaming services such as Spotify, YouTube Music, Apple Music and others</a>.
+The goal is to achieve <a href="#features">more native user experience and tighter integration
+with Linux desktop environments</a> than usual web browsers can offer.
+It tries to feel and look like a native application as much as possible.
+Nuvola offers background playback, handling of media key, integration with media player applets,
 Last.fm scrobbling, lyrics fetching, and much more.
 </p>
 </div>
@@ -65,8 +66,8 @@ Last.fm scrobbling, lyrics fetching, and much more.
     <entry class="border-primary">
        <header class="border-primary">{. fab fa-github} Open source software</header>
        <body>
-         The source code of [Nuvola Runtime](https://github.com/tiliado/nuvolaruntime) and individual
-         [Nuvola Apps](https://github.com/topics/nuvola-app) are available on
+         The source code of [Nuvola Player](https://github.com/tiliado/nuvolaplayer) and individual
+         [integration scripts](https://github.com/topics/nuvola-app) are available on
          [GitHub](https://github.com).
        </body>
     </entry>
@@ -76,7 +77,7 @@ Last.fm scrobbling, lyrics fetching, and much more.
 Music Streaming Services {: #services}
 --------------------------------------
 
-The following web-based music streaming services[^2] are supported by Nuvola Apps Runtime:
+The following web-based music streaming services[^1] are supported by Nuvola Player:
 
 [Snippet: apps gallery]
 
@@ -124,11 +125,6 @@ to receive the latest news.
 [Snippet: Nuvola News]
 
 [^1]:
-    *Nuvola Apps Runtime* used to be called *Nuvola Player* in the past. While Nuvola still focuses
-    on [music streaming services](#services), we also explore the possibility to integrate web apps
-    of all kinds. [Google Calendar script](/app/google_calendar/) is our very first experiment in
-    this area.
-[^2]:
-    The streaming services are provided by third parties (the Providers). Nuvola Apps project is not affiliated with,
+    The streaming services are provided by third parties (the Providers). Nuvola Player project is not affiliated with,
     nor endorsed by, nor supported by the Providers. The service names and logos may be trademarks or registered
     trademarks owned by the Providers.

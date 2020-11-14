@@ -1,7 +1,7 @@
-Nuvola Apps Website
-===================
+Nuvola Player Website
+=====================
 
-Tool to generate [Nuvola Apps Website](https://nuvola.tiliado.eu).
+Tool to generate [Nuvola Player Website](https://nuvola.tiliado.eu).
 
 Usage
 -----
@@ -36,7 +36,7 @@ Architecture
  * [Templates](./templates) - Jinja2 templates
    - [snippets.html](./templates/snippets.html): Snippets used in other templates.
    - [index.html](./templates/index.html): List of apps.
-   - [nuvola.html](./templates/nuvola.html): Installation instructions for Flatpak and Nuvola Apps Runtime.
+   - [nuvola.html](./templates/nuvola.html): Installation instructions for Flatpak and Nuvola Player.
    - [nuvola_DISTRO.html](./templates/nuvola_debian.html): Overrides `nuvola.html` with instructions for `DISTRO`
      distribution.
    - [nuvola_DISTRO_RELEASE.html](./templates/nuvola_debian_jessie.html): Overrides `nuvola.html` with instructions 

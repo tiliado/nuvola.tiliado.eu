@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% import "snippets.html" as snippets %}
 
-{% block title %}Install Nuvola Apps • {{ super() }}{% endblock %}
+{% block title %}Install Nuvola Player • {{ super() }}{% endblock %}
 
 {% block content %}
   <div id="index" class="container">
     <h2>Installation Instructions</h2>
     <p>
       <span class="glyphicon glyphicon-info-sign"></span>
-      <a href="https://tiliado.github.io/nuvolaplayer/documentation/4.html">Nuvola Apps</a>
+      <a href="https://tiliado.github.io/nuvolaplayer/documentation/4.html">Nuvola Player</a>
       are provided as cross-distribution <a href="https://flatpak.org">Flatpak</a> packages.
       They should work on every Linux distribution.
     </p>
 
     {% if not distro_spec %}
-      <p>Follow installation instructions to instal Nuvola Apps on:</p>
+      <p>Follow installation instructions to install Nuvola Player on:</p>
       <ul>
         {% for d in distributions %}
           {%  if d.releases %}
@@ -32,11 +32,11 @@
     {% else %}
       <ol>
         <li><a href="/nuvola{{ distro_spec }}/">Install Flatpak and add {{ nuvola.name }} repository</a>.</li>
-        <li>Then install any of the available Nuvola Apps from the list below.</li>
+        <li>Then install any of the available integration scripts from the list below.</li>
       </ol>
     {% endif %}
 
-    <h2>Available Nuvola Apps</h2>
+    <h2>Available integration scripts</h2>
     {{ snippets.table_of_apps(apps, distro_spec) }}
   </div>
 {% endblock %}
