@@ -280,6 +280,14 @@
     "version": "1.4"
   },
   {
+    "id": "iheart_radio",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "iHeartRADIO",
+    "uid": "eu.tiliado.NuvolaAppIheartRadio",
+    "version": "1.0"
+  },
+  {
     "id": "owncloud_music",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
