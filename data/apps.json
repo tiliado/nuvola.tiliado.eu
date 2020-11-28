@@ -192,6 +192,14 @@
     "version": "1.4"
   },
   {
+    "id": "pretzel",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Pretzel",
+    "uid": "eu.tiliado.NuvolaAppPretzel",
+    "version": "1.0"
+  },
+  {
     "id": "primephonic",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
