@@ -24,20 +24,20 @@
     "version": "1.0"
   },
   {
-    "id": "bbc_iplayer",
-    "maintainer": "Andrew Stubbs",
-    "maintainer_link": "https://github.com/a-m-s",
-    "name": "BBC iPlayer",
-    "uid": "eu.tiliado.NuvolaAppBbcIplayer",
-    "version": "1.6"
-  },
-  {
     "id": "bandcamp",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Bandcamp",
     "uid": "eu.tiliado.NuvolaAppBandcamp",
     "version": "2.3"
+  },
+  {
+    "id": "bbc_iplayer",
+    "maintainer": "Andrew Stubbs",
+    "maintainer_link": "https://github.com/a-m-s",
+    "name": "BBC iPlayer",
+    "uid": "eu.tiliado.NuvolaAppBbcIplayer",
+    "version": "1.6"
   },
   {
     "id": "brain_fm",
@@ -48,20 +48,20 @@
     "version": "1.1"
   },
   {
-    "id": "difm",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "DI.FM",
-    "uid": "eu.tiliado.NuvolaAppDifm",
-    "version": "1.0"
-  },
-  {
     "id": "deezer",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Deezer",
     "uid": "eu.tiliado.NuvolaAppDeezer",
     "version": "3.3"
+  },
+  {
+    "id": "difm",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "DI.FM",
+    "uid": "eu.tiliado.NuvolaAppDifm",
+    "version": "1.0"
   },
   {
     "id": "focus_at_will",
@@ -101,6 +101,14 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "IDAGIO",
     "uid": "eu.tiliado.NuvolaAppIdagio",
+    "version": "1.0"
+  },
+  {
+    "id": "iheart_radio",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "iHeartRADIO",
+    "uid": "eu.tiliado.NuvolaAppIheartRadio",
     "version": "1.0"
   },
   {
@@ -166,6 +174,14 @@
     "name": "NPR One",
     "uid": "eu.tiliado.NuvolaAppNprOne",
     "version": "1.2"
+  },
+  {
+    "id": "owncloud_music",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "ownCloud Music",
+    "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
+    "version": "1.4"
   },
   {
     "id": "pandora",
@@ -277,22 +293,6 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube Music",
     "uid": "eu.tiliado.NuvolaAppYoutubeMusic",
-    "version": "1.4"
-  },
-  {
-    "id": "iheart_radio",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "iHeartRADIO",
-    "uid": "eu.tiliado.NuvolaAppIheartRadio",
-    "version": "1.0"
-  },
-  {
-    "id": "owncloud_music",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "ownCloud Music",
-    "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
     "version": "1.4"
   }
 ]

@@ -13,7 +13,7 @@ def main(argv: List[str]) -> int:
         global_vars = json.load(f)
     with open(params.apps) as f:
         apps = json.load(f)
-        apps.sort(key=lambda item: item["name"])
+        apps.sort(key=lambda item: item["name"].lower())
     with open(params.distributions) as f:
         distributions = json.load(f)
     with open(params.team) as f:
