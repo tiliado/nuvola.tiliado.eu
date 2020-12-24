@@ -13,7 +13,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
     "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.10"
+    "version": "5.11"
   },
   {
     "id": "apple_music",
@@ -253,7 +253,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
-    "version": "3.2"
+    "version": "3.3"
   },
   {
     "id": "tidal",
@@ -293,6 +293,6 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube Music",
     "uid": "eu.tiliado.NuvolaAppYoutubeMusic",
-    "version": "1.4"
+    "version": "1.5"
   }
 ]
