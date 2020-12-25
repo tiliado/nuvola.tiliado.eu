@@ -72,6 +72,14 @@
     "version": "1.0"
   },
   {
+    "id": "emby",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Emby",
+    "uid": "eu.tiliado.NuvolaAppEmby",
+    "version": "1.0"
+  },
+  {
     "id": "focus_at_will",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
