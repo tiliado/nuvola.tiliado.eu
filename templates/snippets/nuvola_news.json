@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.20 brings Audible and Emby, prepares for feature requests voting",
+      "link": "https://medium.com/nuvola-news/nuvola-4-20-released-43e119bb1e94",
+      "date": "December 28th, 2020",
+      "text": "Another monthly release of Nuvola Player is out in the wild. Version 4.20 introduces two new services Audible and Emby, fixes integration of Bandcamp, drops Tiliado accounts and begins preparation for feature requests voting."
+    },
+        {
       "title": "Nuvola 4.19 brings iHeartRADIO, Pretzel and three updated services",
       "link": "https://medium.com/nuvola-news/nuvola-4-19-released-b4b1266f89a5",
       "date": "November 29th, 2020",
