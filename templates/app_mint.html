@@ -1,0 +1,52 @@
+{% extends "app.html" %}
+{% import "snippets.html" as snippets %}
+
+{% macro install_app_with_software_manager(app, distro_spec, environments) %}
+
+  <h2>Install {{ app.name }}</h2>
+
+  <p>
+    In order to <strong>install {{ app.name }} with Software Manager</strong>,
+  </p>
+  <ol>
+    <li>
+      <a href="/nuvola{{ distro_spec }}/">Install Flatpak and  add {{ nuvola.name }} repository</a>.
+    </li>
+    <li>Launch <em>Software Manager</em>.</li>
+    <li>Search for <em>{{ app.name }}</em>.</li>
+    <li>
+      If there are multiple results, install a package from <em>the stable branch</em>.
+      Unfortunately, this information is not available in the list of packages, but you need to visit package detail
+      and wait a bit until this information is shown.
+    </li>
+    <li>
+      {{ snippets.log_out_log_in(environments) }}
+    </li>
+  </ol>
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/mint/search_nuvola_app.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/mint/search_nuvola_app.thumb.png" class="img-thumbnail"
+               alt="Launch Software Manager and search for '{{ app.name }}'.">
+        </a>
+        <a href="/screenshots/nuvola/mint/install_nuvola_app.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/mint/install_nuvola_app.thumb.png" class="img-thumbnail"
+               alt="Verify you install a package from the stable branch and click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    Alternatively, launch a Linux terminal emulator,
+    type <code>flatpak install nuvola {{ app.uid }}</code> and press the Enter key to install this package.
+  </p>
+  {{ snippets.log_out_log_in(environments) }}
+
+  {{ snippets.generic_launch_app(app, environments) }}
+{% endmacro %}
+
+{% block tab_content %}
+  {{ install_app_with_software_manager(app, distro_spec, "Cinnamon, Mate, XFCE") }}
+{% endblock %}

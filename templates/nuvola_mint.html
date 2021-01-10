@@ -1,0 +1,140 @@
+{% extends "nuvola.html" %}
+{% import "snippets.html" as snippets %}
+
+
+{% macro install_flatpak_with_software_manager() %}
+  <h2>Install Flatpak and Friends</h2>
+  <p>
+    <strong>Flatpak</strong> is a cross-distribution framework for distribution and running of sandboxed applications.
+    <strong>XDG Desktop Portal</strong> provides {{ nuvola.name }} with desktop integration.
+  </p>
+  <p>
+    <strong>All packages are preinstalled</strong> in Linux Mint Cinnamon, Mate and XFCE editions.
+    If you have removed them, you can install them by clicking the links below and then
+    <strong>restart your computer</strong> to add Flatpak paths alongside the system ones.
+    Otherwise, you may see strange errors.
+    Unfortunately, just logging out and logging in is not enough.
+  </p>
+  <p><a class="btn btn-primary" href="apt:flatpak">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install Flatpak with Software Manager
+  </a></p>
+
+  <p><a class="btn btn-primary" href="apt:xdg-desktop-portal-gtk">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+    Click to install XDG Desktop Portal with Software Manager
+  </a></p>
+
+  <p>
+    Alternatively, launch a Linux terminal emulator
+    and type the command below and press the Enter key to install these packages.
+  </p>
+  <pre><code>
+    sudo apt install flatpak xdg-desktop-portal-gtk
+  </code></pre>
+  {{ add_repositories_with_software_manager() }}
+{% endmacro %}
+
+{% macro add_repositories_with_software_manager() %}
+  <h2>Add Flathub and Nuvola Player Repositories</h2>
+  <p>
+    The <strong>Flathub repository</strong> provides GNOME Platform runtime, which is used by Nuvola to share common
+    dependencies with other Flatpak apps to reduce disk & memory usage. The <strong>Nuvola Player</strong> repository
+    contains <em>Nuvola Player Service</em> and individual integration scripts.
+  </p>
+  <ol>
+    <li>
+      <p>
+        <a class="btn btn-primary" href="https://dl.flathub.org/repo/flathub.flatpakrepo">
+          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+          Click to install Flathub repository with GNOME Software
+        </a>
+      </p>
+      <p>
+        This repository is preinstalled in Linux Mint Cinnamon, Mate and XFCE editions, so
+        you need to install it only if you have removed it.
+      </p>
+      <br/>
+    </li>
+    <li>
+      <p>
+        <a class="btn btn-primary" href="https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo">
+          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+          Click to install Nuvola Player repository with GNOME Software
+        </a>
+      </p>
+      <p>
+        Software Manager might show <strong>a misleading error message</strong> "The Flatpak repo you are trying to add
+        already exists." It seems to check the presence of the repository twice: Once before installation and then again
+        after installation, which obviously leads to the error message.
+      </p>
+      <br/>
+    </li>
+    <li>
+      <p>
+        Refresh Software Manager package cache: Launch <em>Software Manager</em> and select
+        <em>Refresh the list of packages</em> from the hamburger menu.
+      </p>
+      <div class="gallery">
+        <div class="container-fluid text-center">
+          <div class="row">
+            <a href="/screenshots/nuvola/mint/refresh_package_cache.png" class="col-sm-6">
+              <img src="/screenshots/nuvola/mint/refresh_package_cache.thumb.png"
+                   class="img-thumbnail"
+                   alt="Launch Software Manager and select Refresh the list of packages.">
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ol>
+  <p>
+    Alternatively, launch a Linux terminal emulator and type the following commands:
+  </p>
+  <pre><code>
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists nuvola https://dl.tiliado.eu/flatpak/nuvola.flatpakrepo
+    flatpak update
+  </code></pre>
+{% endmacro %}
+
+{% macro install_nuvola_service_with_software_manager() %}
+
+  {{ snippets.about_nuvola_service() }}
+  <p>
+    In order to <strong>install Nuvola Player Service with Software Manager</strong>,
+  </p>
+  <ol>
+    <li>Launch <em>Software Manager</em>.</li>
+    <li>Search for <em>Nuvola Player Service</em>.</li>
+    <li>
+      If there are multiple results, install a package from <em>the stable branch</em>.
+      Unfortunately, this information is not available in the list of packages, but you need to visit package detail
+      and wait a bit until this information is shown.
+    </li>
+  </ol>
+  <div class="gallery">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <a href="/screenshots/nuvola/mint/search_nuvola_service.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/mint/search_nuvola_service.thumb.png" class="img-thumbnail"
+               alt="Launch Software Manager and search for '{{ nuvola.name }}'.">
+        </a>
+        <a href="/screenshots/nuvola/mint/install_nuvola_service.png" class="col-sm-6">
+          <img src="/screenshots/nuvola/mint/install_nuvola_service.thumb.png" class="img-thumbnail"
+               alt="Verify you install a package from the stable branch and click the 'Install' button.">
+        </a>
+      </div>
+    </div>
+  </div>
+  <p>
+    Alternatively, launch a Linux terminal emulator an run the following command:
+  </p>
+  <pre><code>flatpak install nuvola {{ nuvola.uid }}</code></pre>
+{% endmacro %}
+
+{% block tab_content %}
+  {{ install_flatpak_with_software_manager() }}
+  {{ install_nuvola_service_with_software_manager() }}
+  {{ snippets.install_individual_apps(apps, distro_spec) }}
+{% endblock %}

@@ -18,6 +18,10 @@
     ]
   },
   {
+    "id": "mint",
+    "name": "Linux Mint"
+  },
+  {
     "id": "elementary",
     "name": "elementaryOS",
     "releases": [
