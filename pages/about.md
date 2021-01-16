@@ -87,6 +87,7 @@ Desktop Integration {: #features}
 Although Nuvola should work in all Linux desktop environments, we currently test only
 [GNOME](/docs/4/desktops/gnome.html) (Ubuntu, Fedora),
 [Cinnamon](/docs/4/desktops/cinnamon.html) (Linux Mint),
+[Mate](:4/desktops/mate.html) (Linux Mint),
 [Unity](/docs/4/desktops/unity.html) (Ubuntu),
 and [Pantheon](/docs/4/desktops/pantheon.html) (elementaryOS).
 We hope to explore other desktops in the future.
@@ -115,6 +116,12 @@ role="button">elementaryOS</a>
 src="https://tiliado.github.io/nuvolaplayer/documentation/images/3.0/unity/unity_google_play_music_launcher_thumbs_up[256x192].png"/></a>
 <br><a class="btn btn-secondary my-2" href="/docs/4/desktops/unity.html"
 role="button">Unity</a>
+</div>
+<div class="col-12 col-md-6 my-2">
+<a href="/docs/4/desktops/mate.html"><img height="192" width="256"
+src="https://nuvola.tiliado.eu/docs/images/4/desktops/cinnamon/mpris[330x].png"/></a>
+<br><a class="btn btn-secondary my-2" href="/docs/4/desktops/mate.html"
+role="button">Mate</a>
 </div>
 </div>
 
