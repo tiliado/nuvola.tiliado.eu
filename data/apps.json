@@ -37,7 +37,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Bandcamp",
     "uid": "eu.tiliado.NuvolaAppBandcamp",
-    "version": "2.3"
+    "version": "2.4"
   },
   {
     "id": "bbc_iplayer",
@@ -94,22 +94,6 @@
     "name": "Gaana",
     "uid": "eu.tiliado.NuvolaAppGaana",
     "version": "1.0"
-  },
-  {
-    "id": "google_calendar",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "Google Calendar",
-    "uid": "eu.tiliado.NuvolaAppGoogleCalendar",
-    "version": "1.4"
-  },
-  {
-    "id": "google_play_music",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "Google Play Music",
-    "uid": "eu.tiliado.NuvolaAppGooglePlayMusic",
-    "version": "6.3"
   },
   {
     "id": "idagio",
@@ -206,14 +190,6 @@
     "name": "Pandora",
     "uid": "eu.tiliado.NuvolaAppPandora",
     "version": "1.1"
-  },
-  {
-    "id": "plex",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "Plex Music",
-    "uid": "eu.tiliado.NuvolaAppPlex",
-    "version": "1.5"
   },
   {
     "id": "pocket_casts",

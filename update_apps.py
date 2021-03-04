@@ -16,7 +16,8 @@ def update_all(apps_list: str, branch: str, apps_dir: str, output: str) -> str:
     with open(apps_list) as f:
         recipes = load_yaml(f)
 
-    list_of_apps: List[str] = recipes["apps"][branch]
+    retired = set(recipes["apps"]["retired"])
+    list_of_apps: List[str] = [x for x in recipes["apps"][branch] if x not in retired]
     apps: List[Dict[str, Any]] = [update_app(apps_dir, app, "master") for app in list_of_apps]
     apps.sort(key=lambda item: item["id"])
     data = json.dumps(apps, indent=2, separators=(',', ': '), sort_keys=True, ensure_ascii=False)
