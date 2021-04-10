@@ -16,6 +16,14 @@
     "version": "5.11"
   },
   {
+    "id": "anghami",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Anghami",
+    "uid": "eu.tiliado.NuvolaAppAnghami",
+    "version": "1.0"
+  },
+  {
     "id": "apple_music",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
