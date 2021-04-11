@@ -5,7 +5,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "8tracks",
     "uid": "eu.tiliado.NuvolaApp8tracks",
-    "version": "5.3"
+    "version": "5.4"
   },
   {
     "id": "amazon_cloud_player",
@@ -13,7 +13,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Amazon Cloud Player",
     "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.11"
+    "version": "5.12"
   },
   {
     "id": "anghami",
@@ -29,7 +29,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Apple Music",
     "uid": "eu.tiliado.NuvolaAppAppleMusic",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "audible",
@@ -37,7 +37,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Audible",
     "uid": "eu.tiliado.NuvolaAppAudible",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "bandcamp",
@@ -53,7 +53,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "BBC iPlayer",
     "uid": "eu.tiliado.NuvolaAppBbcIplayer",
-    "version": "1.6"
+    "version": "1.7"
   },
   {
     "id": "brain_fm",
@@ -61,7 +61,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Brain.fm",
     "uid": "eu.tiliado.NuvolaAppBrainFm",
-    "version": "1.1"
+    "version": "1.2"
   },
   {
     "id": "deezer",
@@ -69,7 +69,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Deezer",
     "uid": "eu.tiliado.NuvolaAppDeezer",
-    "version": "3.3"
+    "version": "3.4"
   },
   {
     "id": "difm",
@@ -77,7 +77,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "DI.FM",
     "uid": "eu.tiliado.NuvolaAppDifm",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "emby",
@@ -93,7 +93,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Focus@Will",
     "uid": "eu.tiliado.NuvolaAppFocusAtWill",
-    "version": "1.1"
+    "version": "1.2"
   },
   {
     "id": "gaana",
@@ -101,7 +101,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Gaana",
     "uid": "eu.tiliado.NuvolaAppGaana",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "idagio",
@@ -109,7 +109,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "IDAGIO",
     "uid": "eu.tiliado.NuvolaAppIdagio",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "iheart_radio",
@@ -125,7 +125,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Ivoox",
     "uid": "eu.tiliado.NuvolaAppIvoox",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "jamendo",
@@ -133,7 +133,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Jamendo",
     "uid": "eu.tiliado.NuvolaAppJamendo",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "jango",
@@ -141,7 +141,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Jango",
     "uid": "eu.tiliado.NuvolaAppJango",
-    "version": "2.5"
+    "version": "2.6"
   },
   {
     "id": "jupiter_broadcasting",
@@ -149,7 +149,7 @@
     "maintainer_link": "https://github.com/a-m-s",
     "name": "Jupiter Broadcasting",
     "uid": "eu.tiliado.NuvolaAppJupiterBroadcasting",
-    "version": "1.5"
+    "version": "1.6"
   },
   {
     "id": "kexp",
@@ -157,7 +157,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "KEXP Radio",
     "uid": "eu.tiliado.NuvolaAppKexp",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "mentorfm",
@@ -165,7 +165,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "MentorFM",
     "uid": "eu.tiliado.NuvolaAppMentorfm",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "mixcloud",
@@ -173,7 +173,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Mixcloud",
     "uid": "eu.tiliado.NuvolaAppMixcloud",
-    "version": "4.2"
+    "version": "4.3"
   },
   {
     "id": "npr_one",
@@ -181,7 +181,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "NPR One",
     "uid": "eu.tiliado.NuvolaAppNprOne",
-    "version": "1.2"
+    "version": "1.3"
   },
   {
     "id": "owncloud_music",
@@ -189,7 +189,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "ownCloud Music",
     "uid": "eu.tiliado.NuvolaAppOwncloudMusic",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "pocket_casts",
@@ -197,7 +197,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Pocket Casts",
     "uid": "eu.tiliado.NuvolaAppPocketCasts",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "pretzel",
@@ -213,7 +213,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Primephonic",
     "uid": "eu.tiliado.NuvolaAppPrimephonic",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "qobuz",
@@ -221,7 +221,7 @@
     "maintainer_link": "https://github.com/Romunix",
     "name": "Qobuz",
     "uid": "eu.tiliado.NuvolaAppQobuz",
-    "version": "1.3"
+    "version": "1.4"
   },
   {
     "id": "siriusxm",
@@ -229,7 +229,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SiriusXM",
     "uid": "eu.tiliado.NuvolaAppSiriusxm",
-    "version": "1.6"
+    "version": "1.7"
   },
   {
     "id": "soundcloud",
@@ -237,7 +237,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SoundCloud",
     "uid": "eu.tiliado.NuvolaAppSoundcloud",
-    "version": "1.5"
+    "version": "1.6"
   },
   {
     "id": "spotify",
@@ -245,7 +245,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
-    "version": "3.3"
+    "version": "3.4"
   },
   {
     "id": "tidal",
@@ -253,7 +253,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Tidal",
     "uid": "eu.tiliado.NuvolaAppTidal",
-    "version": "1.1"
+    "version": "1.2"
   },
   {
     "id": "tunein",
@@ -261,7 +261,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "TuneIn",
     "uid": "eu.tiliado.NuvolaAppTunein",
-    "version": "1.4"
+    "version": "1.5"
   },
   {
     "id": "yandex_music",
@@ -269,7 +269,7 @@
     "maintainer_link": "https://github.com/d-r-q",
     "name": "Yandex Music",
     "uid": "eu.tiliado.NuvolaAppYandexMusic",
-    "version": "1.7"
+    "version": "1.8"
   },
   {
     "id": "youtube",
@@ -277,7 +277,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube",
     "uid": "eu.tiliado.NuvolaAppYoutube",
-    "version": "2.2"
+    "version": "2.3"
   },
   {
     "id": "youtube_music",
