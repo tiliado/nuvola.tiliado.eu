@@ -88,7 +88,7 @@ class Generator(generator.Generator):
         self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render("index.html", {
-                'navbar_tab': 'install',
+                'navbar': 'install',
                 "distributions": self.distributions,
                 "distro_name": distro_name,
                 "apps": self.apps,
@@ -139,7 +139,7 @@ class Generator(generator.Generator):
         self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(templates, {
-                'navbar_tab': 'install',
+                'navbar': 'install',
                 "tab_target": "/app/" + app["id"],
                 "apps": self.apps,
                 "app": app,
@@ -191,7 +191,7 @@ class Generator(generator.Generator):
         os.makedirs(os.path.dirname(target), exist_ok=True)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(templates, {
-                'navbar_tab': 'install',
+                'navbar': 'install',
                 "tab_target": "/nuvola",
                 "distributions": self.distributions,
                 "apps": self.apps,
@@ -221,7 +221,7 @@ class Generator(generator.Generator):
         self.resources.add(self.repo_pages_kind, None, target)
         with open(target, "wt") as f:
             f.write(self.ctx.templater.render(['team.html'], {
-                'navbar_tab': 'team',
+                'navbar': 'team',
                 "team": self.team,
                 "canonical_path": canonical_path
             }))
