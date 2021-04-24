@@ -8,6 +8,14 @@
     "version": "5.4"
   },
   {
+    "id": "airsonic",
+    "maintainer": "Jiří Janoušek",
+    "maintainer_link": "https://github.com/fenryxo",
+    "name": "Airsonic",
+    "uid": "eu.tiliado.NuvolaAppAirsonic",
+    "version": "1.0"
+  },
+  {
     "id": "amazon_cloud_player",
     "maintainer": "Andrew Stubbs",
     "maintainer_link": "https://github.com/a-m-s",
