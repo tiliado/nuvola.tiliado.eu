@@ -32,14 +32,6 @@
     "version": "1.0"
   },
   {
-    "id": "apple_music",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "Apple Music",
-    "uid": "eu.tiliado.NuvolaAppAppleMusic",
-    "version": "1.1"
-  },
-  {
     "id": "audible",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
