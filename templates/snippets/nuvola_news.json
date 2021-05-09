@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.22 adds Airsonic and opens survey",
+      "link": "https://medium.com/nuvola-news/nuvola-4-22-released-7b4e232c2711",
+      "date": "May 9th, 2021",
+      "text": "Version 4.22 introduces new services Anghami, updates Deezer, iHeartRADIO and Spotify, and opens Nuvola Player Survey."
+    },
+    {
       "title": "Nuvola 4.21 brings Anghami, adds official support for  Linux Mint, Cinnamon and Mate",
       "link": "https://medium.com/nuvola-news/nuvola-4-21-released-e8e7ca00aa95",
       "date": "April 11th, 2021",
