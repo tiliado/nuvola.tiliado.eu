@@ -4,6 +4,10 @@
     "name": "Ubuntu",
     "releases": [
       {
+        "id": "hirsute",
+        "name": "Ubuntu 21.04 Hirsute Hippo"
+      },
+      {
         "id": "groovy",
         "name": "Ubuntu 20.10 Groovy Gorilla"
       },

@@ -1,0 +1,6 @@
+{% extends "app.html" %}
+{% import "snippets_ubuntu.html" as ubuntu %}
+
+{% block tab_content %}
+  {{ ubuntu.install_app_with_gnome_software_focal(app, distro_spec, "GNOME, Unity, etc.", "_20_04") }}
+{% endblock %}
