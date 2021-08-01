@@ -1,6 +1,12 @@
 {
   "news": [
     {
+      "title": "Nuvola 4.23 fixes Soundcloud, Spotify and YouTube Music",
+      "link": "https://medium.com/nuvola-news/nuvola-4-23-released-16cefbfbd420",
+      "date": "August 1st, 2021",
+      "text": "Version 4.23 brings bug fixes of three services."
+    },
+    {
       "title": "Nuvola 4.22 adds Airsonic and opens survey",
       "link": "https://medium.com/nuvola-news/nuvola-4-22-released-7b4e232c2711",
       "date": "May 9th, 2021",

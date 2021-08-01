@@ -16,14 +16,6 @@
     "version": "1.0"
   },
   {
-    "id": "amazon_cloud_player",
-    "maintainer": "Andrew Stubbs",
-    "maintainer_link": "https://github.com/a-m-s",
-    "name": "Amazon Cloud Player",
-    "uid": "eu.tiliado.NuvolaAppAmazonCloudPlayer",
-    "version": "5.12"
-  },
-  {
     "id": "anghami",
     "maintainer": "Jiří Janoušek",
     "maintainer_link": "https://github.com/fenryxo",
@@ -69,7 +61,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Deezer",
     "uid": "eu.tiliado.NuvolaAppDeezer",
-    "version": "3.4"
+    "version": "3.5"
   },
   {
     "id": "difm",
@@ -117,7 +109,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "iHeartRADIO",
     "uid": "eu.tiliado.NuvolaAppIheartRadio",
-    "version": "1.0"
+    "version": "1.1"
   },
   {
     "id": "ivoox",
@@ -237,7 +229,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "SoundCloud",
     "uid": "eu.tiliado.NuvolaAppSoundcloud",
-    "version": "1.6"
+    "version": "1.7"
   },
   {
     "id": "spotify",
@@ -245,15 +237,7 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "Spotify",
     "uid": "eu.tiliado.NuvolaAppSpotify",
-    "version": "3.4"
-  },
-  {
-    "id": "tidal",
-    "maintainer": "Jiří Janoušek",
-    "maintainer_link": "https://github.com/fenryxo",
-    "name": "Tidal",
-    "uid": "eu.tiliado.NuvolaAppTidal",
-    "version": "1.2"
+    "version": "3.6"
   },
   {
     "id": "tunein",
@@ -285,6 +269,6 @@
     "maintainer_link": "https://github.com/fenryxo",
     "name": "YouTube Music",
     "uid": "eu.tiliado.NuvolaAppYoutubeMusic",
-    "version": "1.5"
+    "version": "1.6"
   }
 ]
